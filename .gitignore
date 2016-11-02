@@ -1,0 +1,11 @@
+# Machine-specific data from emacs
+.emacs.d/ac-comphist.dat
+.emacs.d/auto-save-list
+.emacs.d/eshell
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/rake.cache
+.emacs.d/url
+.emacs.d/abbrev_defs
+.emacs.d/ido.last
+
+# Some personal Tmuxinator projects
