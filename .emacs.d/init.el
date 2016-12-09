@@ -74,8 +74,8 @@
 ;; ERC
 (add-hook 'erc-mode-hook 'visual-line-mode)
 ;; TeX
-(add-hook 'tex-mode-hook 'flyspell-mode)
-(add-hook 'tex-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
