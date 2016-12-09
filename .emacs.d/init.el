@@ -53,6 +53,8 @@
 (global-flycheck-mode t)
 ;; Projectile-rails mode
 (projectile-rails-global-mode)
+;; Subword mode
+(subword-mode t)
 
 ;;; GUI Emacs
 ;; Disable toolbar
