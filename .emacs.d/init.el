@@ -122,7 +122,7 @@
  '(main-line-color2 "#111111")
  '(package-selected-packages
    (quote
-    (projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
+    (graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
  '(projectile-mode t nil (projectile))
