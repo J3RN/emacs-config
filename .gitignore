@@ -7,5 +7,4 @@
 .emacs.d/url
 .emacs.d/abbrev_defs
 .emacs.d/ido.last
-
-# Some personal Tmuxinator projects
+.emacs.d/tramp
