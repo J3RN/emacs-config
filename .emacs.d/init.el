@@ -23,6 +23,11 @@
 ;; Enable shift-arrow keybindings for window movement
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+;; Org mode recommendations
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
