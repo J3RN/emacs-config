@@ -16,10 +16,10 @@
 
 ;;; Key bindings
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-x t") (lambda () (interactive) (shell)))
 (global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x w") 'whitespace-mode)
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 ;; Enable shift-arrow keybindings for window movement
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
