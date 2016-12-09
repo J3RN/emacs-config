@@ -76,6 +76,8 @@
 ;; TeX
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+;; JavaScript
+(add-hook 'js-mode-hook (lambda () (setq indent-tabs-mode nil)))
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
