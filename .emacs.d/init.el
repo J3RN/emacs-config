@@ -66,6 +66,8 @@
 (projectile-rails-global-mode)
 ;; Subword mode
 (subword-mode t)
+;; Which Key mode for keybinding suggestions
+(which-key-mode)
 
 ;;; GUI Emacs
 ;; Disable toolbar
