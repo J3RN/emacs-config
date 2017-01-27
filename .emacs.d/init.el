@@ -1,3 +1,10 @@
+;;; init.el --- The startup file
+
+;;; Commentary:
+;; This is just my personal Emacs config.  I'm relatively new to Emacs, so it's
+;; probably terribad.
+
+;;; Code:
 ;;; Packages
 (require 'package)
 ;; Use Melpa packages
