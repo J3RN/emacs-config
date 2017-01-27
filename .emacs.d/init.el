@@ -20,8 +20,12 @@
 (exec-path-from-shell-initialize)
 ;; Autocomplete never ignores case
 (setq-default ac-ignore-case nil)
+;; Tell Projectile to use Helm for completion
+(setq-default projectile-completion-system 'helm)
 
 ;;; Key bindings
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x t") (lambda () (interactive) (shell)))
 (global-set-key (kbd "C-x c") 'compile)
@@ -54,8 +58,8 @@
 (global-linum-mode t)
 ;; Projectile
 (projectile-mode t)
-;; Ido mode
-(ido-mode t)
+;; Helm
+(helm-mode t)
 ;; Flycheck mode
 (global-flycheck-mode t)
 ;; Projectile-rails mode
