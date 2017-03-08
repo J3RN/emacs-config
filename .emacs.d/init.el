@@ -26,7 +26,10 @@
 ;;; Key bindings
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c m g") 'magit-status)
+(global-set-key (kbd "C-c m b") 'magit-blame)
+(global-set-key (kbd "C-c m d") 'magit-diff)
+(global-set-key (kbd "C-c m c") 'magit-checkout)
 (global-set-key (kbd "C-x t") (lambda () (interactive) (shell)))
 (global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x w") 'whitespace-mode)
@@ -81,7 +84,7 @@
 
 ;;; Hooks
 ;; Projectile
-;; (add-hook 'projectile-mode-hook 'projectile-rails-on)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 ;; Doc View
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 ;; ERC
@@ -91,6 +94,8 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 ;; JavaScript
 (add-hook 'js-mode-hook (lambda () (setq indent-tabs-mode nil)))
+;; Org Bullets (pretty UTF-8 bullets for org)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -132,22 +137,24 @@
  '(erc-server-reconnect-attempts t)
  '(fringe-mode 6 nil (fringe))
  '(global-auto-complete-mode t)
+ '(inhibit-startup-screen t)
  '(linum-format " %7d ")
  '(main-line-color1 "#191919")
  '(main-line-color2 "#111111")
  '(package-selected-packages
    (quote
-    (diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm-projectile helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
+    (rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm-projectile helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
  '(projectile-mode t nil (projectile))
- '(scroll-step 1))
+ '(scroll-step 1)
+ '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Hack"))))
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "Meslo LG S for Powerline"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#2222FF"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#22A0F0"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#22F0F0"))))
