@@ -22,6 +22,8 @@
 (setq-default ac-ignore-case nil)
 ;; Tell Projectile to use Helm for completion
 (setq-default projectile-completion-system 'helm)
+;; Silver Searcher configuration
+(setq-default ag-reuse-window 't)
 
 ;;; Key bindings
 (global-set-key (kbd "M-x") 'helm-M-x)
