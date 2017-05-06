@@ -169,3 +169,7 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#F0A022"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#FF2222"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#F022A0")))))
+
+;; Add to Auto-complete modes
+(add-to-list 'ac-modes 'haml-mode)
+(add-to-list 'ac-modes 'rust-mode)
