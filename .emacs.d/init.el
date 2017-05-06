@@ -173,3 +173,6 @@
 ;; Add to Auto-complete modes
 (add-to-list 'ac-modes 'haml-mode)
 (add-to-list 'ac-modes 'rust-mode)
+
+(provide 'init)
+;;; init.el ends here
