@@ -5,6 +5,7 @@
 ;; probably terribad.
 
 ;;; Code:
+
 ;;; Packages
 (require 'package)
 ;; Use Melpa packages
