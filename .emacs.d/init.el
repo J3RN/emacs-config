@@ -119,6 +119,10 @@
 ;;; Add rg to projectile
 (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep)
 
+;;; Allow 'vm rails' for the projectile-rails vanilla rails command
+(add-to-list 'safe-local-variable-values
+	     '(projectile-rails-vanilla-command . "vm rails"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
