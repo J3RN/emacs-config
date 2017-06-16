@@ -17,23 +17,26 @@
 (package-initialize)
 
 ;;; Key bindings
+;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; Magit
 (global-set-key (kbd "C-c m g") 'magit-status)
 (global-set-key (kbd "C-c m b") 'magit-blame)
 (global-set-key (kbd "C-c m d") 'magit-diff)
 (global-set-key (kbd "C-c m c") 'magit-checkout)
+;; Org mode
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
+;; Custom
 (global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x w") 'whitespace-mode)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 ;; Enable shift-arrow keybindings for window movement
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-;; Org mode recommendations
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
