@@ -23,7 +23,6 @@
 (global-set-key (kbd "C-c m b") 'magit-blame)
 (global-set-key (kbd "C-c m d") 'magit-diff)
 (global-set-key (kbd "C-c m c") 'magit-checkout)
-(global-set-key (kbd "C-x t") (lambda () (interactive) (shell)))
 (global-set-key (kbd "C-x c") 'compile)
 (global-set-key (kbd "C-x w") 'whitespace-mode)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
