@@ -31,8 +31,8 @@
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o b") 'org-iswitchb)
 ;; Custom
-(global-set-key (kbd "C-x c") 'compile)
-(global-set-key (kbd "C-x w") 'whitespace-mode)
+(global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 ;; Enable shift-arrow keybindings for window movement
 (when (fboundp 'windmove-default-keybindings)
