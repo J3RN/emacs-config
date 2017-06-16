@@ -137,7 +137,7 @@
    (quote
     ("f78de13274781fbb6b01afd43327a4535438ebaeec91d93ebdbba1e3fba34d3c" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" "1fab355c4c92964546ab511838e3f9f5437f4e68d9d1d073ab8e36e51b26ca6a" "7bf64a1839bf4dbc61395bd034c21204f652185d17084761a648251041b70233" "63b7b8a45190b2e7362a975067bd76b55ae548c00e9088d12b4133eb0525a604" default)))
  '(erc-server-reconnect-attempts t)
- '(exec-path-from-shell-shell-name "/bin/sh")
+ '(exec-path-from-shell-shell-name "/bin/bash")
  '(fringe-mode 6 nil (fringe))
  '(global-auto-complete-mode t)
  '(inhibit-startup-screen t)
