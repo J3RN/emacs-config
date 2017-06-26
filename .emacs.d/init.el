@@ -52,19 +52,12 @@
 (setq-default require-final-newline t)
 
 ;;; Global modes
-;; Line numbers
-(global-linum-mode t)
-;; Projectile
-(projectile-mode t)
-;; Helm
-(helm-mode t)
-;; Flycheck mode
-(global-flycheck-mode t)
-;; Projectile-rails mode
+(global-linum-mode)
+(projectile-mode)
+(helm-mode)
+(global-flycheck-mode)
 (projectile-rails-global-mode)
-;; Subword mode
-(subword-mode t)
-;; Which Key mode for keybinding suggestions
+(global-subword-mode)
 (which-key-mode)
 
 ;;; GUI Emacs
