@@ -44,8 +44,6 @@
 ;;; Display items
 ;; Do not wrap long lines
 (setq-default truncate-lines t)
-;; Show trailing whitespace in code files
-(add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
 
 ;;; Better formatting of files
 ;; Require newlines at the end of files
@@ -84,6 +82,8 @@
 (add-hook 'js-mode-hook (lambda () (setq indent-tabs-mode nil)))
 ;; Org Bullets (pretty UTF-8 bullets for org)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;; Show trailing whitespace in code files
+(add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
