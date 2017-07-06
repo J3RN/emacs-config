@@ -49,11 +49,11 @@
 
 ;;; Global modes
 (global-linum-mode)
+(global-subword-mode)
 (projectile-mode)
+(projectile-rails-global-mode)
 (helm-mode)
 (global-flycheck-mode)
-(projectile-rails-global-mode)
-(global-subword-mode)
 (which-key-mode)
 
 ;;; GUI Emacs
