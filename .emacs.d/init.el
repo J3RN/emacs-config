@@ -41,12 +41,10 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
-;;; Display items
-;; Do not wrap long lines
+;;; Do not wrap long lines
 (setq-default truncate-lines t)
 
-;;; Better formatting of files
-;; Require newlines at the end of files
+;;; Require newlines at the end of files
 (setq-default require-final-newline t)
 
 ;;; Global modes
