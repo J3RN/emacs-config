@@ -48,6 +48,7 @@
 (setq-default require-final-newline t)
 
 ;;; Global modes
+(column-number-mode)
 (global-linum-mode)
 (global-subword-mode)
 (projectile-mode)
@@ -55,6 +56,7 @@
 (helm-mode)
 (global-flycheck-mode)
 (which-key-mode)
+(global-auto-complete-mode)
 
 ;;; GUI Emacs
 ;; Disable toolbar
@@ -121,7 +123,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
  '(compilation-scroll-output t)
  '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes
@@ -130,7 +131,6 @@
  '(erc-server-reconnect-attempts t)
  '(exec-path-from-shell-shell-name "/bin/bash")
  '(fringe-mode 6 nil (fringe))
- '(global-auto-complete-mode t)
  '(inhibit-startup-screen t)
  '(linum-format " %7d ")
  '(main-line-color1 "#191919")
@@ -140,7 +140,6 @@
     (go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm-projectile helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
- '(projectile-mode t nil (projectile))
  '(scroll-step 1)
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
