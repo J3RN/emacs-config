@@ -9,12 +9,12 @@
 ;;; Packages
 (require 'package)
 ;; Use Melpa packages
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Use Elpa packages (default in versions 24+)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t))
-(package-initialize)
+(package-initialize)			; Load and activate packages
+(package-refresh-contents)		; Check for updates
 
 ;;; Key bindings
 ;; Helm
