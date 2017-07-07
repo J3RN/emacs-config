@@ -30,6 +30,8 @@
 (global-set-key (kbd "C-c o a") 'org-agenda)
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o b") 'org-iswitchb)
+;; Neotree
+(global-set-key (kbd "C-c n") 'neotree-toggle)
 ;; Custom
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
