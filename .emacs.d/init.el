@@ -86,6 +86,11 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; Show trailing whitespace in code files
 (add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
+;; Styling C
+(add-hook 'c-mode-common-hook (lambda () (setq c-default-style "linux"
+					       c-basic-offset 8
+					       tab-width 8
+					       indent-tabs-mode t)))
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
