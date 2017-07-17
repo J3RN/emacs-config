@@ -145,6 +145,7 @@
  '(package-selected-packages
    (quote
     (counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
+ '(paradox-automatically-star nil)
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
  '(safe-local-variable-values (quote ((projectile-rails-vanilla-command . "vm rails"))))
