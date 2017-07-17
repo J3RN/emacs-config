@@ -14,7 +14,6 @@
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t))
 (package-initialize)			; Load and activate packages
-(package-refresh-contents)		; Check for updates
 
 ;;; Key bindings
 ;; Helm
@@ -180,6 +179,7 @@
 (setq-default projectile-completion-system 'helm)
 ;; Silver Searcher configuration
 (setq-default ag-reuse-window 't)
+(paradox-upgrade-packages)		; Update packages with Paradox
 
 (provide 'init)
 ;;; init.el ends here
