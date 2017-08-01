@@ -8,3 +8,6 @@
 .emacs.d/abbrev_defs
 .emacs.d/ido.last
 .emacs.d/tramp
+
+# Packages
+.emacs.d/elpa
