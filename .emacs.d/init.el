@@ -58,6 +58,7 @@
 (global-flycheck-mode)
 (which-key-mode)
 (global-auto-complete-mode)
+(global-diff-hl-mode)
 
 ;;; GUI Emacs
 ;; Disable toolbar
