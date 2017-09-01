@@ -10,6 +10,9 @@
 (load-file (locate-user-emacs-file "local.el"))
 
 ;;; Packages
+(setq package-selected-packages
+      '(counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag))
+
 (require 'package)
 ;; Use Melpa packages
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -17,6 +20,15 @@
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t))
 (package-initialize)			; Load and activate packages
+
+;; Fetch the list of available packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install missing packages
+(dolist (package package-selected-packages)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;;; Key bindings
 ;; Helm
@@ -145,9 +157,6 @@
  '(linum-format " %7d ")
  '(main-line-color1 "#191919")
  '(main-line-color2 "#111111")
- '(package-selected-packages
-   (quote
-    (counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag)))
  '(paradox-automatically-star nil)
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
