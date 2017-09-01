@@ -7,7 +7,9 @@
 ;;; Code:
 
 ;;; Load local configuration
-(load-file (locate-user-emacs-file "local.el"))
+(let ((local-config-file (locate-user-emacs-file "local.el")))
+      (if (file-readable-p local-config-file)
+	  (load-file local-config-file)))
 
 ;;; Packages
 (setq package-selected-packages
