@@ -10,5 +10,8 @@
 .emacs.d/tramp
 .emacs.d/recentf
 
+# Machine-specific configuration
+.emacs.d/local.el
+
 # Packages
 .emacs.d/elpa
