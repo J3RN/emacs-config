@@ -72,6 +72,9 @@
 ;;; Require newlines at the end of files
 (setq-default require-final-newline t)
 
+;;; GPG pinentry prompt fix for macOS
+(setq-default epa-pinentry-mode 'loopback)
+
 ;;; Global modes
 (column-number-mode)
 (global-linum-mode)
