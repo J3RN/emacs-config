@@ -56,6 +56,12 @@
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
+;; Kill defun
+(global-set-key (kbd "C-M-k")
+		(lambda ()
+		  (interactive)
+		  (mark-defun)
+		  (kill-region (point) (mark))))
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
