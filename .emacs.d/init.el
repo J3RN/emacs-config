@@ -6,6 +6,9 @@
 
 ;;; Code:
 
+;;; Load local configuration
+(load-file (locate-user-emacs-file "local.el"))
+
 ;;; Packages
 (require 'package)
 ;; Use Melpa packages
