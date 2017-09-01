@@ -197,6 +197,9 @@
 (add-to-list 'ac-modes 'haml-mode)
 (add-to-list 'ac-modes 'rust-mode)
 
+;;; Allow scroll-left
+(put 'scroll-left 'disabled nil)
+
 ;;; Package configuration
 ;; Initialize exec-path-from-shell
 (exec-path-from-shell-initialize)
