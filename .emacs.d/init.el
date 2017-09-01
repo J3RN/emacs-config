@@ -62,6 +62,9 @@
 		  (interactive)
 		  (mark-defun)
 		  (kill-region (point) (mark))))
+;; Helm-occur replaces isearch
+(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "C-r") 'helm-occur)
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
