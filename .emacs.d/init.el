@@ -171,7 +171,10 @@
  '(paradox-automatically-star nil)
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
- '(safe-local-variable-values (quote ((projectile-rails-vanilla-command . "vm rails"))))
+ '(safe-local-variable-values
+   (quote
+    ((eval visual-line-mode t)
+     (projectile-rails-vanilla-command . "vm rails"))))
  '(scroll-step 1)
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
