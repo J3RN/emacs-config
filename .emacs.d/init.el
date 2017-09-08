@@ -48,6 +48,8 @@
 (global-set-key (kbd "C-c o b") 'org-iswitchb)
 ;; Neotree
 (global-set-key (kbd "C-c n") 'neotree-toggle)
+;; Counsel
+(global-set-key (kbd "C-c u r") 'counsel-rg)
 ;; Custom
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
