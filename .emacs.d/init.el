@@ -80,9 +80,11 @@
 (setq-default epa-pinentry-mode 'loopback)
 
 ;;; Global modes
+;; Built-in
 (column-number-mode)
 (global-linum-mode)
 (global-subword-mode)
+;; Packages
 (projectile-mode)
 (projectile-rails-global-mode)
 (helm-mode)
