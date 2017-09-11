@@ -84,6 +84,7 @@
 (column-number-mode)
 (global-linum-mode)
 (global-subword-mode)
+(show-paren-mode)
 ;; Packages
 (projectile-mode)
 (projectile-rails-global-mode)
