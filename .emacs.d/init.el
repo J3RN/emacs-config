@@ -66,9 +66,9 @@
 		  (interactive)
 		  (mark-defun)
 		  (kill-region (point) (mark))))
-;; Helm-occur replaces isearch
-(global-set-key (kbd "C-s") 'helm-occur)
-(global-set-key (kbd "C-r") 'helm-occur)
+;; Swiper replaces isearch
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-r") 'swiper)
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
