@@ -69,6 +69,12 @@
 ;; Swiper replaces isearch
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-r") 'swiper)
+(global-set-key (kbd "C-M-s") (lambda ()
+			      (interactive)
+			      (swiper (format "%s" (thing-at-point 'symbol)))))
+(global-set-key (kbd "C-M-r") (lambda ()
+			      (interactive)
+			      (swiper (format "%s" (thing-at-point 'symbol)))))
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
