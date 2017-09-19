@@ -38,9 +38,7 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; Magit
 (global-set-key (kbd "C-c m g") 'magit-status)
-(global-set-key (kbd "C-c m b") 'magit-blame)
-(global-set-key (kbd "C-c m d") 'magit-diff)
-(global-set-key (kbd "C-c m c") 'magit-checkout)
+(global-set-key (kbd "C-c m f") 'magit-file-popup)
 ;; Org mode
 (global-set-key (kbd "C-c o l") 'org-store-link)
 (global-set-key (kbd "C-c o a") 'org-agenda)
