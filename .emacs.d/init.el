@@ -178,7 +178,7 @@
  '(erc-server-reconnect-attempts t)
  '(exec-path-from-shell-shell-name "/bin/bash")
  '(inhibit-startup-screen t)
- '(linum-format " %7d ")
+ '(linum-format " %4d ")
  '(main-line-color1 "#191919")
  '(main-line-color2 "#111111")
  '(paradox-automatically-star nil)
