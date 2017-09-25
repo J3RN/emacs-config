@@ -224,7 +224,9 @@
 (setq-default projectile-completion-system 'helm)
 ;; Silver Searcher configuration
 (setq-default ag-reuse-window 't)
-(paradox-upgrade-packages)		; Update packages with Paradox
+
+;; Update packages with Paradox
+(paradox-upgrade-packages)
 
 ;; Show startup screen
 (dashboard-setup-startup-hook)
