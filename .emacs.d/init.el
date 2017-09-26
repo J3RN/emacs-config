@@ -48,6 +48,9 @@
 (global-set-key (kbd "C-c n") 'neotree-toggle)
 ;; Counsel
 (global-set-key (kbd "C-c u r") 'counsel-rg)
+;; Swiper replaces isearch
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-r") 'swiper)
 ;; Built-in
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
@@ -64,9 +67,6 @@
 		  (interactive)
 		  (mark-defun)
 		  (kill-region (point) (mark))))
-;; Swiper replaces isearch
-(global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "C-r") 'swiper)
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
