@@ -83,6 +83,7 @@
 (global-linum-mode)
 (global-subword-mode)
 (show-paren-mode)
+(global-auto-revert-mode)
 ;; Packages
 (projectile-mode)
 (projectile-rails-global-mode)
