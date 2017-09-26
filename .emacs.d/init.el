@@ -48,7 +48,7 @@
 (global-set-key (kbd "C-c n") 'neotree-toggle)
 ;; Counsel
 (global-set-key (kbd "C-c u r") 'counsel-rg)
-;; Custom
+;; Built-in
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
