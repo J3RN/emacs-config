@@ -68,6 +68,13 @@
 		  (interactive)
 		  (mark-defun)
 		  (kill-region (point) (mark))))
+;; Faster buffers
+(global-set-key (kbd "C-c b") (lambda ()
+				(interactive)
+				(switch-to-buffer (other-buffer (current-buffer) 1))))
+(global-set-key (kbd "C-c k") (lambda ()
+				(interactive)
+				(kill-buffer (current-buffer))))
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
