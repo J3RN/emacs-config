@@ -34,8 +34,8 @@
 
 ;;; Key bindings
 ;; Helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; Magit
 (global-set-key (kbd "C-c m g") 'magit-status)
 (global-set-key (kbd "C-c m a") 'magit-dispatch-popup)
@@ -95,7 +95,7 @@
 ;; Packages
 (projectile-mode)
 (projectile-rails-global-mode)
-(helm-mode)
+;; (helm-mode)
 (global-flycheck-mode)
 (which-key-mode)
 (global-auto-complete-mode)
@@ -173,7 +173,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(compilation-scroll-output t)
- '(custom-enabled-themes (quote (eminence)))
+ '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes
    (quote
     ("3629b62a41f2e5f84006ff14a2247e679745896b5eaa1d5bcfbc904a3441b0cd" "390ede68e62beeb894d7b35c202153491774ad07a1e1e1745e679b5abd8c71be" "a1800595bab75fcf8085b3639142ca48b9d1d5cdc0d87defba091ed4912a03c5" "a49760e39bd7d7876c94ee4bf483760e064002830a63e24c2842a536c6a52756" "677177c27f2eb49e092e0e30813b9f2b25b3adc2484517f0f40e3722d999d628" "cc6cd39e0fe870d3dfe01577148299215f4f21e580ee49c229937f1a7fd12a3b" "7cf0f5bb26a1dc3fe14928caec3f96062409e52a394acbd8508b2d8f2d6367f7" "0df6738dfdef764770341bb1b6f8dd0bc53bae8423f3bf61a46c66cb8a8e7ca8" "f78de13274781fbb6b01afd43327a4535438ebaeec91d93ebdbba1e3fba34d3c" "c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" "1fab355c4c92964546ab511838e3f9f5437f4e68d9d1d073ab8e36e51b26ca6a" "7bf64a1839bf4dbc61395bd034c21204f652185d17084761a648251041b70233" "63b7b8a45190b2e7362a975067bd76b55ae548c00e9088d12b4133eb0525a604" default)))
@@ -183,12 +183,19 @@
  '(linum-format " %4d ")
  '(main-line-color1 "#191919")
  '(main-line-color2 "#111111")
+ '(org-agenda-files nil)
  '(paradox-automatically-star nil)
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
  '(safe-local-variable-values
    (quote
-    ((eval visual-line-mode t)
+    ((eval progn
+	   (require
+	    (quote projectile))
+	   (puthash
+	    (projectile-project-root)
+	    "vm bundle exec rake test" projectile-test-cmd-map))
+     (eval visual-line-mode t)
      (projectile-rails-vanilla-command . "vm rails"))))
  '(scroll-step 1)
  '(send-mail-function (quote mailclient-send-it)))
@@ -197,7 +204,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Menlo"))))
+ '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "Menlo"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#2222FF"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#22A0F0"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#22F0F0"))))
@@ -220,8 +227,8 @@
 (exec-path-from-shell-initialize)
 ;; Autocomplete never ignores case
 (setq-default ac-ignore-case nil)
-;; Tell Projectile to use Helm for completion
-(setq-default projectile-completion-system 'helm)
+;; Tell Projectile to use Ivy for completion
+(setq-default projectile-completion-system 'ivy)
 ;; Silver Searcher configuration
 (setq-default ag-reuse-window 't)
 
@@ -230,6 +237,14 @@
 
 ;; Show startup screen
 (dashboard-setup-startup-hook)
+
+;; Example Ivy config
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 
 (provide 'init)
 ;;; init.el ends here
