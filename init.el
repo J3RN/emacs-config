@@ -133,6 +133,13 @@
 					       c-basic-offset 8
 					       tab-width 8
 					       indent-tabs-mode t)))
+;; ANSI colorize compilation output
+(defun colorize-compilation-buffer ()
+  "Colorize ANSI escape sequences in compilation output."
+  (read-only-mode)
+  (ansi-color-apply-on-region compilation-filter-start (point))
+  (read-only-mode))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 ;;; Scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
