@@ -170,6 +170,9 @@
 ;;; Add rg to projectile
 (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep)
 
+;; Customize command used for counsel-rg
+(setq-default counsel-rg-base-command "rg -S -n --no-heading --color never %s .")
+
 ;;; Allow 'vm rails' for the projectile-rails vanilla rails command
 (add-to-list 'safe-local-variable-values
 	     '(projectile-rails-vanilla-command . "vm rails"))
