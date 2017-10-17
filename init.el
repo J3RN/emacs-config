@@ -76,6 +76,9 @@
 				(interactive)
 				(kill-buffer (current-buffer))))
 
+;;; Use visible bell instead of audible one for a quiet editing experience
+(setq visible-bell t)
+
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
 
