@@ -47,11 +47,13 @@
 (global-set-key (kbd "C-c o b") 'org-iswitchb)
 ;; Neotree
 (global-set-key (kbd "C-c n") 'neotree-toggle)
+;; Ivy
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 ;; Counsel
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-c u r") 'counsel-rg)
 ;; Swiper replaces isearch
 (global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "C-r") 'swiper)
 ;; Built-in
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
@@ -255,9 +257,6 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
-(global-set-key "\C-s" 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
 
 (provide 'init)
 ;;; init.el ends here
