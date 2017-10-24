@@ -200,6 +200,7 @@
  '(main-line-color2 "#111111")
  '(org-agenda-files nil)
  '(paradox-automatically-star nil)
+ '(paradox-github-token t)
  '(powerline-color1 "#191919")
  '(powerline-color2 "#111111")
  '(safe-local-variable-values
