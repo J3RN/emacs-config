@@ -258,5 +258,8 @@
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 
+;; Start the server (so emacsclient can connect)
+(server-start)
+
 (provide 'init)
 ;;; init.el ends here
