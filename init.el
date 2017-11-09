@@ -13,7 +13,7 @@
 
 ;;; Packages
 (setq package-selected-packages
-      '(dashboard page-break-lines counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag))
+      '(spacemacs-theme dashboard page-break-lines counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-projectile org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag))
 
 (require 'package)
 ;; Use Melpa packages
@@ -188,10 +188,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(compilation-scroll-output t)
- '(custom-enabled-themes (quote (monokai)))
+ '(custom-enabled-themes (quote (spacemacs-dark)))
  '(custom-safe-themes
    (quote
-    ("390ede68e62beeb894d7b35c202153491774ad07a1e1e1745e679b5abd8c71be" "8ed752276957903a270c797c4ab52931199806ccd9f0c3bb77f6f4b9e71b9272" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "390ede68e62beeb894d7b35c202153491774ad07a1e1e1745e679b5abd8c71be" "8ed752276957903a270c797c4ab52931199806ccd9f0c3bb77f6f4b9e71b9272" default)))
  '(erc-server-reconnect-attempts t)
  '(exec-path-from-shell-shell-name "/bin/bash")
  '(inhibit-startup-screen t)
