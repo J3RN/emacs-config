@@ -252,6 +252,7 @@
 (paradox-upgrade-packages)
 
 ;; Show startup screen
+(setq dashboard-items '((projects . 5) (recents . 5)))
 (dashboard-setup-startup-hook)
 
 ;; Example Ivy config
