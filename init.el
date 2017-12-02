@@ -82,6 +82,9 @@
 				  (interactive)
 				  (switch-to-buffer-other-window (other-buffer (current-buffer) 1))))
 
+(global-set-key (kbd "C-c a l") 'paradox-list-packages)
+(global-set-key (kbd "C-c a i") 'package-install)
+
 ;;; Use visible bell instead of audible one for a quiet editing experience
 (setq visible-bell t)
 
