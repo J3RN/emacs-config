@@ -32,35 +32,80 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;;; Key bindings
-;; Helm
-;; (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; Magit
-(global-set-key (kbd "C-c m g") 'magit-status)
-(global-set-key (kbd "C-c m a") 'magit-dispatch-popup)
-(global-set-key (kbd "C-c m f") 'magit-file-popup)
-;; Org mode
-(global-set-key (kbd "C-c o l") 'org-store-link)
-(global-set-key (kbd "C-c o a") 'org-agenda)
-(global-set-key (kbd "C-c o c") 'org-capture)
-(global-set-key (kbd "C-c o b") 'org-iswitchb)
-;; Neotree
-(global-set-key (kbd "C-c n") 'neotree-toggle)
-;; Ivy
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-;; Counsel
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-c u r") 'counsel-rg)
-;; Swiper replaces isearch
-(global-set-key (kbd "C-s") 'swiper)
+(use-package dashboard
+  :init
+  (setq dashboard-items '((projects . 5) (recents . 5)))
+  (setq dashboard-startup-banner "~/.emacs.d/256x256@2x.png")
+  :config
+  (dashboard-setup-startup-hook))
+
+(use-package magit
+  :bind (("C-c g s" . magit-status)
+	 ("C-c g a" . magit-dispatch-popup)
+	 ("C-c g f" . magit-file-popup)
+	 ("C-c g t" . git-timemachine)))
+
+(use-package org
+  :bind (("C-c o l" . org-store-link)
+	 ("C-c o a" . org-agenda)
+	 ("C-c o c" . org-capture)
+	 ("C-c o b" . org-iswitchb)))
+
+(use-package neotree
+  :bind ("C-c n" . neotree-toggle))
+
+(use-package ivy
+  :bind ("C-c C-r" . ivy-resume))
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-c u r" . counsel-rg)))
+
+(use-package swiper
+  :bind ("C-s" . swiper))
+
+(use-package projectile
+  :config
+  (projectile-mode))
+
+(use-package projectile-rails
+  :config
+  (projectile-rails-global-mode))
+
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
+
+(use-package which-key
+  :config
+  (which-key-mode))
+
+(use-package auto-complete
+  :config
+  (global-auto-complete-mode))
+
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
+
 ;; Built-in
-(global-set-key (kbd "C-c c") 'compile)
-(global-set-key (kbd "C-c w") 'whitespace-mode)
-(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
-;; Enable shift-arrow keybindings for window movement
-(when (fboundp 'windmove-default-keybindings)
+(use-package compile
+  :bind ("C-c c" . compile))
+
+(use-package whitespace
+  :bind ("C-c w" . whitespace-mode))
+
+(use-package simple
+  :bind ("C-c d" . delete-trailing-whitespace))
+
+(use-package windmove
+  :config
   (windmove-default-keybindings))
+
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
@@ -104,15 +149,6 @@
 (global-subword-mode)
 (show-paren-mode)
 (global-auto-revert-mode)
-;; Packages
-(projectile-mode)
-(projectile-rails-global-mode)
-;; (helm-mode)
-(global-flycheck-mode)
-(which-key-mode)
-(global-auto-complete-mode)
-(global-diff-hl-mode)
-(global-page-break-lines-mode)
 
 ;;; GUI Emacs
 ;; Disable toolbar
@@ -259,8 +295,8 @@
 (paradox-upgrade-packages)
 
 ;; Show startup screen
-(setq dashboard-items '((projects . 5) (recents . 5)))
-(dashboard-setup-startup-hook)
+
+
 
 ;; Example Ivy config
 (ivy-mode 1)
