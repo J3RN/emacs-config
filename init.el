@@ -77,6 +77,10 @@
 (global-set-key (kbd "C-c k") (lambda ()
 				(interactive)
 				(kill-buffer (current-buffer))))
+(global-set-key (kbd "C-c 4 0") 'kill-buffer-and-window)
+(global-set-key (kbd "C-c 4 b") (lambda ()
+				  (interactive)
+				  (switch-to-buffer-other-window (other-buffer (current-buffer) 1))))
 
 ;;; Use visible bell instead of audible one for a quiet editing experience
 (setq visible-bell t)
