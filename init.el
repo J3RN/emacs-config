@@ -294,10 +294,6 @@
 ;; Update packages with Paradox
 (paradox-upgrade-packages)
 
-;; Show startup screen
-
-
-
 ;; Example Ivy config
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
