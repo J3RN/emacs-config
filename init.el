@@ -299,6 +299,9 @@
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 
+;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; Start the server (so emacsclient can connect)
 (server-start)
 
