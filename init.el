@@ -201,9 +201,8 @@
 (setq mouse-wheel-follow-mouse 't)	 ;; scroll window under mouse
 
 ;;; Auto-mode adjustments
-;; Treat SCSS as CSS
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 ;; Web-mode for web files
+(add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode)) ; CSS, SCSS
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)) ; HTML
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))   ; PHP
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))   ; Handlebars
