@@ -106,6 +106,12 @@
   :config
   (windmove-default-keybindings))
 
+(use-package smartparens
+  :config
+  (smartparens-global-mode)
+  (define-key smartparens-mode-map (kbd "C-c {") 'sp-forward-slurp-sexp)
+  (define-key smartparens-mode-map (kbd "C-c }") 'sp-backward-slurp-sexp))
+
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
