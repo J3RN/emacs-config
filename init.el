@@ -95,7 +95,8 @@
   :config
   (smartparens-global-mode)
   (define-key smartparens-mode-map (kbd "C-c {") 'sp-forward-slurp-sexp)
-  (define-key smartparens-mode-map (kbd "C-c }") 'sp-backward-slurp-sexp))
+  (define-key smartparens-mode-map (kbd "C-c }") 'sp-backward-slurp-sexp)
+  (define-key smartparens-mode-map (kbd "C-c `") 'sp-unwrap-sexp))
 
 (use-package swiper
   :bind ("C-s" . swiper))
