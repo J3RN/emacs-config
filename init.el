@@ -31,6 +31,18 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; use-package declarations
+(use-package auto-complete
+  :config
+  (global-auto-complete-mode))
+
+(use-package compile
+  :bind ("C-c c" . compile))
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-c u r" . counsel-rg)))
+
 (use-package dashboard
   :init
   (setq dashboard-items '((projects . 5) (recents . 5)))
@@ -38,11 +50,25 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
+
+(use-package ivy
+  :bind ("C-c C-r" . ivy-resume))
+
 (use-package magit
   :bind (("C-c g s" . magit-status)
 	 ("C-c g a" . magit-dispatch-popup)
 	 ("C-c g f" . magit-file-popup)
 	 ("C-c g t" . git-timemachine)))
+
+(use-package neotree
+  :bind ("C-c n" . neotree-toggle))
 
 (use-package org
   :bind (("C-c o l" . org-store-link)
@@ -50,18 +76,9 @@
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-iswitchb)))
 
-(use-package neotree
-  :bind ("C-c n" . neotree-toggle))
-
-(use-package ivy
-  :bind ("C-c C-r" . ivy-resume))
-
-(use-package counsel
-  :bind (("M-x" . counsel-M-x)
-	 ("C-c u r" . counsel-rg)))
-
-(use-package swiper
-  :bind ("C-s" . swiper))
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
 
 (use-package projectile
   :config
@@ -71,45 +88,28 @@
   :config
   (projectile-rails-global-mode))
 
-(use-package flycheck
-  :config
-  (global-flycheck-mode))
-
-(use-package which-key
-  :config
-  (which-key-mode))
-
-(use-package auto-complete
-  :config
-  (global-auto-complete-mode))
-
-(use-package diff-hl
-  :config
-  (global-diff-hl-mode))
-
-(use-package page-break-lines
-  :config
-  (global-page-break-lines-mode))
-
-;; Built-in
-(use-package compile
-  :bind ("C-c c" . compile))
-
-(use-package whitespace
-  :bind ("C-c w" . whitespace-mode))
-
 (use-package simple
   :bind ("C-c d" . delete-trailing-whitespace))
-
-(use-package windmove
-  :config
-  (windmove-default-keybindings))
 
 (use-package smartparens
   :config
   (smartparens-global-mode)
   (define-key smartparens-mode-map (kbd "C-c {") 'sp-forward-slurp-sexp)
   (define-key smartparens-mode-map (kbd "C-c }") 'sp-backward-slurp-sexp))
+
+(use-package swiper
+  :bind ("C-s" . swiper))
+
+(use-package which-key
+  :config
+  (which-key-mode))
+
+(use-package whitespace
+  :bind ("C-c w" . whitespace-mode))
+
+(use-package windmove
+  :config
+  (windmove-default-keybindings))
 
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
