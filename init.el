@@ -12,8 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages
-      '(zenburn-theme csv-mode git-timemachine counsel-etags use-package spacemacs-theme dashboard page-break-lines counsel paradox go-mode dictionary neotree nim-mode projectile-ripgrep ripgrep rainbow-delimiters rust-mode rubocop org-bullets diff-hl monokai-theme org-pomodoro smartparens which-key helm graphviz-dot-mode paredit projectile-rails ess flycheck znc yaml-mode web-mode ruby-test-mode org markdown-mode magit haml-mode git-gutter fish-mode exec-path-from-shell evil coffee-mode auto-complete auctex ag))
+(setq package-selected-packages '(ag auctex auto-complete coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters ripgrep rubocop ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
 
 (require 'package)
 ;; Use Melpa packages
