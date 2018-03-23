@@ -12,7 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages '(ag auctex auto-complete coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters ripgrep rubocop ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
+(setq package-selected-packages '(ag auctex auto-complete coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters ripgrep rubocop ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
 
 (require 'package)
 ;; Use Melpa packages
@@ -53,6 +53,10 @@
 (use-package diff-hl
   :config
   (global-diff-hl-mode))
+
+(use-package enh-ruby-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode)))
 
 (use-package flycheck
   :config
