@@ -180,8 +180,6 @@
 ;; TeX
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
-;; JavaScript
-(add-hook 'js-mode-hook (lambda () (setq indent-tabs-mode nil)))
 ;; Org Bullets (pretty UTF-8 bullets for org)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; Show trailing whitespace in code files
@@ -211,6 +209,7 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))   ; PHP
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))   ; Handlebars
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))   ; ERB
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))    ; JavaScript
 
 ;;; Sensible backup settings
 (setq
