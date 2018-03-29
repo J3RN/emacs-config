@@ -12,7 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters ripgrep rubocop ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
+(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters ripgrep rubocop ruby-hash-syntax ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
 
 (require 'package)
 ;; Use Melpa packages
@@ -132,6 +132,10 @@
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
+
+(use-package ruby-hash-syntax
+  :config
+  (define-key enh-ruby-mode-map (kbd "C-c h") 'ruby-hash-syntax-toggle))
 
 (use-package simple
   :bind ("C-c d" . delete-trailing-whitespace))
