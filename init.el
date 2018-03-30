@@ -34,15 +34,20 @@
 ;; use-package declarations
 (use-package auto-complete
   :config
-  (global-auto-complete-mode))
+  (global-auto-complete-mode)
+  (setq-default ac-ignore-case nil)
+  (add-to-list 'ac-modes 'haml-mode)
+  (add-to-list 'ac-modes 'rust-mode))
 
 (use-package bundler
   :bind ("C-c u i" . bundle-install))
 
 (use-package compile
+  :init (setq compilation-scroll-output t)
   :bind ("C-c c" . compile))
 
 (use-package counsel
+  :init (setq-default counsel-rg-base-command "rg -S -n --no-heading --color never %s .")
   :bind (("M-x" . counsel-M-x)
 	 ("C-c u r" . counsel-rg)))
 
@@ -61,18 +66,36 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode)))
 
+(use-package exec-path-from-shell
+  :init (setq exec-path-from-shell-shell-name "/bin/bash")
+  :config (exec-path-from-shell-initialize))
+
 (use-package flycheck
   :config
   (global-flycheck-mode))
 
 (use-package ivy
-  :bind ("C-c C-r" . ivy-resume))
+  :init
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  :bind ("C-c C-r" . ivy-resume)
+  :config (ivy-mode 1))
+
+(use-package linum
+  :init (setq linum-format " %4d ")
+  :config (global-linum-mode))
 
 (use-package magit
   :bind (("C-c g s" . magit-status)
 	 ("C-c g a" . magit-dispatch-popup)
 	 ("C-c g f" . magit-file-popup)
 	 ("C-c g t" . git-timemachine)))
+
+(use-package mwheel
+  :init
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+  (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
+  (setq mouse-wheel-follow-mouse 't))                 ;; scroll window under mouse
 
 (use-package neotree
   :bind ("C-c n" . neotree-toggle))
@@ -87,13 +110,28 @@
   :config
   (global-page-break-lines-mode))
 
+(use-package paradox
+  :init
+  (setq paradox-automatically-star nil)
+  (setq paradox-github-token t)
+  :bind
+  ("C-c a l" . paradox-list-packages)
+  ("C-c a i" . package-install))
+
 (use-package projectile
+  :init
+  (setq-default projectile-completion-system 'ivy)
   :config
-  (projectile-mode))
+  (projectile-mode)
+  (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep))
 
 (use-package projectile-rails
   :config
-  (projectile-rails-global-mode))
+  (projectile-rails-global-mode)
+  (add-hook 'projectile-mode-hook 'projectile-rails-on))
+
+(use-package sendmail
+  :init (setq send-mail-function 'mailclient-send-it))
 
 (use-package simple
   :bind ("C-c d" . delete-trailing-whitespace))
@@ -107,6 +145,15 @@
 
 (use-package swiper
   :bind ("C-s" . swiper))
+
+(use-package web-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)))
 
 (use-package which-key
   :config
@@ -140,9 +187,6 @@
 				  (interactive)
 				  (switch-to-buffer-other-window (other-buffer (current-buffer) 1))))
 
-(global-set-key (kbd "C-c a l") 'paradox-list-packages)
-(global-set-key (kbd "C-c a i") 'package-install)
-
 ;;; Use visible bell instead of audible one for a quiet editing experience
 (setq visible-bell t)
 
@@ -158,7 +202,6 @@
 ;;; Global modes
 ;; Built-in
 (column-number-mode)
-(global-linum-mode)
 (global-subword-mode)
 (show-paren-mode)
 (global-auto-revert-mode)
@@ -174,8 +217,6 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;; Hooks
-;; Projectile
-(add-hook 'projectile-mode-hook 'projectile-rails-on)
 ;; Doc View
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 ;; ERC
@@ -200,20 +241,6 @@
   (read-only-mode))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-;;; Scroll one line at a time (less "jumpy" than defaults)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't)	 ;; scroll window under mouse
-
-;;; Auto-mode adjustments
-;; Web-mode for web files
-(add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode)) ; CSS, SCSS
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)) ; HTML
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))   ; PHP
-(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))   ; Handlebars
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))   ; ERB
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))    ; JavaScript
-
 ;;; Sensible backup settings
 (setq
  backup-by-copying t
@@ -223,92 +250,20 @@
  kept-old-versions 2
  version-control t)
 
-;;; Custom theme path
+;; Set Monokai as the current theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(setq custom-safe-themes '("f0c98535db38af17e81e491a77251e198241346306a90c25eb982b57e687d7c0" default))
+(load-theme 'monokai)
 
-;;; Add rg to projectile
-(define-key projectile-command-map (kbd "s r") 'projectile-ripgrep)
-
-;; Customize command used for counsel-rg
-(setq-default counsel-rg-base-command "rg -S -n --no-heading --color never %s .")
-
-;;; Allow 'vm rails' for the projectile-rails vanilla rails command
-(add-to-list 'safe-local-variable-values
-	     '(projectile-rails-vanilla-command . "vm rails"))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(compilation-scroll-output t)
- '(custom-enabled-themes (quote (monokai-theme)))
- '(erc-server-reconnect-attempts t)
- '(exec-path-from-shell-shell-name "/bin/bash")
- '(inhibit-startup-screen t)
- '(linum-format " %4d ")
- '(main-line-color1 "#191919")
- '(main-line-color2 "#111111")
- '(org-agenda-files nil)
- '(paradox-automatically-star nil)
- '(paradox-github-token t)
- '(powerline-color1 "#191919")
- '(powerline-color2 "#111111")
- '(safe-local-variable-values
-   (quote
-    ((eval progn
-	   (require
-	    (quote projectile))
-	   (puthash
-	    (projectile-project-root)
-	    "vm bundle exec rake test" projectile-test-cmd-map))
-     (eval visual-line-mode t)
-     (projectile-rails-vanilla-command . "vm rails"))))
- '(scroll-step 1)
- '(send-mail-function (quote mailclient-send-it)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "Menlo"))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#2222FF"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#22A0F0"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#22F0F0"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#22F0A0"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#22FF22"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#A0F022"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#F0A022"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#FF2222"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "#F022A0")))))
-
-;; Add to Auto-complete modes
-(add-to-list 'ac-modes 'haml-mode)
-(add-to-list 'ac-modes 'rust-mode)
-
-;;; Allow scroll-left
-(put 'scroll-left 'disabled nil)
-
-;;; Package configuration
-;; Initialize exec-path-from-shell
-(exec-path-from-shell-initialize)
-;; Autocomplete never ignores case
-(setq-default ac-ignore-case nil)
-;; Tell Projectile to use Ivy for completion
-(setq-default projectile-completion-system 'ivy)
-;; Silver Searcher configuration
-(setq-default ag-reuse-window 't)
-
-;; Update packages with Paradox
-(paradox-upgrade-packages)
-
-;; Example Ivy config
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+;; Scrolling
+(setq scroll-conservatively 100) ; Scroll one line at a time when point moves off screen
+(put 'scroll-left 'disabled nil) ; Allow scroll-left
 
 ;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
+
+;; Upgrade packages with Paradox
+(paradox-upgrade-packages)
 
 ;; Start the server (so emacsclient can connect)
 (server-start)
