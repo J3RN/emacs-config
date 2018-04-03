@@ -256,7 +256,7 @@
 
 ;; Set Monokai as the current theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(setq custom-safe-themes '("f0c98535db38af17e81e491a77251e198241346306a90c25eb982b57e687d7c0" default))
+(setq custom-safe-themes '("c3d4af771cbe0501d5a865656802788a9a0ff9cf10a7df704ec8b8ef69017c68" default))
 (load-theme 'monokai)
 
 ;; Scrolling
