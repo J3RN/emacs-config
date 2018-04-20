@@ -266,11 +266,9 @@
 ;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
-;; Upgrade packages with Paradox
-(paradox-upgrade-packages)
-
-;; Start the server (so emacsclient can connect)
-(server-start)
+;; Startup
+(paradox-upgrade-packages)	       ; Upgrade packages with Paradox
+(server-start)			       ; Start the server so clients can connect
 
 (provide 'init)
 ;;; init.el ends here
