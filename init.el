@@ -91,6 +91,9 @@
 	 ("C-c g f" . magit-file-popup)
 	 ("C-c g t" . git-timemachine)))
 
+(use-package markdown-mode
+  :config (add-hook 'markdown-mode-hook 'visual-line-mode))
+
 (use-package mwheel
   :init
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
