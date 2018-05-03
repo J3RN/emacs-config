@@ -267,6 +267,9 @@
 (setq scroll-conservatively 100) ; Scroll one line at a time when point moves off screen
 (put 'scroll-left 'disabled nil) ; Allow scroll-left
 
+;; Always split vertically
+(setq split-width-threshold nil)
+
 ;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
