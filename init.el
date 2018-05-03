@@ -227,8 +227,6 @@
 ;;; Hooks
 ;; Doc View
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-;; ERC
-(add-hook 'erc-mode-hook 'visual-line-mode)
 ;; TeX
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
