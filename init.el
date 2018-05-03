@@ -31,6 +31,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Always demand. Eager load packages instead of lazy loading them.
+(setq use-package-always-demand t)
+
 ;; use-package declarations
 (use-package auto-complete
   :config
