@@ -12,7 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-hash-syntax ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
+(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit magit-gh-pulls markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-hash-syntax ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme znc))
 
 (require 'package)
 ;; Use Melpa packages
@@ -91,6 +91,9 @@
 	 ("C-c g a" . magit-dispatch-popup)
 	 ("C-c g f" . magit-file-popup)
 	 ("C-c g t" . git-timemachine)))
+
+(use-package magit-gh-pulls
+  :hook (magit-mode . magit-gh-pulls-mode))
 
 (use-package markdown-mode
   :config (add-hook 'markdown-mode-hook 'visual-line-mode))
