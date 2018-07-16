@@ -82,6 +82,9 @@
   :config
   (global-flycheck-mode))
 
+(use-package inf-ruby
+  :config (setq inf-ruby-default-implementation "pry"))
+
 (use-package ivy
   :init (setq ivy-use-virtual-buffers t)
   :bind ("C-c C-r" . ivy-resume)
