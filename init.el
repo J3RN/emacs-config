@@ -50,8 +50,7 @@
 	 ("C-c u o" . bundle-open)))
 
 (use-package compile
-  :init (setq compilation-scroll-output t)
-  :bind ("C-c c" . compile))
+  :init (setq compilation-scroll-output t))
 
 (use-package counsel
   :init (setq-default counsel-rg-base-command "rg -S -n --no-heading --color never %s .")
