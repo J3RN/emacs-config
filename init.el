@@ -46,7 +46,8 @@
   (add-to-list 'ac-modes 'rust-mode))
 
 (use-package bundler
-  :bind ("C-c u i" . bundle-install))
+  :bind (("C-c u i" . bundle-install)
+	 ("C-c u o" . bundle-open)))
 
 (use-package compile
   :init (setq compilation-scroll-output t)
