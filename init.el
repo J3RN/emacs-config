@@ -68,6 +68,8 @@
   :config
   (global-diff-hl-mode))
 
+(use-package elixir-mode)
+
 (use-package enh-ruby-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode)))
