@@ -12,7 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess evil exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode graphviz-dot-mode haml-mode helm magit magithub markdown-mode monokai-theme neotree nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-end ruby-hash-syntax ruby-test-mode rust-mode smartparens spacemacs-theme use-package web-mode which-key yaml-mode zenburn-theme))
+(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode haml-mode magit magithub markdown-mode monokai-theme nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-end ruby-hash-syntax ruby-test-mode rust-mode smartparens use-package web-mode which-key yaml-mode))
 
 (require 'package)
 ;; Use Melpa packages
@@ -30,6 +30,9 @@
 (dolist (package package-selected-packages)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; Uninstall stuff I don't use anymore
+(package-autoremove)
 
 ;; Always demand. Eager load packages instead of lazy loading them.
 (setq use-package-always-demand t)
@@ -106,9 +109,6 @@
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
   (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
   (setq mouse-wheel-follow-mouse 't))                 ;; scroll window under mouse
-
-(use-package neotree
-  :bind ("C-c n" . neotree-toggle))
 
 (use-package org
   :bind (("C-c o l" . org-store-link)
@@ -246,6 +246,9 @@
 					       c-basic-offset 8
 					       tab-width 8
 					       indent-tabs-mode t)))
+;; Let's see if this comes back to bite me
+(setq indent-tabs-mode nil)
+
 ;; ANSI colorize compilation output
 (defun colorize-compilation-buffer ()
   "Colorize ANSI escape sequences in compilation output."
