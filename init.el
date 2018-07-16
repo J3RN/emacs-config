@@ -12,7 +12,7 @@
       (load-file local-config-file)))
 
 ;;; Packages
-(setq package-selected-packages '(ag auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode haml-mode magit magithub markdown-mode monokai-theme nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-end ruby-hash-syntax ruby-test-mode rust-mode smartparens use-package web-mode which-key yaml-mode))
+(setq package-selected-packages '(auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode haml-mode magit magithub markdown-mode monokai-theme nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-end ruby-hash-syntax ruby-test-mode rust-mode smartparens use-package web-mode which-key yaml-mode))
 
 (require 'package)
 ;; Use Melpa packages
