@@ -114,7 +114,8 @@
   :bind (("C-c o l" . org-store-link)
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
-	 ("C-c o b" . org-iswitchb)))
+	 ("C-c o b" . org-iswitchb))
+  :config (add-hook 'org-mode-hook 'visual-line-mode))
 
 (use-package page-break-lines
   :config
