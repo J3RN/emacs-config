@@ -264,6 +264,12 @@
 				  (interactive)
 				  (switch-to-buffer-other-window (other-buffer (current-buffer) 1))))
 
+;; Normal mac fullscreenifying shortcut
+(if (string-equal "darwin" system-type)
+    (progn
+      (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen)
+      (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)))
+
 ;;; Use visible bell instead of audible one for a quiet editing experience
 (setq visible-bell t)
 
