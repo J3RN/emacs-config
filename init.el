@@ -11,33 +11,34 @@
   (if (file-readable-p local-config-file)
       (load-file local-config-file)))
 
-;;; Packages
-(setq package-selected-packages '(auctex auto-complete bundler coffee-mode counsel counsel-etags csv-mode dashboard dictionary diff-hl enh-ruby-mode ess exec-path-from-shell fish-mode flycheck git-gutter git-timemachine go-mode haml-mode magit magithub markdown-mode monokai-theme nim-mode org org-bullets org-pomodoro page-break-lines paradox paredit projectile-rails projectile-ripgrep rainbow-delimiters restclient ripgrep rubocop ruby-end ruby-hash-syntax ruby-test-mode rust-mode smartparens use-package web-mode which-key yaml-mode))
-
 (require 'package)
 ;; Use Melpa packages
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Use Elpa packages (default in versions 24+)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t))
-(package-initialize)			; Load and activate packages
+;; Load and activate packages
+(package-initialize)
 
 ;; Fetch the list of available packages
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; Install missing packages
-(dolist (package package-selected-packages)
-  (unless (package-installed-p package)
-    (package-install package)))
+;; Install use-package if it's missing
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
-;; Uninstall stuff I don't use anymore
-(package-autoremove)
-
-;; Always demand. Eager load packages instead of lazy loading them.
-(setq use-package-always-demand t)
+;; Setup use-package
+(require 'use-package)
+(setq use-package-always-ensure t)	; Always ensure packages are installed
+(setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
+(use-package tex
+  :ensure auctex
+  :hook ((LaTeX-mode . flyspell-mode)
+	 (LaTeX-mode . visual-line-mode)))
+
 (use-package auto-complete
   :config
   (global-auto-complete-mode)
@@ -45,9 +46,17 @@
   (add-to-list 'ac-modes 'haml-mode)
   (add-to-list 'ac-modes 'rust-mode))
 
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe))
+
 (use-package bundler
   :bind (("C-c u i" . bundle-install)
 	 ("C-c u o" . bundle-open)))
+
+(use-package coffee-mode)
 
 (use-package compile
   :init (setq compilation-scroll-output t))
@@ -57,12 +66,18 @@
   :bind (("M-x" . counsel-M-x)
 	 ("C-c u r" . counsel-rg)))
 
+(use-package counsel-etags)
+
+(use-package csv-mode)
+
 (use-package dashboard
   :init
   (setq dashboard-items '((projects . 5) (recents . 5)))
   (setq dashboard-startup-banner "~/.emacs.d/256x256@2x.png")
   :config
   (dashboard-setup-startup-hook))
+
+(use-package dictionary)
 
 (use-package diff-hl
   :config
@@ -74,13 +89,26 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode)))
 
+(use-package ess)
+
 (use-package exec-path-from-shell
   :init (setq exec-path-from-shell-shell-name "/bin/bash")
   :config (exec-path-from-shell-initialize))
 
+(use-package fish-mode)
+
 (use-package flycheck
   :config
   (global-flycheck-mode))
+
+(use-package git-gutter)
+
+(use-package git-timemachine
+  :bind ("C-c g t" . git-timemachine))
+
+(use-package go-mode)
+
+(use-package haml-mode)
 
 (use-package inf-ruby
   :config (setq inf-ruby-default-implementation "pry"))
@@ -95,10 +123,10 @@
   :config (global-linum-mode))
 
 (use-package magit
-  :bind (("C-c g s" . magit-status)
-	 ("C-c g a" . magit-dispatch-popup)
-	 ("C-c g f" . magit-file-popup)
-	 ("C-c g t" . git-timemachine)))
+  :bind
+  ("C-c g s" . magit-status)
+  ("C-c g a" . magit-dispatch-popup)
+  ("C-c g f" . magit-file-popup))
 
 (use-package magithub
   :after magit
@@ -109,11 +137,12 @@
 (use-package markdown-mode
   :config (add-hook 'markdown-mode-hook 'visual-line-mode))
 
-(use-package mwheel
-  :init
-  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-  (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
-  (setq mouse-wheel-follow-mouse 't))                 ;; scroll window under mouse
+(use-package monokai-theme
+  :config
+  (setq custom-safe-themes '("c3d4af771cbe0501d5a865656802788a9a0ff9cf10a7df704ec8b8ef69017c68" default))
+  (load-theme 'monokai))
+
+(use-package nim-mode)
 
 (use-package org
   :bind (("C-c o l" . org-store-link)
@@ -121,6 +150,11 @@
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-iswitchb))
   :config (add-hook 'org-mode-hook 'visual-line-mode))
+
+(use-package org-bullets
+  :hook org-mode)
+
+(use-package org-pomodoro)
 
 (use-package page-break-lines
   :config
@@ -134,27 +168,44 @@
   ("C-c a l" . paradox-list-packages)
   ("C-c a i" . package-install))
 
+(use-package paredit
+  :hook (prog-mode . paredit-mode))
+
 (use-package projectile
   :init
   (setq-default projectile-completion-system 'ivy)
   :config
-  (projectile-mode)
-  (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep))
+  (projectile-mode))
 
 (use-package projectile-rails
   :config
   (projectile-rails-global-mode)
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
-(use-package sendmail
-  :init (setq send-mail-function 'mailclient-send-it))
+(use-package projectile-ripgrep
+  :config (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package restclient)
+
+(use-package ripgrep)
+
+(use-package rubocop)
+
+(use-package ruby-end)
 
 (use-package ruby-hash-syntax
   :config
   (define-key enh-ruby-mode-map (kbd "C-c h") 'ruby-hash-syntax-toggle))
 
-(use-package simple
-  :bind ("C-c d" . delete-trailing-whitespace))
+(use-package ruby-test-mode)
+
+(use-package rust-mode)
+
+(use-package sendmail
+  :init (setq send-mail-function 'mailclient-send-it))
 
 (use-package smartparens
   :config
@@ -176,8 +227,7 @@
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)))
 
 (use-package which-key
-  :config
-  (which-key-mode))
+  :config (which-key-mode t))
 
 (use-package whitespace
   :bind ("C-c w" . whitespace-mode))
@@ -186,9 +236,13 @@
   :config
   (windmove-default-keybindings))
 
+(use-package yaml-mode)
+
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
+;; Delete trailing whitespace
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 ;; Kill defun
 (global-set-key (kbd "C-M-k")
 		(lambda ()
@@ -237,13 +291,6 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;; Hooks
-;; Doc View
-(add-hook 'doc-view-mode-hook 'auto-revert-mode)
-;; TeX
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'visual-line-mode)
-;; Org Bullets (pretty UTF-8 bullets for org)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; Show trailing whitespace in code files
 (add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
 ;; Styling C
@@ -271,14 +318,12 @@
  kept-old-versions 2
  version-control t)
 
-;; Set Monokai as the current theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(setq custom-safe-themes '("c3d4af771cbe0501d5a865656802788a9a0ff9cf10a7df704ec8b8ef69017c68" default))
-(load-theme 'monokai)
-
 ;; Scrolling
-(setq scroll-conservatively 100) ; Scroll one line at a time when point moves off screen
-(put 'scroll-left 'disabled nil) ; Allow scroll-left
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; one line at a time
+(setq mouse-wheel-progressive-speed nil)	    ; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't)                  ; scroll window under mouse
+(setq scroll-conservatively 100)		    ; Scroll one line at a time when point moves off screen
+(put 'scroll-left 'disabled nil)		    ; Allow scroll-left
 
 ;; Always split vertically
 (setq split-width-threshold nil)
@@ -287,7 +332,6 @@
 (setq confirm-kill-emacs 'yes-or-no-p)
 
 ;; Startup
-(paradox-upgrade-packages)	       ; Upgrade packages with Paradox
 (server-start)			       ; Start the server so clients can connect
 
 (provide 'init)
