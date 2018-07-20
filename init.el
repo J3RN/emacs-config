@@ -83,6 +83,8 @@
   :config
   (global-diff-hl-mode))
 
+(use-package dockerfile-mode)
+
 (use-package elixir-mode)
 
 (use-package enh-ruby-mode
