@@ -196,7 +196,8 @@
 
 (use-package rubocop)
 
-(use-package ruby-end)
+(use-package ruby-end
+  :hook (elixir-mode . ruby-end-mode))
 
 (use-package ruby-hash-syntax
   :config
