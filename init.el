@@ -54,7 +54,8 @@
 
 (use-package bundler
   :bind (("C-c u i" . bundle-install)
-	 ("C-c u o" . bundle-open)))
+	 ("C-c u o" . bundle-open)
+	 ("C-c u u" . bundle-update)))
 
 (use-package coffee-mode)
 
