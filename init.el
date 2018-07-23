@@ -171,7 +171,7 @@
   ("C-c a i" . package-install))
 
 (use-package paredit
-  :hook (prog-mode . paredit-mode))
+  :hook (emacs-lisp-mode . paredit-mode))
 
 (use-package projectile
   :init
@@ -288,6 +288,7 @@
 (global-subword-mode)
 (show-paren-mode)
 (global-auto-revert-mode)
+(electric-pair-mode)
 
 ;;; GUI Emacs
 ;; Disable toolbar
