@@ -6,11 +6,6 @@
 
 ;;; Code:
 
-;;; Load local configuration
-(let ((local-config-file (locate-user-emacs-file "local.el")))
-  (if (file-readable-p local-config-file)
-      (load-file local-config-file)))
-
 (require 'package)
 ;; Use Melpa packages
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -341,6 +336,11 @@
 
 ;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
+
+;;; Load local configuration
+(let ((local-config-file (locate-user-emacs-file "local.el")))
+  (if (file-readable-p local-config-file)
+      (load-file local-config-file)))
 
 ;; Startup
 (server-start)			       ; Start the server so clients can connect
