@@ -6,6 +6,7 @@
 
 ;;; Code:
 
+;;; Package stuff
 (require 'package)
 ;; Use Melpa packages
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -238,17 +239,21 @@
 
 (use-package yaml-mode)
 
+;;; Bindings for built-in and custom functionality
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
+
 ;; Delete trailing whitespace
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
+
 ;; Kill defun
 (global-set-key (kbd "C-M-k")
 		(lambda ()
 		  (interactive)
 		  (mark-defun)
 		  (kill-region (point) (mark))))
+
 ;; Faster buffers
 (global-set-key (kbd "C-c b") (lambda ()
 				(interactive)
@@ -279,8 +284,7 @@
 ;;; GPG pinentry prompt fix for macOS
 (setq-default epa-pinentry-mode 'loopback)
 
-;;; Global modes
-;; Built-in
+;;; Enable built-in global modes
 (column-number-mode)
 (global-subword-mode)
 (show-paren-mode)
@@ -305,7 +309,7 @@
 					       c-basic-offset 8
 					       tab-width 8
 					       indent-tabs-mode t)))
-;; Let's see if this comes back to bite me
+;;; Never indent with tabs (this could be a bad idea...)
 (setq indent-tabs-mode nil)
 
 ;; ANSI colorize compilation output
@@ -332,10 +336,10 @@
 (setq scroll-conservatively 100)		    ; Scroll one line at a time when point moves off screen
 (put 'scroll-left 'disabled nil)		    ; Allow scroll-left
 
-;; Always split vertically
+;;; Always split vertically
 (setq split-width-threshold nil)
 
-;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
+;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
 ;;; Load local configuration
@@ -343,7 +347,7 @@
   (if (file-readable-p local-config-file)
       (load-file local-config-file)))
 
-;; Startup
+;;; Startup
 (server-start)			       ; Start the server so clients can connect
 
 (provide 'init)
