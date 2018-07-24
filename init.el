@@ -34,11 +34,6 @@
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
-(use-package tex
-  :ensure auctex
-  :hook ((LaTeX-mode . flyspell-mode)
-	 (LaTeX-mode . visual-line-mode)))
-
 (use-package auto-complete
   :config
   (global-auto-complete-mode)
@@ -220,6 +215,11 @@
 
 (use-package swiper
   :bind ("C-s" . swiper))
+
+(use-package tex
+  :ensure auctex
+  :hook ((LaTeX-mode . flyspell-mode)
+	 (LaTeX-mode . visual-line-mode)))
 
 (use-package web-mode
   :config
