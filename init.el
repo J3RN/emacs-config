@@ -145,7 +145,7 @@
   :config (add-hook 'org-mode-hook 'visual-line-mode))
 
 (use-package org-bullets
-  :hook org-mode)
+  :hook (org-mode . org-bullets-mode))
 
 (use-package org-pomodoro)
 
