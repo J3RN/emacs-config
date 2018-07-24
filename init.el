@@ -147,7 +147,8 @@
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
-(use-package org-pomodoro)
+(use-package org-pomodoro
+  :bind ("C-c o p" . org-pomodoro))
 
 (use-package page-break-lines
   :config
