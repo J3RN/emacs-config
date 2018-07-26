@@ -104,6 +104,9 @@
 
 (use-package haml-mode)
 
+(use-package imenu
+  :bind ("M-i" . imenu))
+
 (use-package inf-ruby
   :config (setq inf-ruby-default-implementation "pry"))
 
