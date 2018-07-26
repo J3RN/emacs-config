@@ -129,7 +129,7 @@
   (setq magithub-clone-default-directory "~/Workspace"))
 
 (use-package markdown-mode
-  :config (add-hook 'markdown-mode-hook 'visual-line-mode))
+  :hook ('markdown-mode . 'visual-line-mode))
 
 (use-package monokai-theme
   :config
@@ -143,7 +143,7 @@
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-iswitchb))
-  :config (add-hook 'org-mode-hook 'visual-line-mode))
+  :hook ('org-mode . 'visual-line-mode))
 
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
@@ -175,7 +175,7 @@
 (use-package projectile-rails
   :config
   (projectile-rails-global-mode)
-  (add-hook 'projectile-mode-hook 'projectile-rails-on))
+  :hook ('projectile-mode-hook . 'projectile-rails-on))
 
 (use-package projectile-ripgrep
   :config (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep))
