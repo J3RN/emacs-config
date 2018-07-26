@@ -342,6 +342,9 @@
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+;;; Hitting C-n at the end of a buffer will add more lines to the buffer
+(setq next-line-add-newlines t)
+
 ;;; Load local configuration
 (let ((local-config-file (locate-user-emacs-file "local.el")))
   (if (file-readable-p local-config-file)
