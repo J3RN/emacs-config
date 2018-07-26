@@ -114,7 +114,7 @@
 
 (use-package linum
   :init (setq linum-format " %4d ")
-  :config (global-linum-mode))
+  :hook (prog-mode . linum-mode))
 
 (use-package magit
   :bind
