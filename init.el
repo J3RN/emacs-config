@@ -173,6 +173,7 @@
   :init
   (setq-default projectile-completion-system 'ivy)
   :config
+  (setq projectile-switch-project-action 'magit-status)
   (projectile-mode))
 
 (use-package projectile-rails
