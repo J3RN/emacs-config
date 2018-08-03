@@ -147,10 +147,8 @@
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-switchb))
-  :hook ('org-mode . 'visual-line-mode))
-
-(use-package org-bullets
-  :hook (org-mode . org-bullets-mode))
+  :hook (('org-mode . 'visual-line-mode)
+	 ('org-mode . 'org-indent-mode)))
 
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
