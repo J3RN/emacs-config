@@ -81,7 +81,8 @@
 
 (use-package enh-ruby-mode
   :config
-  (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode)))
+  (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
+  (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode))
 
 (use-package ess)
 
