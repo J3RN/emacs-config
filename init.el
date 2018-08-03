@@ -137,7 +137,7 @@
 
 (use-package monokai-theme
   :config
-  (setq custom-safe-themes '("c3d4af771cbe0501d5a865656802788a9a0ff9cf10a7df704ec8b8ef69017c68" default))
+  (setq custom-safe-themes '("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default))
   (load-theme 'monokai))
 
 (use-package nim-mode)
