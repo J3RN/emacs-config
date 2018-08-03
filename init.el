@@ -334,12 +334,12 @@
  kept-old-versions 2
  version-control t)
 
-;; Scrolling
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; one line at a time
-(setq mouse-wheel-progressive-speed nil)	    ; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't)                  ; scroll window under mouse
-(setq scroll-conservatively 100)		    ; Scroll one line at a time when point moves off screen
-(put 'scroll-left 'disabled nil)		    ; Allow scroll-left
+;;; Set sane scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; one line at a time
+      mouse-wheel-progressive-speed nil            ; don't accelerate scrolling
+      mouse-wheel-follow-mouse 't                  ; scroll window under mouse
+      scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
+(put 'scroll-left 'disabled nil)                   ; Allow scroll-left
 
 ;;; Always split vertically
 (setq split-width-threshold nil)
