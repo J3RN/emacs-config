@@ -190,6 +190,8 @@
 
 (use-package ripgrep)
 
+(use-package rspec-mode)
+
 (use-package rubocop)
 
 (use-package ruby-end
