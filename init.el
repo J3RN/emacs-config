@@ -172,6 +172,7 @@
   :init
   (setq-default projectile-completion-system 'ivy)
   :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (setq projectile-switch-project-action 'magit-status)
   (projectile-mode))
 
