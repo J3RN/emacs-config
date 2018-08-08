@@ -181,9 +181,6 @@
   (projectile-rails-global-mode)
   :hook ('projectile-mode-hook . 'projectile-rails-on))
 
-(use-package projectile-ripgrep
-  :config (define-key projectile-command-map (kbd "s r") 'projectile-ripgrep))
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
