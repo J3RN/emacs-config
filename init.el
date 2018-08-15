@@ -82,7 +82,10 @@
 (use-package enh-ruby-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
-  (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode))
+  (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode)
+  :bind
+  ("C-c r '" . ruby-toggle-string-quotes)
+  ("C-c r {" . enh-ruby-toggle-block))
 
 (use-package ess)
 
