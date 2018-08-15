@@ -191,7 +191,9 @@
 
 (use-package ripgrep)
 
-(use-package rspec-mode)
+(use-package rspec-mode
+  :hook ((rspec-compilation-mode . visual-line-mode)
+	 (projectile-rails-mode . rspec-mode)))
 
 (use-package rubocop)
 
