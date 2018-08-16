@@ -30,6 +30,8 @@
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
+(use-package alchemist)
+
 (use-package auto-complete
   :config
   (global-auto-complete-mode)
