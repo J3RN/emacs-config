@@ -153,7 +153,8 @@
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-switchb))
   :hook (('org-mode . 'visual-line-mode)
-	 ('org-mode . 'org-indent-mode)))
+	 ('org-mode . 'org-indent-mode))
+  :config (setq org-catch-invisible-edits 'smart))
 
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
