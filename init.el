@@ -321,8 +321,6 @@
 					       c-basic-offset 8
 					       tab-width 8
 					       indent-tabs-mode t)))
-;;; Never indent with tabs (this could be a bad idea...)
-(setq indent-tabs-mode nil)
 
 ;; ANSI colorize compilation output
 (defun colorize-compilation-buffer ()
