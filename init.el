@@ -30,9 +30,12 @@
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
-(use-package alchemist)
+(use-package alchemist
+  :delight "🜂"
+  :delight alchemist-phoenix-mode "🐦")
 
 (use-package auto-complete
+  :delight "⇥"
   :config
   (global-auto-complete-mode)
   (setq-default ac-ignore-case nil)
@@ -70,6 +73,8 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package delight)
+
 (use-package dictionary)
 
 (use-package diff-hl
@@ -78,9 +83,20 @@
 
 (use-package dockerfile-mode)
 
-(use-package elixir-mode)
+(use-package eldoc
+  :delight "🕮")
+
+(use-package elixir-mode
+  :delight "🜄")
+
+(use-package emacs
+  :delight emacs-lisp-mode "🐐"
+  :delight eshell-mode "🐚"
+  :delight subword-mode
+  :delight whitespace-mode "»")
 
 (use-package enh-ruby-mode
+  :delight "💎"
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
   (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode)
@@ -118,6 +134,7 @@
   :config (setq inf-ruby-default-implementation "pry"))
 
 (use-package ivy
+  :delight
   :init (setq ivy-use-virtual-buffers t)
   :bind ("C-c C-r" . ivy-resume)
   :config (ivy-mode 1))
@@ -148,6 +165,8 @@
 (use-package nim-mode)
 
 (use-package org
+  :delight "O"
+  :delight org-indent-mode "→"
   :bind (("C-c o l" . org-store-link)
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
@@ -160,6 +179,7 @@
   :bind ("C-c o p" . org-pomodoro))
 
 (use-package page-break-lines
+  :delight
   :config
   (global-page-break-lines-mode))
 
@@ -173,13 +193,16 @@
 
 (use-package paredit
   :hook (emacs-lisp-mode . paredit-mode)
+  :delight "🄟"
   :bind (("C-c M-s" . paredit-splice-sexp)
 	 ("C-S-<right>" . paredit-forward-slurp-sexp)
 	 ("C-S-<left>" . paredit-forward-barf-sexp)
 	 ("C-M-<right>" . paredit-backward-barf-sexp)
-	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
+	 ("C-M-<left>" . paredit-backward-slurp-sexp))
+  :delight "🄟")
 
 (use-package projectile
+  :delight '(:eval (format "[%s]" (projectile-project-name)))
   :init
   (setq-default projectile-completion-system 'ivy)
   :config
@@ -188,6 +211,7 @@
   (projectile-mode))
 
 (use-package projectile-rails
+  :delight "🚈"
   :config
   (projectile-rails-global-mode)
   :hook (projectile-mode-hook . projectile-rails-on))
@@ -200,12 +224,14 @@
 (use-package ripgrep)
 
 (use-package rspec-mode
+  :delight "👓"
   :hook ((rspec-compilation-mode . visual-line-mode)
 	 (projectile-rails-mode . rspec-mode)))
 
 (use-package rubocop)
 
 (use-package ruby-end
+  :delight "⏎"
   :hook (elixir-mode . ruby-end-mode))
 
 (use-package ruby-hash-syntax
@@ -214,7 +240,8 @@
 
 (use-package ruby-test-mode)
 
-(use-package rust-mode)
+(use-package rust-mode
+  :delight "⚙")
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
@@ -238,6 +265,7 @@
   (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode)))
 
 (use-package which-key
+  :delight
   :config (which-key-mode t))
 
 (use-package whitespace
