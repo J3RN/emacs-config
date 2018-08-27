@@ -138,7 +138,7 @@
   (setq magithub-clone-default-directory "~/Workspace"))
 
 (use-package markdown-mode
-  :hook ('markdown-mode . 'visual-line-mode))
+  :hook (markdown-mode . visual-line-mode))
 
 (use-package monokai-theme
   :config
@@ -152,8 +152,8 @@
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
 	 ("C-c o b" . org-switchb))
-  :hook (('org-mode . 'visual-line-mode)
-	 ('org-mode . 'org-indent-mode))
+  :hook ((org-mode . visual-line-mode)
+	 (org-mode . org-indent-mode))
   :config (setq org-catch-invisible-edits 'smart))
 
 (use-package org-pomodoro
@@ -190,7 +190,7 @@
 (use-package projectile-rails
   :config
   (projectile-rails-global-mode)
-  :hook ('projectile-mode-hook . 'projectile-rails-on))
+  :hook (projectile-mode-hook . projectile-rails-on))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
