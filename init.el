@@ -122,8 +122,7 @@
   :config (ivy-mode 1))
 
 (use-package linum
-  :init (setq linum-format " %4d ")
-  :hook (prog-mode . linum-mode))
+  :init (setq linum-format " %4d "))
 
 (use-package magit
   :bind
