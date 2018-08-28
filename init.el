@@ -98,8 +98,7 @@
 (use-package fish-mode)
 
 (use-package flycheck
-  :config
-  (global-flycheck-mode))
+  :config (global-flycheck-mode))
 
 (use-package git-gutter)
 
