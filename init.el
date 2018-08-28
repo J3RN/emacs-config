@@ -56,7 +56,6 @@
   :init (setq compilation-scroll-output t))
 
 (use-package counsel
-  :init (setq-default counsel-rg-base-command "rg -S -n --no-heading --color never %s .")
   :bind (("M-x" . counsel-M-x)
 	 ("C-c u r" . counsel-rg)))
 
