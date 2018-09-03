@@ -200,6 +200,11 @@
 	 ("C-M-<right>" . paredit-backward-barf-sexp)
 	 ("C-M-<left>" . paredit-backward-slurp-sexp))
   :delight "🄟")
+  :bind (("C-c M-s" . paredit-splice-sexp)
+	 ("C-S-<right>" . paredit-forward-slurp-sexp)
+	 ("C-S-<left>" . paredit-forward-barf-sexp)
+	 ("C-M-<right>" . paredit-backward-barf-sexp)
+	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
 (use-package projectile
   :delight '(:eval (format "[%s]" (projectile-project-name)))
