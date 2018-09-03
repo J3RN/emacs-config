@@ -341,6 +341,9 @@
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
 (put 'scroll-left 'disabled nil)                   ; Allow scroll-left
 
+;;; Enable useful disabled commands
+(put 'narrow-to-region 'disabled nil)
+
 ;;; Always split vertically
 (setq split-width-threshold nil)
 
