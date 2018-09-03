@@ -339,9 +339,9 @@
       mouse-wheel-progressive-speed nil            ; don't accelerate scrolling
       mouse-wheel-follow-mouse 't                  ; scroll window under mouse
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
-(put 'scroll-left 'disabled nil)                   ; Allow scroll-left
 
 ;;; Enable useful disabled commands
+(put 'scroll-left 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
 ;;; Always split vertically
