@@ -169,7 +169,12 @@
   ("C-c a i" . package-install))
 
 (use-package paredit
-  :hook (emacs-lisp-mode . paredit-mode))
+  :hook (emacs-lisp-mode . paredit-mode)
+  :bind (("C-c M-s" . paredit-splice-sexp)
+	 ("C-S-<right>" . paredit-forward-slurp-sexp)
+	 ("C-S-<left>" . paredit-forward-barf-sexp)
+	 ("C-M-<right>" . paredit-backward-barf-sexp)
+	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
 (use-package projectile
   :init
@@ -210,13 +215,6 @@
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
-
-(use-package smartparens
-  :config
-  (smartparens-global-mode)
-  (define-key smartparens-mode-map (kbd "C-c {") 'sp-forward-slurp-sexp)
-  (define-key smartparens-mode-map (kbd "C-c }") 'sp-backward-slurp-sexp)
-  (define-key smartparens-mode-map (kbd "C-c `") 'sp-unwrap-sexp))
 
 (use-package swiper
   :bind ("C-s" . swiper))
