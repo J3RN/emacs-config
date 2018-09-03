@@ -56,7 +56,7 @@
   :init (setq compilation-scroll-output t))
 
 (use-package counsel
-  :bind (("M-x" . counsel-M-x)
+ :bind (("M-x" . (lambda () (interactive) (counsel-M-x "")))
 	 ("C-c u r" . counsel-rg)))
 
 (use-package counsel-etags)
