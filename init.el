@@ -315,8 +315,8 @@
       (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen)
       (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)))
 
-;;; Use visible bell instead of audible one for a quiet editing experience
-(setq visible-bell t)
+;;; Kill bell altogether
+(setq ring-bell-function (lambda () ()))
 
 ;;; Do not wrap long lines
 (setq-default truncate-lines t)
