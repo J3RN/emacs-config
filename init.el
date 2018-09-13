@@ -69,7 +69,7 @@
 (use-package dashboard
   :init
   (setq dashboard-items '((projects . 5) (recents . 5)))
-  (setq dashboard-startup-banner "~/.emacs.d/256x256@2x.png")
+  (setq dashboard-startup-banner "~/.emacs.d/128x128@2x.png")
   :config
   (dashboard-setup-startup-hook))
 
