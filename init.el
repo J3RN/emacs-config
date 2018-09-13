@@ -380,9 +380,6 @@
 (put 'scroll-left 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
-;;; Always split vertically
-(setq split-width-threshold nil)
-
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
