@@ -99,6 +99,9 @@
 (use-package flycheck
   :config (global-flycheck-mode))
 
+(use-package flycheck-mix
+  :config (flycheck-mix-setup))
+
 (use-package git-gutter)
 
 (use-package git-timemachine
