@@ -383,6 +383,9 @@
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+;;; Set shell font to be not bad
+(set-face-attribute 'comint-highlight-prompt nil :inherit nil)
+
 ;;; Load local configuration
 (let ((local-config-file (locate-user-emacs-file "local.el")))
   (if (file-readable-p local-config-file)
