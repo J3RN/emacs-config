@@ -267,7 +267,8 @@
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+  (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'")))
 
 (use-package which-key
   :delight
