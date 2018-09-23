@@ -371,6 +371,14 @@
 ;;; Set shell font to be not bad
 (set-face-attribute 'comint-highlight-prompt nil :inherit nil)
 
+;;; Yank and indent
+(dolist (command '(yank yank-pop))
+  (eval `(defadvice ,command (after indent-region activate)
+	   (if (and (not current-prefix-arg)
+		    (derived-mode-p 'prog-mode))
+	       (let ((mark-even-if-inactive transient-mark-mode))
+		 (indent-region (region-beginning) (region-end) nil))))))
+
 ;;; Load local configuration
 (let ((local-config-file (locate-user-emacs-file "local.el")))
   (if (file-readable-p local-config-file)
