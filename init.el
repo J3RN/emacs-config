@@ -93,7 +93,9 @@
   :delight emacs-lisp-mode "🐐"
   :delight eshell-mode "🐚"
   :delight subword-mode
-  :delight whitespace-mode "»")
+  :delight whitespace-mode "»"
+  :hook (prog-mode . whitespace-mode)
+  (setq whitespace-style '(face tabs trailing lines-tail space-before-tab newline empty space-after-tab tab-mark)))
 
 (use-package enh-ruby-mode
   :delight "💎"
