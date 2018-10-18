@@ -384,6 +384,7 @@
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
 
+(setq custom-theme-directory (locate-user-emacs-file "themes"))
 (load-theme 'wombat)
 
 (provide 'init)
