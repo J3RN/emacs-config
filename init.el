@@ -280,12 +280,14 @@
 ;; Delete trailing whitespace
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 
-;; Kill defun
-(global-set-key (kbd "C-M-k")
-		(lambda ()
-		  (interactive)
-		  (mark-defun)
-		  (kill-region (point) (mark))))
+;; Add kill defun function and binding
+(defun kill-defun ()
+  "Kill the function under point."
+  (interactive)
+  (mark-defun)
+  (kill-region (point) (mark)))
+
+(global-set-key (kbd "C-M-k") 'kill-defun)
 
 ;; Faster buffers
 (global-set-key (kbd "C-c b") (lambda ()
