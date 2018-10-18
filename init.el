@@ -338,13 +338,6 @@
 ;; Maximize the window
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;;; Hooks
-;; Styling C
-(add-hook 'c-mode-common-hook (lambda () (setq c-default-style "linux"
-					       c-basic-offset 8
-					       tab-width 8
-					       indent-tabs-mode t)))
-
 ;; ANSI colorize compilation output
 (defun colorize-compilation-buffer ()
   "Colorize ANSI escape sequences in compilation output."
