@@ -157,11 +157,6 @@
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
 
-(use-package monokai-theme
-  :config
-  (setq custom-safe-themes '("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default))
-  (load-theme 'monokai))
-
 (use-package nim-mode)
 
 (use-package org
@@ -388,6 +383,8 @@
 
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
+
+(load-theme 'wombat)
 
 (provide 'init)
 ;;; init.el ends here
