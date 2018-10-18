@@ -95,6 +95,13 @@
   :delight subword-mode
   :delight whitespace-mode "»"
   :hook (prog-mode . whitespace-mode)
+  :config
+  ;; Enable global modes
+  (global-subword-mode)
+  (column-number-mode)
+  (show-paren-mode)
+  (global-auto-revert-mode)
+  (electric-pair-mode)
   (setq whitespace-style '(face tabs trailing lines-tail space-before-tab newline empty space-after-tab tab-mark)))
 
 (use-package enh-ruby-mode
@@ -321,13 +328,6 @@
 ;;; GPG pinentry prompt fix for macOS
 (setq-default epa-pinentry-mode 'loopback)
 
-;;; Enable built-in global modes
-(column-number-mode)
-(global-subword-mode)
-(show-paren-mode)
-(global-auto-revert-mode)
-(electric-pair-mode)
-
 ;;; GUI Emacs
 ;; Disable toolbar
 (tool-bar-mode -1)
@@ -339,8 +339,6 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;; Hooks
-;; Show trailing whitespace in code files
-(add-hook 'prog-mode-hook (lambda () (setq show-trailing-whitespace t)))
 ;; Styling C
 (add-hook 'c-mode-common-hook (lambda () (setq c-default-style "linux"
 					       c-basic-offset 8
