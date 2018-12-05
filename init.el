@@ -230,7 +230,11 @@
   :hook ((rspec-compilation-mode . visual-line-mode)
 	 (projectile-rails-mode . rspec-mode)))
 
-(use-package rubocop)
+(use-package rubocop
+  :bind (("C-c c c p" . rubocop-check-project)
+	 ("C-c c c f" . rubocop-check-current-file)
+	 ("C-c c a p" . rubocop-autocorrect-project)
+	 ("C-c c a f" . rubocop-autocorrect-current-file)))
 
 (use-package ruby-end
   :delight "⏎"
