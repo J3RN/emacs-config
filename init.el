@@ -91,6 +91,8 @@
   :delight eshell-mode "🐚"
   :delight subword-mode
   :delight whitespace-mode "»"
+  :delight abbrev-mode "⫞"
+  :hook (prog-mode . abbrev-mode)
   :hook (prog-mode . whitespace-mode)
   :config
   ;; Enable global modes
