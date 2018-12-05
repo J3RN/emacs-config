@@ -34,13 +34,6 @@
   :delight "🜂"
   :delight alchemist-phoenix-mode "🐦")
 
-(use-package auto-complete
-  :delight "⇥"
-  :config
-  (global-auto-complete-mode)
-  (setq-default ac-ignore-case nil)
-  (add-to-list 'ac-modes 'haml-mode)
-  (add-to-list 'ac-modes 'rust-mode))
 
 (use-package auto-package-update
   :config
@@ -54,6 +47,10 @@
 	 ("C-c u u" . bundle-update)))
 
 (use-package coffee-mode)
+
+(use-package company
+  :delight "🏢"
+  :hook (prog-mode . company-mode))
 
 (use-package compile
   :init (setq compilation-scroll-output t))
