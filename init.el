@@ -101,7 +101,7 @@
   (show-paren-mode)
   (global-auto-revert-mode)
   (electric-pair-mode)
-  (setq whitespace-style '(face tabs trailing lines-tail space-before-tab newline empty space-after-tab tab-mark)))
+  (setq whitespace-style '(face tabs trailing space-before-tab newline empty space-after-tab tab-mark)))
 
 (use-package enh-ruby-mode
   :delight "💎"
