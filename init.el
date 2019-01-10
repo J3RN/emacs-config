@@ -154,7 +154,8 @@
   :bind
   ("C-c g s" . magit-status)
   ("C-c g a" . magit-dispatch-popup)
-  ("C-c g f" . magit-file-popup))
+  ("C-c g f" . magit-file-popup)
+  ("C-c g c" . magit-clone))
 
 (use-package magithub
   :after magit
