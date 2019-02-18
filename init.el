@@ -84,7 +84,8 @@
   :delight "🕮")
 
 (use-package elixir-mode
-  :delight "🜄")
+  :delight "🜄"
+  :bind ("C-c e f" . elixir-format))
 
 (use-package emacs
   :delight emacs-lisp-mode "🐐"
