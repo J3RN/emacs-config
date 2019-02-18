@@ -205,6 +205,8 @@
 	 ("C-M-<right>" . paredit-backward-barf-sexp)
 	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
+(use-package pomodoro)
+
 (use-package projectile
   :delight '(:eval (format "[%s]" (projectile-project-name)))
   :init
