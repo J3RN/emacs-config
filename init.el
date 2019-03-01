@@ -157,12 +157,6 @@
   ("C-c g f" . magit-file-dispatch)
   ("C-c g c" . magit-clone))
 
-(use-package magithub
-  :after magit
-  :config
-  (magithub-feature-autoinject t)
-  (setq magithub-clone-default-directory "~/Workspace"))
-
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
 
