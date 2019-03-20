@@ -157,6 +157,9 @@
   ("C-c g f" . magit-file-dispatch)
   ("C-c g c" . magit-clone))
 
+(use-package spaceline
+  :config (spaceline-spacemacs-theme))
+
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
 
