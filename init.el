@@ -299,8 +299,6 @@
   (mark-defun)
   (kill-region (point) (mark)))
 
-(global-set-key (kbd "C-M-k") 'kill-defun)
-
 ;; Faster buffers
 (global-set-key (kbd "C-c b") (lambda ()
 				(interactive)
