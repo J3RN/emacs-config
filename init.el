@@ -273,6 +273,34 @@
 (use-package swiper
   :bind ("C-s" . swiper))
 
+(use-package tempo
+  :bind
+  ("C-c t c" . tempo-complete-tag)
+  ("C-c t f" . tempo-forward-mark)
+  ("C-c t b" . tempo-backward-mark)
+  :config
+  ;; (setq tempo-interactive t)
+  (tempo-define-template "exmodule"
+			 '("defmodule " p (s-upper-camel-case (file-name-sans-extension (buffer-name))) " do" n> p n "end" >)
+			 "em"
+			 "Inserts a new Elixir module")
+  (tempo-define-template "exfun"
+			 '("def " (p "name: ") "(" (p "args: ") ") do" n > p n "end" >)
+			 "ed"
+			 "Inserts an Elixir function declaration")
+  (tempo-define-template "exdefp"
+			 '("defp " (p "name: ") "(" (p "args: ") ") do" n > p n "end" >)
+			 "edp"
+			 "Inserts a private Elixir function declaration")
+  (tempo-define-template "exdescribe"
+			 '("describe \"" (p "what? ") "\" do" n> p n "end" >)
+			 "ede"
+			 "Inserts a new ExUnit describe block")
+  (tempo-define-template "extest"
+			 '("test \"" (p "description: ") "\", %{" (p "context: ") "} do" n > p n "end" >)
+			 "et"
+			 "Inserts a standard ExUnit test declaration"))
+
 (use-package tex
   :ensure auctex
   :hook ((LaTeX-mode . flyspell-mode)
