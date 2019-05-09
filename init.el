@@ -128,6 +128,8 @@
 (use-package flycheck-mix
   :config (flycheck-mix-setup))
 
+(use-package forge)
+
 (use-package git-gutter)
 
 (use-package git-timemachine
