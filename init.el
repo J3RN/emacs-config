@@ -85,7 +85,8 @@
 
 (use-package elixir-mode
   :delight "🜄"
-  :bind ("C-c e f" . elixir-format))
+  :bind ("C-c e f" . elixir-format)
+  :hook (elixir-mode . lsp))
 
 (use-package emacs
   :delight emacs-lisp-mode "🐐"
@@ -150,6 +151,23 @@
 
 (use-package linum
   :init (setq linum-format " %4d "))
+
+(use-package lsp-mode
+  :commands lsp
+  :bind
+  ("C-c l f" . lsp-format-buffer)
+  ("C-c l ," . lsp-find-definition)
+  :init (setq lsp-prefer-flymake nil))
+
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :init
+  (setq lsp-ui-doc-enable nil)
+  :config
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+
+(use-package company-lsp :commands company-lsp)
 
 (use-package magit
   :bind
