@@ -307,7 +307,11 @@
   (tempo-define-template "extest"
 			 '("test \"" (p "description: ") "\", %{" (p "context: ") "} do" n > p n "end" >)
 			 "et"
-			 "Inserts a standard ExUnit test declaration"))
+			 "Inserts a standard ExUnit test declaration")
+  (tempo-define-template "exsetup"
+			 '("setup context do" n > p n "end" >)
+			 "es"
+			 "Inserts a standard ExUnit setup block"))
 
 (use-package tex
   :ensure auctex
