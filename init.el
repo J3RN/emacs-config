@@ -278,7 +278,8 @@
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
 
-(use-package swiper)
+(use-package swiper
+  :bind ("C-c s" . swiper))
 
 (use-package tempo
   :bind
