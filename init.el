@@ -159,8 +159,8 @@
   :commands lsp
   :bind
   ("C-c l f" . lsp-format-buffer)
-  ("C-c l ," . lsp-find-definition)
   :init (setq lsp-prefer-flymake nil))
+  ("C-c l ." . lsp-find-definition)
 
 (use-package lsp-ui
   :commands lsp-ui-mode
