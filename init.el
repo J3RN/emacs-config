@@ -295,7 +295,7 @@
 			 "em"
 			 "Inserts a new Elixir module")
   (tempo-define-template "exfun"
-			 '("def " (p "name: ") "(" (p "args: ") ") do" n > p n "end" >)
+			 '("@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
 			 "ed"
 			 "Inserts an Elixir function declaration")
   (tempo-define-template "exdefp"
