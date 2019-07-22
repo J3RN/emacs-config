@@ -33,7 +33,9 @@
 (use-package alchemist
   :delight "🜂"
   :delight alchemist-phoenix-mode "🐦"
-  :init (setq alchemist-test-truncate-lines nil))
+  :init
+  (setq alchemist-test-truncate-lines nil)
+  (setq alchemist-test-status-modeline nil))
 
 (use-package auto-package-update
   :config
