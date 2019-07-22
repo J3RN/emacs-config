@@ -289,7 +289,7 @@
   ("C-c t f" . tempo-forward-mark)
   ("C-c t b" . tempo-backward-mark)
   :config
-  ;; (setq tempo-interactive t)
+  (setq tempo-interactive t)
   (tempo-define-template "exmodule"
 			 '("defmodule " p (s-upper-camel-case (file-name-sans-extension (buffer-name))) " do" n> p n "end" >)
 			 "em"
