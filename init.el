@@ -450,6 +450,7 @@
 
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 (load-theme 'wombat)
+(spaceline-emacs-theme)
 
 (provide 'init)
 ;;; init.el ends here
