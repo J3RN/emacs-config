@@ -184,7 +184,7 @@
   ("C-c g c" . magit-clone))
 
 (use-package spaceline
-  :config (spaceline-spacemacs-theme))
+  :init (setq spaceline-minor-modes-p nil))
 
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
