@@ -249,7 +249,8 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package restclient)
+(use-package restclient
+  :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
 (use-package ripgrep)
 
