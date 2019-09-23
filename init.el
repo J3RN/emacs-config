@@ -88,7 +88,9 @@
 (use-package elixir-mode
   :delight "🜄"
   :bind ("C-c e f" . elixir-format)
-  :hook (elixir-mode . lsp))
+  :hook
+  (elixir-mode . lsp)
+  (elixir-mode . (lambda () (setq indent-tabs-mode nil))))
 
 (use-package emacs
   :delight emacs-lisp-mode "🐐"
