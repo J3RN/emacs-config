@@ -318,7 +318,11 @@
   (tempo-define-template "exsetup"
 			 '("setup context do" n > p n "end" >)
 			 "es"
-			 "Inserts a standard ExUnit setup block"))
+			 "Inserts a standard ExUnit setup block")
+  (tempo-define-template "exfn"
+			 '("fn " (p "arg: ") " ->" n > p > n "end" >)
+			 "fn"
+			 "Inserts an anonymous Elixir function"))
 
 (use-package tex
   :ensure auctex
