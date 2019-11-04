@@ -165,6 +165,7 @@
   :commands lsp
   :bind
   ("C-c l f" . lsp-format-buffer)
+  ("C-c l r" . lsp-workspace-restart)
   :init
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
