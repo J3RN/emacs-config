@@ -206,7 +206,7 @@
 	 (org-mode . org-indent-mode))
   :config
   (setq org-catch-invisible-edits 'smart)
-  (setq org-log-done 'time))
+  (setq org-agenda-log-mode-items '(closed clock state)))
 
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
