@@ -206,7 +206,12 @@
 	 (org-mode . org-indent-mode))
   :config
   (setq org-catch-invisible-edits 'smart)
-  (setq org-agenda-log-mode-items '(closed clock state)))
+  (setq org-agenda-log-mode-items '(closed clock state))
+  (setq org-agenda-prefix-format
+	'((agenda . " %i %-20:c%?-12t% s")
+	  (todo . " %i %-12:c")
+	  (tags . " %i %-12:c")
+	  (search . " %i %-12:c"))))
 
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
