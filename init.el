@@ -8,11 +8,10 @@
 
 ;;; Package stuff
 (require 'package)
-;; Use Melpa packages
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; Use Elpa packages (default in versions 24+)
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t))
+;; Set package archives
+(setq package-archives
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
 ;; Load and activate packages
 (package-initialize)
 
