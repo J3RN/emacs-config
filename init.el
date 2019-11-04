@@ -87,10 +87,9 @@
 
 (use-package elixir-mode
   :delight "🜄"
-  :bind ("C-c e f" . elixir-format)
   :hook
   (elixir-mode . lsp)
-  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+  (elixir-mode . (lambda () (add-hook 'before-save-hook 'lsp-format-buffer)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil))))
 
 (use-package emacs
