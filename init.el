@@ -66,7 +66,7 @@
 
 (use-package dashboard
   :init
-  (setq dashboard-items '((projects . 5) (recents . 5)))
+  (setq dashboard-items '(agenda projects))
   (setq dashboard-startup-banner (locate-user-emacs-file "128x128@2x.png"))
   :config
   (dashboard-setup-startup-hook))
