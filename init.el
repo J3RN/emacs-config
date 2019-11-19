@@ -128,7 +128,7 @@
 (use-package fish-mode)
 
 (use-package flycheck
-  :config (global-flycheck-mode))
+  :hook (prog-mode . flycheck-mode))
 
 (use-package flycheck-mix
   :config (flycheck-mix-setup))
