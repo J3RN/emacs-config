@@ -167,7 +167,8 @@
   :init
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
-  (setq lsp-restart 'auto-restart))
+  (setq lsp-restart 'auto-restart)
+  (setq lsp-file-watch-threshold 50000))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
