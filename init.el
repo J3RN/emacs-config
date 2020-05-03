@@ -123,9 +123,6 @@
 (use-package flycheck
   :hook (prog-mode . flycheck-mode))
 
-(use-package flycheck-mix
-  :config (flycheck-mix-setup))
-
 (use-package forge)
 
 (use-package git-gutter)
