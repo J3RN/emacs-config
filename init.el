@@ -29,13 +29,6 @@
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
-(use-package alchemist
-  :delight "🜂"
-  :delight alchemist-phoenix-mode "🐦"
-  :init
-  (setq alchemist-test-truncate-lines nil)
-  (setq alchemist-test-status-modeline nil))
-
 (use-package auto-package-update
   :config
   (setq auto-package-update-delete-old-versions t)
