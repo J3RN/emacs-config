@@ -100,6 +100,7 @@
   (show-paren-mode)
   (global-auto-revert-mode)
   (electric-pair-mode)
+  (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
   (setq whitespace-style '(face tabs trailing space-before-tab newline empty space-after-tab tab-mark)))
 
