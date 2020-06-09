@@ -93,6 +93,7 @@
   :hook (prog-mode . abbrev-mode)
   :hook (prog-mode . whitespace-mode)
   :hook (compilation-mode . visual-line-mode)
+  :hook (text-mode . flyspell-mode)
   :config
   ;; Enable global modes
   (global-subword-mode)
