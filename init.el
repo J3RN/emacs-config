@@ -51,7 +51,9 @@
 
 (use-package counsel
   :bind (("M-x" . (lambda () (interactive) (counsel-M-x "")))
-	 ("C-c u r" . counsel-rg)))
+	 ("C-c u r" . counsel-rg))
+  :config
+  (add-to-list 'ivy-more-chars-alist '(counsel-rg . 2)))
 
 (use-package counsel-etags)
 
