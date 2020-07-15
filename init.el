@@ -105,7 +105,9 @@
   (electric-pair-mode)
   (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
-  (setq whitespace-style '(face tabs trailing space-before-tab newline empty space-after-tab tab-mark)))
+  (setq whitespace-style '(face tabs trailing space-before-tab newline empty space-after-tab tab-mark))
+  (put 'downcase-region 'disabled nil)
+  (put 'upcase-region 'disabled nil))
 
 (use-package enh-ruby-mode
   :delight "💎"
