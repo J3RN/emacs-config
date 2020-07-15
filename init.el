@@ -332,6 +332,8 @@
   :hook ((LaTeX-mode . flyspell-mode)
 	 (LaTeX-mode . visual-line-mode)))
 
+(use-package tide)
+
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
@@ -341,7 +343,9 @@
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
-  (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'")))
+  (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
+  :hook
+  (web-mode . tide-setup))
 
 (use-package which-key
   :delight
