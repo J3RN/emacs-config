@@ -340,9 +340,10 @@
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.l?eex\\'" . web-mode))
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
   :hook
   (web-mode . tide-setup))
