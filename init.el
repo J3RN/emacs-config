@@ -455,14 +455,6 @@
 	       (let ((mark-even-if-inactive transient-mark-mode))
 		 (indent-region (region-beginning) (region-end) nil))))))
 
-;;; Load local configuration
-(let ((local-config-file (locate-user-emacs-file "local.el")))
-  (if (file-readable-p local-config-file)
-      (load-file local-config-file)))
-
-;;; Startup
-(server-start)			       ; Start the server so clients can connect
-
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 (load-theme 'wombat)
 (spaceline-emacs-theme)
@@ -481,6 +473,14 @@
 			      (slot . -1)
 			      (window-height . 0.5)
 			      (inhibit-same-window . t))))
+
+;;; Load local configuration
+(let ((local-config-file (locate-user-emacs-file "local.el")))
+  (if (file-readable-p local-config-file)
+      (load-file local-config-file)))
+
+;;; Startup
+(server-start)			       ; Start the server so clients can connect
 
 (provide 'init)
 ;;; init.el ends here
