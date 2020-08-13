@@ -467,5 +467,20 @@
 (load-theme 'wombat)
 (spaceline-emacs-theme)
 
+(defvar j3rn-bottom-windows
+  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Elixir" "\\*SQL\\*")
+  "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
+
+(defun j3rn-bottom-window-p (buffer action)
+  "Predicate indicating whether BUFFER should be placed at the bottom of the frame.  ACTION."
+  (seq-some (lambda (pattern) (eq 0 (string-match-p pattern buffer))) j3rn-bottom-windows))
+
+(setq display-buffer-alist
+      '((j3rn-bottom-window-p display-buffer-in-side-window
+			      (side . bottom)
+			      (slot . -1)
+			      (window-height . 0.5)
+			      (inhibit-same-window . t))))
+
 (provide 'init)
 ;;; init.el ends here
