@@ -160,10 +160,8 @@
 
 (use-package lsp-mode
   :commands lsp
-  :bind
-  ("C-c l f" . lsp-format-buffer)
-  ("C-c l r" . lsp-workspace-restart)
   :init
+  (setq lsp-keymap-prefix "C-c l")
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
   (setq lsp-restart 'auto-restart)
