@@ -82,7 +82,6 @@
 (use-package elixir-mode
   :delight "🜄"
   :hook
-  (elixir-mode . lsp)
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'lsp-format-buffer)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil))))
 
@@ -162,10 +161,11 @@
   :commands lsp
   :init
   (setq lsp-keymap-prefix "C-c l")
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-enable-snippet nil)
   (setq lsp-restart 'auto-restart)
-  (setq lsp-file-watch-threshold 50000))
+  (setq lsp-file-watch-threshold 50000)
+  :hook
+  (elixir-mode . lsp)
+  (web-mode . lsp))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
