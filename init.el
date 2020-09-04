@@ -289,6 +289,20 @@
 (use-package swiper
   :bind ("C-c s" . swiper))
 
+(defun j3rn-elixir-relative-path ()
+  "Return the path after lib/."
+  (car (last (split-string (pwd) "lib/"))))
+
+(defun j3rn-elixir-module-name ()
+  "Determine a reasonable Elixir module name for the current buffer."
+  (string-join (append
+		(mapcar 's-upper-camel-case (split-string
+						    (string-remove-suffix
+						     "/"
+						     (j3rn-elixir-relative-path)) "/"))
+		(list (s-upper-camel-case (file-name-sans-extension (buffer-name)))))
+	       "."))
+
 (use-package tempo
   :bind
   ("C-c t c" . tempo-complete-tag)
@@ -297,7 +311,7 @@
   :config
   (setq tempo-interactive t)
   (tempo-define-template "exmodule"
-			 '("defmodule " p (s-upper-camel-case (file-name-sans-extension (buffer-name))) " do" n> p n "end" >)
+			 '("defmodule " p (j3rn-elixir-module-name) " do" n> p n "end" >)
 			 "em"
 			 "Inserts a new Elixir module")
   (tempo-define-template "exfun"
