@@ -95,6 +95,7 @@
   :hook (prog-mode . whitespace-mode)
   :hook (compilation-mode . visual-line-mode)
   :hook (text-mode . flyspell-mode)
+  :bind ("C-c q" . browse-url)
   :config
   ;; Enable global modes
   (global-subword-mode)
