@@ -481,7 +481,7 @@
 (spaceline-emacs-theme)
 
 (defvar j3rn-bottom-windows
-  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Elixir" "\\*SQL\\*")
+  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Elixir" "\\*SQL")
   "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
 
 (defun j3rn-bottom-window-p (buffer action)
