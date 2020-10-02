@@ -159,6 +159,10 @@
 (use-package linum
   :init (setq linum-format " %4d "))
 
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol
+  :bind ("C-c l w s" . lsp-ivy-workspace-symbol))
+
 (use-package lsp-mode
   :delight
   :commands lsp
