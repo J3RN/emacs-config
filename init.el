@@ -43,7 +43,7 @@
 (use-package coffee-mode)
 
 (use-package company
-  :delight "🏢"
+  :delight
   :hook (prog-mode . company-mode))
 
 (use-package compile
@@ -77,20 +77,20 @@
 (use-package dockerfile-mode)
 
 (use-package eldoc
-  :delight "🕮")
+  :delight)
 
 (use-package elixir-mode
-  :delight "🜄"
+  :delight
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'lsp-format-buffer)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil))))
 
 (use-package emacs
-  :delight emacs-lisp-mode "🐐"
-  :delight eshell-mode "🐚"
+  :delight emacs-lisp-mode
+  :delight eshell-mode
   :delight subword-mode
-  :delight whitespace-mode "»"
-  :delight abbrev-mode "⫞"
+  :delight whitespace-mode
+  :delight abbrev-mode
   :hook (prog-mode . abbrev-mode)
   :hook (prog-mode . whitespace-mode)
   :hook (compilation-mode . visual-line-mode)
@@ -113,7 +113,7 @@
   (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark)))
 
 (use-package enh-ruby-mode
-  :delight "💎"
+  :delight
   :config
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
   (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode)
@@ -130,6 +130,7 @@
 (use-package fish-mode)
 
 (use-package flycheck
+  :delight
   :hook (prog-mode . flycheck-mode))
 
 (use-package forge)
@@ -159,6 +160,7 @@
   :init (setq linum-format " %4d "))
 
 (use-package lsp-mode
+  :delight
   :commands lsp
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -193,8 +195,8 @@
 (use-package nim-mode)
 
 (use-package org
-  :delight "O"
-  :delight org-indent-mode "→"
+  :delight
+  :delight org-indent-mode
   :bind (("C-c o l" . org-store-link)
 	 ("C-c o a" . org-agenda)
 	 ("C-c o c" . org-capture)
@@ -228,7 +230,7 @@
 
 (use-package paredit
   :hook (emacs-lisp-mode . paredit-mode)
-  :delight "🄟"
+  :delight
   :bind (("C-c M-s" . paredit-splice-sexp)
 	 ("C-S-<right>" . paredit-forward-slurp-sexp)
 	 ("C-S-<left>" . paredit-forward-barf-sexp)
@@ -238,7 +240,7 @@
 (use-package pomodoro)
 
 (use-package projectile
-  :delight '(:eval (format "[%s]" (projectile-project-name)))
+  :delight
   :init
   (setq-default projectile-completion-system 'ivy)
   :config
@@ -247,7 +249,7 @@
   (projectile-mode))
 
 (use-package projectile-rails
-  :delight "🚈"
+  :delight
   :config
   (projectile-rails-global-mode)
   :hook (projectile-mode-hook . projectile-rails-on))
@@ -261,7 +263,7 @@
 (use-package ripgrep)
 
 (use-package rspec-mode
-  :delight "👓"
+  :delight
   :hook ((rspec-compilation-mode . visual-line-mode)
 	 (projectile-rails-mode . rspec-mode)))
 
@@ -272,7 +274,7 @@
 	 ("C-c c a f" . rubocop-autocorrect-current-file)))
 
 (use-package ruby-end
-  :delight "⏎"
+  :delight
   :hook (elixir-mode . ruby-end-mode))
 
 (use-package ruby-hash-syntax
@@ -282,7 +284,7 @@
 (use-package ruby-test-mode)
 
 (use-package rust-mode
-  :delight "⚙")
+  :delight)
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
