@@ -172,7 +172,8 @@
   (setq lsp-file-watch-threshold 50000)
   :hook
   (elixir-mode . lsp)
-  (web-mode . lsp))
+  (web-mode . lsp)
+  (lsp-mode . lsp-headerline-breadcrumb-mode))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
