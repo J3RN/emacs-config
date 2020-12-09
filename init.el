@@ -144,6 +144,8 @@
 
 (use-package haml-mode)
 
+(use-package haskell-mode)
+
 (use-package imenu
   :bind ("M-i" . imenu))
 
