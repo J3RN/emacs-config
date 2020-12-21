@@ -106,6 +106,7 @@
   (electric-pair-mode)
   (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
+  (setq window-buffer-change-functions '(balance-windows))
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
