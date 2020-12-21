@@ -99,6 +99,7 @@
   :config
   ;; Enable global modes
   (global-subword-mode)
+  (global-undo-tree-mode)
   (column-number-mode)
   (show-paren-mode)
   (global-auto-revert-mode)
