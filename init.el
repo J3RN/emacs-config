@@ -35,11 +35,6 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
-(use-package bundler
-  :bind (("C-c u i" . bundle-install)
-	 ("C-c u o" . bundle-open)
-	 ("C-c u u" . bundle-update)))
-
 (use-package company
   :delight
   :hook (prog-mode . company-mode))
@@ -77,12 +72,6 @@
 (use-package eldoc
   :delight)
 
-(use-package elixir-mode
-  :delight
-  :hook
-  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
-  (elixir-mode . (lambda () (setq indent-tabs-mode nil))))
-
 (use-package emacs
   :delight emacs-lisp-mode
   :delight eshell-mode
@@ -107,15 +96,6 @@
   (setq window-buffer-change-functions '(balance-windows))
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
-
-(use-package enh-ruby-mode
-  :delight
-  :config
-  (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
-  (remove-hook 'enh-ruby-mode-hook 'ruby-end-mode)
-  :bind
-  ("C-c r '" . ruby-toggle-string-quotes)
-  ("C-c r {" . enh-ruby-toggle-block))
 
 (use-package ess)
 
@@ -144,9 +124,6 @@
 
 (use-package imenu
   :bind ("M-i" . imenu))
-
-(use-package inf-ruby
-  :config (setq inf-ruby-default-implementation "pry"))
 
 (use-package ivy
   :delight
@@ -251,12 +228,6 @@
   (setq projectile-switch-project-action 'magit-status)
   (projectile-mode))
 
-(use-package projectile-rails
-  :delight
-  :config
-  (projectile-rails-global-mode)
-  :hook (projectile-mode-hook . projectile-rails-on))
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
@@ -264,27 +235,6 @@
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
 (use-package ripgrep)
-
-(use-package rspec-mode
-  :delight
-  :hook ((rspec-compilation-mode . visual-line-mode)
-	 (projectile-rails-mode . rspec-mode)))
-
-(use-package rubocop
-  :bind (("C-c c c p" . rubocop-check-project)
-	 ("C-c c c f" . rubocop-check-current-file)
-	 ("C-c c a p" . rubocop-autocorrect-project)
-	 ("C-c c a f" . rubocop-autocorrect-current-file)))
-
-(use-package ruby-end
-  :delight
-  :hook (elixir-mode . ruby-end-mode))
-
-(use-package ruby-hash-syntax
-  :config
-  (define-key enh-ruby-mode-map (kbd "C-c h") 'ruby-hash-syntax-toggle))
-
-(use-package ruby-test-mode)
 
 (use-package rust-mode
   :delight)
@@ -498,6 +448,7 @@
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
+(load-library "ruby")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
