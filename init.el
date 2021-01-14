@@ -40,8 +40,6 @@
 	 ("C-c u o" . bundle-open)
 	 ("C-c u u" . bundle-update)))
 
-(use-package coffee-mode)
-
 (use-package company
   :delight
   :hook (prog-mode . company-mode))
