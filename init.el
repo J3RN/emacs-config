@@ -109,13 +109,6 @@
   :delight
   :hook (prog-mode . flycheck-mode))
 
-(use-package forge)
-
-(use-package git-gutter)
-
-(use-package git-timemachine
-  :bind ("C-c g t" . git-timemachine))
-
 (use-package go-mode)
 
 (use-package haml-mode)
@@ -158,12 +151,6 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
 (use-package company-lsp :commands company-lsp)
-
-(use-package magit
-  :bind
-  ("C-c g s" . magit-status)
-  ("C-c g f" . magit-file-dispatch)
-  ("C-c g c" . magit-clone))
 
 (use-package spaceline
   :init (setq spaceline-minor-modes-p nil))
@@ -407,6 +394,7 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (load-library "ruby")
 (load-library "elixir")
+(load-library "git")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
