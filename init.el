@@ -108,10 +108,6 @@
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
-(use-package whitespace
-  :config
-  (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark)))
-
 (use-package enh-ruby-mode
   :delight
   :config
@@ -375,7 +371,9 @@
   :config (which-key-mode t))
 
 (use-package whitespace
-  :bind ("C-c w" . whitespace-mode))
+  :bind ("C-c w" . whitespace-mode)
+  :config
+  (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark)))
 
 (use-package windmove
   :config
