@@ -496,10 +496,9 @@
 			      (window-height . 0.5)
 			      (inhibit-same-window . t))))
 
-;;; Load local configuration
-(let ((local-config-file (locate-user-emacs-file "local.el")))
-  (if (file-readable-p local-config-file)
-      (load-file local-config-file)))
+;;; Load libraries
+(add-to-list 'load-path (concat user-emacs-directory "elisp"))
+(if (locate-library "local") (load-library "local"))
 
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
