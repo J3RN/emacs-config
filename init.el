@@ -146,7 +146,6 @@
   (setq lsp-restart 'auto-restart)
   (setq lsp-file-watch-threshold 50000)
   :hook
-  (elixir-mode . lsp)
   (web-mode . lsp)
   (lsp-mode . lsp-headerline-breadcrumb-mode))
 
@@ -245,55 +244,13 @@
 (use-package swiper
   :bind ("C-c s" . swiper))
 
-(defun j3rn-elixir-relative-path ()
-  "Return the path after lib/."
-  (car (last (split-string (pwd) "lib/"))))
-
-(defun j3rn-elixir-module-name ()
-  "Determine a reasonable Elixir module name for the current buffer."
-  (string-join (append
-		(mapcar 's-upper-camel-case (split-string
-						    (string-remove-suffix
-						     "/"
-						     (j3rn-elixir-relative-path)) "/"))
-		(list (s-upper-camel-case (file-name-sans-extension (buffer-name)))))
-	       "."))
-
 (use-package tempo
   :bind
   ("C-c t c" . tempo-complete-tag)
   ("C-c t f" . tempo-forward-mark)
   ("C-c t b" . tempo-backward-mark)
   :config
-  (setq tempo-interactive t)
-  (tempo-define-template "exmodule"
-			 '("defmodule " p (j3rn-elixir-module-name) " do" n> p n "end" >)
-			 "em"
-			 "Inserts a new Elixir module")
-  (tempo-define-template "exfun"
-			 '("@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
-			 "ed"
-			 "Inserts an Elixir function declaration")
-  (tempo-define-template "exdefp"
-			 '("defp " (p "name: ") "(" (p "args: ") ") do" n > p n "end" >)
-			 "edp"
-			 "Inserts a private Elixir function declaration")
-  (tempo-define-template "exdescribe"
-			 '("describe \"" (p "what? ") "\" do" n> p n "end" >)
-			 "ede"
-			 "Inserts a new ExUnit describe block")
-  (tempo-define-template "extest"
-			 '("test \"" (p "description: ") "\", %{" (p "context: ") "} do" n > p n "end" >)
-			 "et"
-			 "Inserts a standard ExUnit test declaration")
-  (tempo-define-template "exsetup"
-			 '("setup context do" n > p n "end" >)
-			 "es"
-			 "Inserts a standard ExUnit setup block")
-  (tempo-define-template "exfn"
-			 '("fn " (p "arg: ") " ->" n > p > n "end" >)
-			 "fn"
-			 "Inserts an anonymous Elixir function"))
+  (setq tempo-interactive t))
 
 (use-package tex
   :ensure auctex
@@ -449,6 +406,7 @@
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (load-library "ruby")
+(load-library "elixir")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
