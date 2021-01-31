@@ -180,6 +180,8 @@
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
 
+(use-package package-lint)
+
 (use-package page-break-lines
   :delight
   :config
