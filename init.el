@@ -86,7 +86,6 @@
   :config
   ;; Enable global modes
   (global-subword-mode)
-  (global-undo-tree-mode)
   (column-number-mode)
   (show-paren-mode)
   (global-auto-revert-mode)
@@ -245,6 +244,9 @@
 	 (LaTeX-mode . visual-line-mode)))
 
 (use-package tide)
+
+(use-package undo-tree
+  :config (global-undo-tree-mode))
 
 (use-package web-mode
   :config
