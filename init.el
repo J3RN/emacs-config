@@ -180,8 +180,6 @@
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
 
-(use-package package-lint)
-
 (use-package page-break-lines
   :delight
   :config
@@ -194,15 +192,6 @@
   :bind
   ("C-c a l" . paradox-list-packages)
   ("C-c a i" . package-install))
-
-(use-package paredit
-  :hook (emacs-lisp-mode . paredit-mode)
-  :delight
-  :bind (("C-c M-s" . paredit-splice-sexp)
-	 ("C-S-<right>" . paredit-forward-slurp-sexp)
-	 ("C-S-<left>" . paredit-forward-barf-sexp)
-	 ("C-M-<right>" . paredit-backward-barf-sexp)
-	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
 (use-package pomodoro)
 
@@ -397,6 +386,7 @@
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (load-library "ruby")
+(load-library "elisp")
 (load-library "elixir")
 (load-library "git")
 (if (locate-library "local") (load-library "local"))
