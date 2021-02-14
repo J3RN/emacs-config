@@ -10,6 +10,13 @@
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
   (elixir-mode . lsp))
 
+(use-package inf-elixir
+  :bind (("C-c i i" . 'inf-elixir)
+         ("C-c i p" . 'inf-elixir-project)
+         ("C-c i l" . 'inf-elixir-send-line)
+         ("C-c i r" . 'inf-elixir-send-region)
+         ("C-c i b" . 'inf-elixir-send-buffer)))
+
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
   (car (last (split-string (pwd) "lib/"))))
