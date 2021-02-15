@@ -385,10 +385,10 @@
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
-(load-library "ruby")
 (load-library "elisp")
 (load-library "elixir")
 (load-library "git")
+(load-library "ruby")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
