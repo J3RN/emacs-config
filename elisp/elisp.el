@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; elisp --- Summary
 ;;; Commentary:
 ;;; Code:
 

@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; elixir --- Summary
 ;;; Commentary:
 ;;; Various Elixir packages and configuration
 ;;; Code:
