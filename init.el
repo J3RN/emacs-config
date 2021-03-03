@@ -385,6 +385,7 @@
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
+(load-library "clojure")
 (load-library "elisp")
 (load-library "elixir")
 (load-library "git")
