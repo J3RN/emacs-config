@@ -201,7 +201,7 @@
   (setq-default projectile-completion-system 'ivy)
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (setq projectile-switch-project-action 'magit-status)
+  (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
   (projectile-mode))
 
 (use-package rainbow-delimiters
