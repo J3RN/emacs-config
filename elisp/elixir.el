@@ -8,7 +8,8 @@
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
-  (elixir-mode . lsp))
+  (elixir-mode . lsp)
+  (elixir-mode . exunit-mode))
 
 (use-package inf-elixir
   :bind (("C-c i i" . 'inf-elixir)
@@ -16,6 +17,9 @@
          ("C-c i l" . 'inf-elixir-send-line)
          ("C-c i r" . 'inf-elixir-send-region)
          ("C-c i b" . 'inf-elixir-send-buffer)))
+
+(use-package exunit
+  :init (setq exunit-key-command-prefix (kbd "C-c e")))
 
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
