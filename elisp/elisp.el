@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package flycheck-package)
+(use-package flycheck-package
+  :config (flycheck-package-setup))
 
 (use-package lispy)
 
