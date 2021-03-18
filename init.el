@@ -212,9 +212,6 @@
 
 (use-package ripgrep)
 
-(use-package rust-mode
-  :delight)
-
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
 
@@ -390,6 +387,7 @@
 (load-library "elixir")
 (load-library "git")
 (load-library "ruby")
+(load-library "rust")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
