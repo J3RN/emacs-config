@@ -1,6 +1,6 @@
-;;; clojure --- Summary
+;;; clojure --- Clojure packages and configuration
 ;;; Commentary:
-;;; Various Clojure packages an configuration
+;;; Various Clojure packages and configuration
 ;;; Code:
 (use-package clojure-mode)
 (use-package cider)

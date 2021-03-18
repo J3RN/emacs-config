@@ -1,5 +1,7 @@
-;;; elisp --- Summary
+;;; elisp --- Packages and configuration for Emacs Lisp
 ;;; Commentary:
+;;; Various packages and configurations thereof for authoring Emacs Lisp
+;;; packages.
 ;;; Code:
 
 (use-package flycheck-package

@@ -1,4 +1,4 @@
-;;; ruby --- Summary
+;;; ruby --- Ruby-related packages and configuration
 ;;; Commentary:
 ;;; Various Ruby packages and configuration
 ;;; Code:

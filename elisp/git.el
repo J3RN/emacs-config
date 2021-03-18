@@ -1,4 +1,4 @@
-;;; git --- Summary
+;;; git --- Git-related packages and configuration
 ;;; Commentary:
 ;;; Various Git-related packages and configuration
 ;;; Code:
