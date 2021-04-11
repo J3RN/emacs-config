@@ -152,7 +152,12 @@
 (use-package company-lsp :commands company-lsp)
 
 (use-package spaceline
-  :init (setq spaceline-minor-modes-p nil))
+  :init
+  (setq spaceline-minor-modes-p nil)
+  (setq spaceline-buffer-position-p nil)
+  (setq spaceline-buffer-encoding-abbrev-p nil)
+  (setq spaceline-which-function-p t)
+  (setq spaceline-hud-p t))
 
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
@@ -249,6 +254,11 @@
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
   :hook
   (web-mode . tide-setup))
+
+(use-package which-func
+  :config
+  (set-face-attribute 'which-func nil :foreground "white")
+  (which-function-mode t))
 
 (use-package which-key
   :delight
