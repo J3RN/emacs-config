@@ -151,6 +151,10 @@
 
 (use-package company-lsp :commands company-lsp)
 
+(use-package re-builder
+  :config
+  (setq reb-re-syntax 'string))
+
 (use-package spaceline
   :init
   (setq spaceline-minor-modes-p nil)
