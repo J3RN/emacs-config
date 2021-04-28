@@ -151,8 +151,6 @@
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   (define-key lsp-ui-mode-map [remap imenu] #'lsp-ui-imenu))
 
-(use-package company-lsp :commands company-lsp)
-
 (use-package re-builder
   :config
   (setq reb-re-syntax 'string))
