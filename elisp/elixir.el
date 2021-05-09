@@ -6,7 +6,7 @@
 (use-package elixir-mode
   :delight
   :hook
-  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
+  ;; (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
   (elixir-mode . lsp)
   (elixir-mode . exunit-mode))
