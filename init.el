@@ -43,7 +43,7 @@
   :init (setq compilation-scroll-output t))
 
 (use-package counsel
-  :bind (("M-x" . (lambda () (interactive) (counsel-M-x "")))
+  :bind (([remap execute-extended-command] . (lambda () (interactive) (counsel-M-x "")))
 	 ([remap imenu] . counsel-imenu)
 	 ("C-c u r" . counsel-rg))
   :config
