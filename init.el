@@ -243,6 +243,7 @@
 (use-package tide)
 
 (use-package undo-tree
+  :init (setq undo-tree-enable-undo-in-region t)
   :config (global-undo-tree-mode))
 
 (use-package web-mode
