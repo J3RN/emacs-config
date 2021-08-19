@@ -5,7 +5,8 @@
 (use-package rust-mode
   :delight
   :hook
-  (rust-mode . lsp))
+  (rust-mode . lsp)
+  (rust-mode . (lambda () (setq-local indent-tabs-mode nil))))
 
 (provide 'rust)
 ;;; rust.el ends here
