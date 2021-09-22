@@ -39,6 +39,10 @@
 		       '("defmodule " p (j3rn-elixir-module-name) " do" n> p n "end" >)
 		       "em"
 		       "Inserts a new Elixir module")
+(tempo-define-template "exprotocol"
+		       '("defprotocol " p (j3rn-elixir-module-name) " do" n> p n "end" >)
+		       "ep"
+		       "Inserts a new Elixir protocol")
 (tempo-define-template "exfun"
 		       '("@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
 		       "ed"
