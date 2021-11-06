@@ -16,7 +16,9 @@
          ("C-c i p" . 'inf-elixir-project)
          ("C-c i l" . 'inf-elixir-send-line)
          ("C-c i r" . 'inf-elixir-send-region)
-         ("C-c i b" . 'inf-elixir-send-buffer)))
+         ("C-c i b" . 'inf-elixir-send-buffer))
+  :hook
+  (inf-elixir-mode . abbrev-mode))
 
 (use-package exunit
   :init (setq exunit-key-command-prefix (kbd "C-c e")))
