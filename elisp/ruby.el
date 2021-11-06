@@ -38,8 +38,7 @@
 	 ("C-c c a f" . rubocop-autocorrect-current-file)))
 
 (use-package ruby-end
-  :delight
-  :hook (elixir-mode . ruby-end-mode))
+  :delight)
 
 (use-package ruby-hash-syntax
   :config
