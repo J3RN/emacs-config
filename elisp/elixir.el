@@ -6,10 +6,9 @@
 (use-package elixir-mode
   :delight
   :hook
-  ;; (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
+  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
-  (elixir-mode . lsp)
-  (elixir-mode . exunit-mode))
+  (elixir-mode . lsp))
 
 (use-package inf-elixir
   :bind (("C-c i i" . 'inf-elixir)
@@ -20,8 +19,11 @@
   :hook
   (inf-elixir-mode . abbrev-mode))
 
-(use-package exunit
-  :init (setq exunit-key-command-prefix (kbd "C-c e")))
+(use-package elixir-test
+  :load-path "~/Code/J3RN/elixir-test-mode/master"
+  :bind (:map elixir-test-mode-map
+              ("C-c e" . elixir-test-command-map))
+  :hook (elixir-mode . elixir-test-mode))
 
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
