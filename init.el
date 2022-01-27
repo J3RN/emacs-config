@@ -295,21 +295,6 @@
   (mark-defun)
   (kill-region (point) (mark)))
 
-;; Faster buffers
-(global-set-key (kbd "C-c b") (lambda ()
-				(interactive)
-				(switch-to-buffer (other-buffer (current-buffer) 1))))
-(global-set-key (kbd "C-c k") (lambda ()
-				(interactive)
-				(kill-buffer (current-buffer))))
-(global-set-key (kbd "C-c y") (lambda ()
-				(interactive)
-				(bury-buffer)))
-(global-set-key (kbd "C-c 4 0") 'kill-buffer-and-window)
-(global-set-key (kbd "C-c 4 b") (lambda ()
-				  (interactive)
-				  (switch-to-buffer-other-window (other-buffer (current-buffer) 1))))
-
 ;; Normal mac fullscreenifying shortcut
 (if (string-equal "darwin" system-type)
     (progn
@@ -403,6 +388,7 @@
 (load-library "clojure")
 (load-library "elisp")
 (load-library "elixir")
+(load-library "fast-buffers")
 (load-library "git")
 (load-library "ruby")
 (load-library "rust")
