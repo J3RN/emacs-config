@@ -139,6 +139,7 @@
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-restart 'auto-restart)
   (setq lsp-file-watch-threshold 50000)
+  (setq lsp-elixir-suggest-specs nil)
   :hook
   (web-mode . lsp)
   (lsp-mode . lsp-headerline-breadcrumb-mode))
