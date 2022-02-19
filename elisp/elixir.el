@@ -20,7 +20,7 @@
   (inf-elixir-mode . abbrev-mode))
 
 (use-package elixir-test
-  :load-path "~/Code/J3RN/elixir-test-mode/master"
+  :straight (elixir-test :type git :host github :repo "J3RN/elixir-test-mode" :files ("elixir-test.el"))
   :bind (:map elixir-test-mode-map
               ("C-c e" . elixir-test-command-map))
   :hook (elixir-mode . elixir-test-mode))

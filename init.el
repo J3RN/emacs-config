@@ -6,25 +6,24 @@
 ;;; Code:
 
 ;;; Package stuff
-(require 'package)
-;; Set package archives
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-	("melpa" . "https://melpa.org/packages/")))
-;; Load and activate packages
-(package-initialize)
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-;; Fetch the list of available packages
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Install use-package if it's missing
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+(setq straight-use-package-by-default t)
+(straight-use-package 'use-package)
 
 ;; Setup use-package
 (require 'use-package)
-(setq use-package-always-ensure t)	; Always ensure packages are installed
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
@@ -236,7 +235,7 @@
   (setq tempo-interactive t))
 
 (use-package tex
-  :ensure auctex
+  :straight auctex
   :hook ((LaTeX-mode . flyspell-mode)
 	 (LaTeX-mode . visual-line-mode)))
 
