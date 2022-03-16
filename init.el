@@ -243,7 +243,9 @@
 (use-package tide)
 
 (use-package undo-tree
-  :init (setq undo-tree-enable-undo-in-region t)
+  :init
+  (setq undo-tree-enable-undo-in-region t)
+  (setq undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo-tree-saves"))))
   :config (global-undo-tree-mode))
 
 (use-package web-mode
