@@ -48,7 +48,7 @@
 		       "ep"
 		       "Inserts a new Elixir protocol")
 (tempo-define-template "exfun"
-		       '("@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
+		       '("@doc \"\"\"" n > (p "doc: " doc) n > "\"\"\"" n > "@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
 		       "ed"
 		       "Inserts an Elixir function declaration")
 (tempo-define-template "exdefp"
