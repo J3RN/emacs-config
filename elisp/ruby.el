@@ -17,8 +17,7 @@
   ("C-c r '" . ruby-toggle-string-quotes)
   ("C-c r {" . enh-ruby-toggle-block))
 
-(use-package inf-ruby
-  :config (setq inf-ruby-default-implementation "pry"))
+(use-package inf-ruby)
 
 (use-package projectile-rails
   :delight
