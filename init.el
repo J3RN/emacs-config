@@ -202,6 +202,12 @@
   ("C-c a l" . paradox-list-packages)
   ("C-c a i" . package-install))
 
+(use-package phi-search
+  :bind
+  ([remap isearch-forward] . phi-search)
+  ([remap query-replace] . phi-replace)
+  ([remap query-replace-regexp] . phi-replace-query))
+
 (use-package pomodoro)
 
 (use-package projectile
