@@ -263,7 +263,8 @@
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.l?eex\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.h?eex\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
   :hook
   (web-mode . tide-setup))
