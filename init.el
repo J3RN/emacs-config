@@ -151,18 +151,6 @@
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
-(use-package re-builder
-  :config
-  (setq reb-re-syntax 'string))
-
-(use-package spaceline
-  :init
-  (setq spaceline-minor-modes-p nil)
-  (setq spaceline-buffer-position-p nil)
-  (setq spaceline-buffer-encoding-abbrev-p nil)
-  (setq spaceline-which-function-p t)
-  (setq spaceline-hud-p t))
-
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
 
@@ -222,6 +210,10 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package re-builder
+  :config
+  (setq reb-re-syntax 'string))
+
 (use-package restclient
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
@@ -229,6 +221,14 @@
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
+
+(use-package spaceline
+  :init
+  (setq spaceline-minor-modes-p nil)
+  (setq spaceline-buffer-position-p nil)
+  (setq spaceline-buffer-encoding-abbrev-p nil)
+  (setq spaceline-which-function-p t)
+  (setq spaceline-hud-p t))
 
 (use-package swiper
   :bind ("C-c s" . swiper))
