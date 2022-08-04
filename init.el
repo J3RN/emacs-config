@@ -146,7 +146,7 @@
 (use-package lsp-ui
   :commands lsp-ui-mode
   :init
-  (setq lsp-ui-doc-delay 2.0)
+  (setq lsp-ui-doc-delay 0.5)
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
