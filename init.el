@@ -28,6 +28,10 @@
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; use-package declarations
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :config (all-the-icons-install-fonts t))
+
 (use-package auto-package-update
   :config
   (setq auto-package-update-delete-old-versions t)
@@ -56,6 +60,8 @@
   :init
   (setq dashboard-items '(agenda projects))
   (setq dashboard-startup-banner (locate-user-emacs-file "128x128@2x.png"))
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-set-heading-icons t)
   :config
   (dashboard-setup-startup-hook))
 
