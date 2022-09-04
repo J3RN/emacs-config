@@ -335,8 +335,6 @@
 (menu-bar-mode -1)
 ;; Disable scrollbar
 (scroll-bar-mode -1)
-;; Maximize the window
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; ANSI colorize compilation output
 (defun colorize-compilation-buffer ()
