@@ -96,6 +96,7 @@
   (show-paren-mode)
   (global-auto-revert-mode)
   (electric-pair-mode)
+  (global-prettify-symbols-mode 1)
   (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
