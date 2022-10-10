@@ -143,7 +143,7 @@
   :commands lsp
   :init
   (setq lsp-keymap-prefix "C-c l")
-  (setq lsp-restart 'auto-restart)
+  (setq lsp-restart 'interactive)
   (setq lsp-file-watch-threshold 50000)
   (setq lsp-elixir-suggest-specs nil)
   :hook
