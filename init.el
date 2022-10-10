@@ -210,6 +210,7 @@
   :delight
   :init
   (setq-default projectile-completion-system 'ivy)
+  (setq projectile-generic-command "fd . -0 --type f --color=never")
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
