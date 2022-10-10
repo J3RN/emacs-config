@@ -146,6 +146,7 @@
   (setq lsp-restart 'interactive)
   (setq lsp-file-watch-threshold 50000)
   (setq lsp-elixir-suggest-specs nil)
+  (setq lsp-log-io t)
   :hook
   (web-mode . lsp)
   (lsp-mode . lsp-headerline-breadcrumb-mode))
