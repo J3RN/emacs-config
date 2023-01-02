@@ -32,6 +32,11 @@
   :if (display-graphic-p)
   :config (all-the-icons-install-fonts t))
 
+(use-package auto-dark
+  :config
+  (setq auto-dark-light-theme 'adwaita)
+  (auto-dark-mode 1))
+
 (use-package auto-package-update
   :config
   (setq auto-package-update-delete-old-versions t)
