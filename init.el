@@ -391,7 +391,6 @@
 		 (indent-region (region-beginning) (region-end) nil))))))
 
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
-(load-theme 'wombat)
 
 (defvar j3rn-bottom-windows
   '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*")
