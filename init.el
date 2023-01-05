@@ -243,7 +243,11 @@
   (setq spaceline-buffer-position-p nil)
   (setq spaceline-buffer-encoding-abbrev-p nil)
   (setq spaceline-which-function-p t)
-  (setq spaceline-hud-p t))
+  (setq spaceline-hud-p t)
+  :config
+  ;; "theme" here just means it modifies the modeline.  Not to be confused with
+  ;; the overall theme loaded by `load-theme'.
+  (spaceline-emacs-theme))
 
 (use-package swiper
   :bind ("C-c s" . swiper))
@@ -388,7 +392,6 @@
 
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 (load-theme 'wombat)
-(spaceline-emacs-theme)
 
 (defvar j3rn-bottom-windows
   '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*")
