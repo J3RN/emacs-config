@@ -15,7 +15,8 @@
   ("C-c g f" . magit-file-dispatch)
   ("C-c g c" . magit-clone)
   :hook
-  (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local))))
+  (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local)))
+  (magit-process-mode . visual-line-mode))
 
 (provide 'git)
 ;;; git.el ends here
