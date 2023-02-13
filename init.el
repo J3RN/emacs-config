@@ -320,6 +320,9 @@
 ;; Delete trailing whitespace
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 
+;; Bind window-toggle-side-windows
+(global-set-key (kbd "C-c 1") 'window-toggle-side-windows)
+
 ;; Add kill defun function and binding
 (defun kill-defun ()
   "Kill the function under point."
