@@ -400,7 +400,7 @@
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 
 (defvar j3rn-bottom-windows
-  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*")
+  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*" "\\magit-process")
   "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
 
 (defun j3rn-bottom-window-p (buffer action)
