@@ -126,7 +126,9 @@
 
 (use-package haml-mode)
 
-(use-package haskell-mode)
+(use-package haskell-mode
+  :config
+  (setq haskell-process-type 'stack-ghci))
 
 (use-package imenu
   :bind ("M-i" . imenu))
