@@ -3,8 +3,17 @@
 ;;; Various Elixir packages and configuration
 ;;; Code:
 
+(defun elixir-expand-keyword ()
+  "Expands a single word like `foo' into an association like `foo: foo'."
+  (interactive)
+  (if-let ((symbol-to-dup (symbol-at-point))
+	   (to-dup (symbol-name symbol-to-dup)))
+      (insert ": " to-dup)
+    (message "No symbol at point")))
+
 (use-package elixir-mode
   :delight
+  :bind ("C-c e :" . elixir-expand-keyword)
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
