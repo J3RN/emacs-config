@@ -17,6 +17,13 @@
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
+  (elixir-mode . (lambda () (setq prettify-symbols-alist '(("<-" . 8592)
+						      ("->" . 8594)
+						      ("=>" . 8658)
+						      ("!=" . 8800)
+						      ("<=" . 8804)
+						      (">=" . 8805)
+						      ("|>" . 9655)))))
   (elixir-mode . lsp))
 
 (use-package inf-elixir
