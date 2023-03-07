@@ -101,6 +101,7 @@
   (column-number-mode)
   (show-paren-mode)
   (global-auto-revert-mode)
+  (global-hi-lock-mode)
   (electric-pair-mode)
   (global-prettify-symbols-mode 1)
   (setq dired-listing-switches "-alh")
