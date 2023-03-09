@@ -14,6 +14,8 @@
   ("C-c g s" . magit-status)
   ("C-c g f" . magit-file-dispatch)
   ("C-c g c" . magit-clone)
+  :config
+  (unbind-key "C-<tab>" magit-section-mode-map)
   :hook
   (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local)))
   (magit-process-mode . visual-line-mode))
