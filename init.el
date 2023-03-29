@@ -127,10 +127,6 @@
 
 (use-package haml-mode)
 
-(use-package haskell-mode
-  :config
-  (setq haskell-process-type 'stack-ghci))
-
 (use-package imenu
   :bind ("M-i" . imenu))
 
@@ -422,6 +418,7 @@
 (load-library "elixir")
 (load-library "fast-buffers")
 (load-library "git")
+(load-library "haskell")
 (load-library "ruby")
 (load-library "rust")
 (if (locate-library "local") (load-library "local"))
