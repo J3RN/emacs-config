@@ -32,6 +32,8 @@
   :if (display-graphic-p)
   :config (all-the-icons-install-fonts t))
 
+(use-package async)
+
 (use-package auto-dark
   :custom
   (auto-dark-light-theme 'adwaita)
@@ -200,6 +202,7 @@
   :init
   (setq paradox-automatically-star nil)
   (setq paradox-github-token t)
+  (setq paradox-execute-asynchronously t)
   :bind
   ("C-c a l" . paradox-list-packages)
   ("C-c a i" . package-install))
