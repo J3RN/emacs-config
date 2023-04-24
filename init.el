@@ -56,6 +56,7 @@
 	 ([remap imenu] . counsel-imenu)
 	 ("C-c u r" . counsel-rg))
   :config
+  (setq counsel-rg-base-command '("rg" "--max-columns" "240" "--with-filename" "--no-heading" "--line-number" "--hidden" "--color" "never" "%s"))
   (add-to-list 'ivy-more-chars-alist '(counsel-rg . 2)))
 
 (use-package counsel-etags)
