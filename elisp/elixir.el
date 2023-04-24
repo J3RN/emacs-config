@@ -55,6 +55,17 @@
 		(list (s-upper-camel-case (file-name-sans-extension (buffer-name)))))
 	       "."))
 
+(define-skeleton elixir-do-end
+  "Automatically insert `end' after a `do'." nil
+  _ > "\nend" >)
+
+(defun elixir-maybe-do-end ()
+  "Insert an `end' to your `do' if line is determined to need it."
+  (if (looking-back " do" 3)
+      (elixir-do-end)))
+
+(define-abbrev elixir-mode-abbrev-table "do" "do" 'elixir-maybe-do-end)
+
 (tempo-define-template "exmodule"
 		       '("defmodule " p (j3rn-elixir-module-name) " do" n> p n "end" >)
 		       "em"
