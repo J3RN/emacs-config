@@ -439,6 +439,7 @@
 (load-library "fast-buffers")
 (load-library "git")
 (load-library "haskell")
+(load-library "purescript")
 (load-library "ruby")
 (load-library "rust")
 (if (locate-library "local") (load-library "local"))
