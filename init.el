@@ -436,6 +436,7 @@
 (load-library "clojure")
 (load-library "elisp")
 (load-library "elixir")
+(load-library "elm")
 (load-library "fast-buffers")
 (load-library "git")
 (load-library "haskell")
