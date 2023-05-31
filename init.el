@@ -391,9 +391,11 @@
  version-control t)
 
 ;;; Set sane scrolling
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; one line at a time
-      mouse-wheel-progressive-speed nil            ; don't accelerate scrolling
-      mouse-wheel-follow-mouse 't                  ; scroll window under mouse
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; One line at a time
+      mouse-wheel-progressive-speed nil            ; Don't accelerate scrolling
+      mouse-wheel-follow-mouse t                   ; Scroll window under mouse
+      mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
+      mouse-wheel-flip-direction t                 ; This will forever bother me now that I've though about it
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
 
 ;;; Enable useful disabled commands
