@@ -447,6 +447,7 @@
 (load-library "purescript")
 (load-library "ruby")
 (load-library "rust")
+(load-library "tabs")
 (if (locate-library "local") (load-library "local"))
 
 ;;; Startup
