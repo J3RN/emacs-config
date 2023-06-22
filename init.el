@@ -105,6 +105,9 @@
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
   (setq warning-minimum-level :error)
+  ;;; Enable useful disabled commands
+  (put 'scroll-left 'disabled nil)
+  (put 'narrow-to-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
@@ -378,10 +381,6 @@
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
       mouse-wheel-flip-direction t                 ; This will forever bother me now that I've though about it
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
-
-;;; Enable useful disabled commands
-(put 'scroll-left 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
 
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
