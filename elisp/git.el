@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Various Git-related packages and configuration
 ;;; Code:
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
 (use-package forge)
 
 (use-package git-gutter)

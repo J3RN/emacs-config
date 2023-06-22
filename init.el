@@ -80,10 +80,6 @@
 
 (use-package dictionary)
 
-(use-package diff-hl
-  :config
-  (global-diff-hl-mode))
-
 (use-package dockerfile-mode)
 
 (use-package eldoc
