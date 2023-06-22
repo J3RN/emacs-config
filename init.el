@@ -444,7 +444,7 @@
 (load-library "ruby")
 (load-library "rust")
 (load-library "tabs")
-(if (locate-library "local") (load-library "local"))
+(when (locate-library "local") (load-library "local"))
 
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
