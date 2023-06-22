@@ -351,7 +351,7 @@
       (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen)
       (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)))
 
-;;; Kill bell altogether
+;;; Disable bell altogether
 (setq ring-bell-function (lambda () ()))
 
 ;;; Do not wrap long lines
