@@ -104,7 +104,7 @@
   (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
-  (setq comp-async-report-warnings-errors nil)
+  (setq warning-minimum-level :error)
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
