@@ -27,6 +27,9 @@
 (setq use-package-always-ensure t)	; Always ensure packages are installed
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
+;; Configure custom themes
+(setq custom-theme-directory (locate-user-emacs-file "themes"))
+
 ;; use-package declarations
 
 (use-package async)
@@ -34,6 +37,7 @@
 (use-package auto-dark
   :custom
   (auto-dark-light-theme 'adwaita)
+  (auto-dark-dark-theme 'wombat)
   :config
   (auto-dark-mode 1))
 
@@ -369,8 +373,6 @@
 		    (derived-mode-p 'prog-mode))
 	       (let ((mark-even-if-inactive transient-mark-mode))
 		 (indent-region (region-beginning) (region-end) nil))))))
-
-(setq custom-theme-directory (locate-user-emacs-file "themes"))
 
 (defvar j3rn-bottom-windows
   '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*")
