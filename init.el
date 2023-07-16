@@ -366,14 +366,6 @@
 ;;; Set shell font to be not bad
 (set-face-attribute 'comint-highlight-prompt nil :inherit nil)
 
-;;; Yank and indent
-(dolist (command '(yank yank-pop))
-  (eval `(defadvice ,command (after indent-region activate)
-	   (if (and (not current-prefix-arg)
-		    (derived-mode-p 'prog-mode))
-	       (let ((mark-even-if-inactive transient-mark-mode))
-		 (indent-region (region-beginning) (region-end) nil))))))
-
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (when (display-graphic-p) (load-library "gui"))
@@ -391,6 +383,8 @@
 (load-library "ruby")
 (load-library "rust")
 (load-library "tabs")
+(load-library "yank-and-indent")
+
 (when (locate-library "local") (load-library "local"))
 
 ;;; Startup
