@@ -374,21 +374,6 @@
 	       (let ((mark-even-if-inactive transient-mark-mode))
 		 (indent-region (region-beginning) (region-end) nil))))))
 
-(defvar j3rn-bottom-windows
-  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*")
-  "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
-
-(defun j3rn-bottom-window-p (buffer action)
-  "Predicate indicating whether BUFFER should be placed at the bottom of the frame.  ACTION."
-  (seq-some (lambda (pattern) (eq 0 (string-match-p pattern buffer))) j3rn-bottom-windows))
-
-(setq display-buffer-alist
-      '((j3rn-bottom-window-p display-buffer-in-side-window
-			      (side . bottom)
-			      (slot . -1)
-			      (window-height . 0.5)
-			      (inhibit-same-window . t))))
-
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (when (display-graphic-p) (load-library "gui"))
@@ -399,6 +384,8 @@
 (load-library "fast-buffers")
 (load-library "git")
 (load-library "haskell")
+;; Comment out if you don't like my layout
+(load-library "j3rn-layout")
 (load-library "lsp")
 (load-library "purescript")
 (load-library "ruby")
