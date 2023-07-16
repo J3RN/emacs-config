@@ -67,6 +67,6 @@ default look of the Gnome 3 desktop.")
  '(default ((((class color) (min-colors 89)) (:background "#EDEDED" :foreground "#2E3436"))))
  '(tab-bar ((((class color) (min-colors 89)) (:background "#E6E6E6"))))
  '(tab-bar-tab ((((class color) (min-colors 89)) (:background "#EDEDED" :foreground "#2E3436" :bold t :box (:line-width (10 . 10) :style flat-button)))))
- '(tab-bar-tab-inactive ((((class color) (min-colors 89)) (:foreground "white" :background "#D9D9D9" :bold t :box (:line-width (10 . 10) :style flat-button))))))
+ '(tab-bar-tab-inactive ((((class color) (min-colors 89)) (:background "#D9D9D9" :foreground "#2E3436" :bold t :box (:line-width (10 . 10) :style flat-button))))))
 
 (provide-theme 'adwaita)
