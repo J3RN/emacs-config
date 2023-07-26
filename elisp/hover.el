@@ -8,7 +8,7 @@
 ;;;
 ;;; Code:
 
-(defvar hover--hi-re nil
+(defvar-local hover--hi-re nil
   "The regexp being highlighted.")
 
 (defvar hover--idle-timer nil
