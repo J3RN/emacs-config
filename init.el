@@ -376,6 +376,7 @@
 (load-library "fast-buffers")
 (load-library "git")
 (load-library "haskell")
+(load-library "hover")
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
 (load-library "lsp")
