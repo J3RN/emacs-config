@@ -16,14 +16,24 @@
 
 (defun hover--reset-highlight ()
   "Highlight the regexp under point."
-  (when hover--hi-re
-    (unhighlight-regexp hover--hi-re))
-  (when-let ((re (find-tag-default-as-symbol-regexp)))
-    (setq hover--hi-re re)
-    (highlight-regexp re)))
+  (when hover-mode
+    (when hover--hi-re
+      (unhighlight-regexp hover--hi-re))
+    (when-let ((re (find-tag-default-as-symbol-regexp)))
+      (setq hover--hi-re re)
+      (highlight-regexp re))))
 
-(setq hover--idle-timer
-      (run-with-idle-timer 1 t #'hover--reset-highlight))
+(define-minor-mode hover-mode
+  "Hovers the symbol under point when idle."
+  :light " Hover"
+  (if hover-mode
+      (setq hover--idle-timer
+	    (run-with-idle-timer 1 t #'hover--reset-highlight))
+    (progn
+      (when hover--hi-re
+	(unhighlight-regexp hover--hi-re)
+	(setq hover--hi-re nil))
+      (cancel-timer hover--idle-timer))))
 
 (provide 'hover)
 ;;; hover.el ends here
