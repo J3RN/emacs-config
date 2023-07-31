@@ -376,7 +376,7 @@
 (load-library "fast-buffers")
 (load-library "git")
 (load-library "haskell")
-(load-library "hover")
+;; (load-library "hover")
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
 (load-library "lsp")
@@ -385,8 +385,11 @@
 (load-library "rust")
 (load-library "tabs")
 (load-library "yank-and-indent")
-
 (when (locate-library "local") (load-library "local"))
+
+(use-package hover
+  :load-path "~/.config/emacs/elisp/hover.el"
+  :hook (prog-mode . hover-mode))
 
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
