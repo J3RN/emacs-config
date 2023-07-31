@@ -79,6 +79,10 @@
 		       '("@doc \"\"\"" n > (p "doc: " doc) n > "\"\"\"" n > "@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
 		       "ed"
 		       "Inserts an Elixir function declaration")
+(tempo-define-template "exfunsmol"
+		       '("def " (p "name: " funname) "(" (p "args: ") ") do" n > p n "end" >)
+		       "eds"
+		       "Inserts an minimal Elixir function declaration")
 (tempo-define-template "exdefp"
 		       '("defp " (p "name: ") "(" (p "args: ") ") do" n > p n "end" >)
 		       "edp"
