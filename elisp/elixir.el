@@ -24,7 +24,7 @@
 						      ("<=" . 8804)
 						      (">=" . 8805)
 						      ("|>" . 9655)))))
-  (elixir-mode . lsp))
+  (elixir-mode . eglot-ensure))
 
 (use-package inf-elixir
   :bind (("C-c i i" . 'inf-elixir)
