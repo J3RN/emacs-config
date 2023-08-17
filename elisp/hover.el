@@ -2,11 +2,17 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; Still very much in need of improvement and customization, but this emulates
-;;; the default(?) behavior in VS Code where having your cursor over something
-;;; will highlight all occurrences of said thing in your buffer.
+;;; This emulates the default(?) behavior in VS Code where having your cursor
+;;; over something will highlight all occurrences of said thing in your buffer.
+;;;
+;;; By default the "highlight" is actually bolding, but you can make it whatever
+;;; you want by customizing `hover-highlight-symbol-face'.
 ;;;
 ;;; Code:
+
+(defface hover-highlight-symbol-face
+  '((t (:inherit bold)))
+  "Face used to highlight the symbol at point.")
 
 (defvar-local hover--hi-re nil
   "The regexp being highlighted.")
@@ -21,7 +27,7 @@
       (unhighlight-regexp hover--hi-re))
     (when-let ((re (find-tag-default-as-symbol-regexp)))
       (setq hover--hi-re re)
-      (highlight-regexp re))))
+      (highlight-regexp re 'hover-highlight-symbol-face))))
 
 (define-minor-mode hover-mode
   "Hovers the symbol under point when idle."
