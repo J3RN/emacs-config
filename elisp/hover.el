@@ -2,9 +2,9 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; Still very much in need of improvement and customization (and a *mode*), but
-;;; this emulates the default(?) behavior in VS Code where having your cursor
-;;; over something will highlight all occurrences of said thing in your buffer.
+;;; Still very much in need of improvement and customization, but this emulates
+;;; the default(?) behavior in VS Code where having your cursor over something
+;;; will highlight all occurrences of said thing in your buffer.
 ;;;
 ;;; Code:
 
