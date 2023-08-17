@@ -20,12 +20,20 @@
 (defvar hover--idle-timer nil
   "Idle timer for the highligher.")
 
+(defun hover--highlight-regexp ()
+  "Returns the regexp to highlight, if any."
+  (when (memq (face-at-point)
+	      '(nil
+		 font-lock-function-name-face
+		 font-lock-variable-name-face))
+    (find-tag-default-as-symbol-regexp)))
+
 (defun hover--reset-highlight ()
   "Highlight the regexp under point."
   (when hover-mode
     (when hover--hi-re
       (unhighlight-regexp hover--hi-re))
-    (when-let ((re (find-tag-default-as-symbol-regexp)))
+    (when-let ((re (hover--highlight-regexp)))
       (setq hover--hi-re re)
       (highlight-regexp re 'hover-highlight-symbol-face))))
 
