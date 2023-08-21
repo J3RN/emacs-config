@@ -105,6 +105,8 @@
   (global-auto-revert-mode)
   (global-hi-lock-mode)
   (electric-pair-mode)
+  ;; Configure built-ins
+  (setq display-line-numbers-width-start t)
   (setq dired-listing-switches "-alh")
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
@@ -157,8 +159,6 @@
                                        "\\\\" "://"))
   (global-ligature-mode t))
 
-(use-package linum
-  :init (setq linum-format " %4d "))
 (use-package markdown-mode
   :hook (markdown-mode . visual-line-mode))
 
