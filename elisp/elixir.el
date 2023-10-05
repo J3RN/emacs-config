@@ -103,6 +103,10 @@
 		       '("fn " (p "arg: ") " ->" n > p > n "end" >)
 		       "fn"
 		       "Inserts an anonymous Elixir function")
+(tempo-define-template "exdoc"
+		       '("\"\"\"" n> p n> "\"\"\"")
+		       "edo"
+		       "Inserts an Elixir HEREDOC-style string")
 
 (provide 'elixir)
 ;;; elixir.el ends here
