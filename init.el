@@ -69,7 +69,7 @@
 (use-package dashboard
   :init
   (setq dashboard-items '(agenda projects))
-  (setq dashboard-startup-banner (locate-user-emacs-file "128x128@2x.png"))
+  (setq dashboard-startup-banner (locate-user-emacs-file (file-name-concat "images" "128x128@2x.png")))
   (setq dashboard-set-init-info nil)
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-set-file-icons t)
