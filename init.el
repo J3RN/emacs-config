@@ -368,23 +368,30 @@
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
-(when (display-graphic-p) (load-library "gui"))
+
+;; Programming languages
 (load-library "clojure")
 (load-library "elisp")
 (load-library "elixir")
 (load-library "elm")
-(load-library "fast-buffers")
-(load-library "git")
 (load-library "haskell")
-;; (load-library "hover")
-;; Comment out if you don't like my layout
-(load-library "j3rn-layout")
-(load-library "lsp")
 (load-library "purescript")
 (load-library "ruby")
 (load-library "rust")
+
+;; Miscellany
+(load-library "diary")
+(load-library "fast-buffers")
+(load-library "git")
+(when (display-graphic-p) (load-library "gui"))
+(load-library "hover")
+;; Comment out if you don't like my layout
+(load-library "j3rn-layout")
+(load-library "lsp")
 (load-library "tabs")
 (load-library "yank-and-indent")
+
+;; Local config
 (when (locate-library "local") (load-library "local"))
 
 (use-package hover
