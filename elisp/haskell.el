@@ -12,7 +12,8 @@
 							    ("=>" . 8658)
 							    ("/=" . 8800)
 							    ("<=" . 8804)
-							    (">=" . 8805))))))
+							    (">=" . 8805)))))
+  (haskell-mode . eglot-ensure))
 
 (provide 'haskell)
 ;;; haskell.el ends here
