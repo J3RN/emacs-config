@@ -4,7 +4,8 @@
 ;;;
 ;;; Code:
 
-(use-package purescript-mode)
+(use-package purescript-mode
+  :hook (purescript-mode . turn-on-purescript-indentation))
 
 (use-package psc-ide
   :hook (purescript-mode . psc-ide-mode))
