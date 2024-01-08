@@ -8,8 +8,8 @@
 	   :ascent center)
     (text " + "))
   "Icon for creating a new tab."
-  ;; The version here is a bit silly
   :scale 0.75
+  ;; The version here is a bit silly
   :version "29.1"
   :help-echo "New tab")
 
@@ -19,8 +19,8 @@
 	   :ascent center)
     (text " x "))
   "Icon for closing the clicked tab."
-  ;; The version here is a bit silly
   :scale 0.75
+  ;; The version here is a bit silly
   :version "29.1"
   :help-echo "Click to close tab")
 
