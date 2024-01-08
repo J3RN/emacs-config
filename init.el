@@ -83,6 +83,13 @@
 
 (use-package dockerfile-mode)
 
+(use-package doom-modeline
+  :init
+  (setq doom-modeline-workspace-name nil)
+  (setq doom-modeline-buffer-file-name-style 'relative-to-project)
+  :config
+  (doom-modeline-mode 1))
+
 (use-package eldoc
   :delight)
 
@@ -231,18 +238,6 @@
 
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
-
-(use-package spaceline
-  :init
-  (setq spaceline-minor-modes-p nil)
-  (setq spaceline-buffer-position-p nil)
-  (setq spaceline-buffer-encoding-abbrev-p nil)
-  (setq spaceline-which-function-p t)
-  (setq spaceline-hud-p t)
-  :config
-  ;; "theme" here just means it modifies the modeline.  Not to be confused with
-  ;; the overall theme loaded by `load-theme'.
-  (spaceline-emacs-theme))
 
 (use-package swiper
   :bind ("C-c s" . swiper))
