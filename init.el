@@ -145,9 +145,15 @@
 
 (use-package ivy
   :delight
-  :init (setq ivy-use-virtual-buffers t)
   :bind ("C-c C-r" . ivy-resume)
-  :config (ivy-mode 1))
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
+  (setq ivy-use-selectable-prompt t)
+  (setq ivy-count-format "(%d/%d)")
+  (ivy-mode 1))
+
+(use-package ivy-hydra)
 
 (use-package ligature
   :config
