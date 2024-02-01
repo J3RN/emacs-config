@@ -11,7 +11,7 @@
 (defvar j3rn-layout-bottom-windows
   '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir"
     "\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*" "\\*Backtrace\\*"
-    "\\*Async Shell Command\\*")
+    "\\*Async Shell Command\\*" "\\*OCaml\\*" "\\*Inf-UCM")
   "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
 
 (defun j3rn-layout-top-window-p (buffer action)
