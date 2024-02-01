@@ -370,6 +370,11 @@
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
+;; Programming, general
+(load-library "git")
+(load-library "hover")
+(load-library "lsp")
+
 ;; Programming languages
 (load-library "clojure")
 (load-library "elisp")
@@ -383,12 +388,9 @@
 ;; Miscellany
 (load-library "diary")
 (load-library "fast-buffers")
-(load-library "git")
 (when (display-graphic-p) (load-library "gui"))
-(load-library "hover")
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
-(load-library "lsp")
 (load-library "tabs")
 (load-library "yank-and-indent")
 
