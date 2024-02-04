@@ -381,6 +381,7 @@
 (load-library "elixir")
 (load-library "elm")
 (load-library "haskell")
+(load-library "ocaml")
 (load-library "purescript")
 (load-library "ruby")
 (load-library "rust")
