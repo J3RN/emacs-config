@@ -74,6 +74,7 @@
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-set-file-icons t)
   (setq dashboard-set-heading-icons t)
+  (setq dashboard-agenda-sort-strategy '(time-up priority-up))
   :config
   (dashboard-setup-startup-hook))
 
