@@ -204,15 +204,6 @@
   :config
   (global-page-break-lines-mode))
 
-(use-package paradox
-  :init
-  (setq paradox-automatically-star nil)
-  (setq paradox-github-token t)
-  (setq paradox-execute-asynchronously t)
-  :bind
-  ("C-c a l" . paradox-list-packages)
-  ("C-c a i" . package-install))
-
 (use-package phi-search
   :bind
   ([remap isearch-forward] . phi-search)
