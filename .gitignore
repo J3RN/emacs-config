@@ -1,3 +1,18 @@
-abbrev_defs
+# Package contents
+elpa
+
+# Game scores
 games
+
+# Machine-local configuration
 elisp/local.el
+abbrev_defs
+
+# Machine-local history
+.last-package-update-day
+eln-cache
+eshell/history
+forge-database.sqlite
+projectile-bookmarks.eld
+recentf
+transient
