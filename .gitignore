@@ -12,7 +12,15 @@ abbrev_defs
 .last-package-update-day
 eln-cache
 eshell/history
-forge-database.sqlite
+forge-database*.sqlite
 projectile-bookmarks.eld
 recentf
 transient
+session.*
+tramp
+projects
+
+# Machine-local data
+bookmarks
+diary
+tree-sitter
