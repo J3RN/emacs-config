@@ -370,6 +370,7 @@
 
 ;; Programming languages
 (load-library "clojure")
+(load-library "csharp")
 (load-library "elisp")
 (load-library "elixir")
 (load-library "elm")
