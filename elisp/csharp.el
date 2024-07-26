@@ -14,7 +14,9 @@
   (add-to-list 'auto-mode-alist '("\\.cs\\'" . csharp-mode))
   :hook
   (csharp-ts-mode . (lambda () (add-hook 'before-save-hook 'csharpier nil 'local)))
-  (csharp-ts-mode . eglot-ensure))
+  (csharp-ts-mode . eglot-ensure)
+  (csharp-mode . (lambda () (add-hook 'before-save-hook 'csharpier nil 'local)))
+  (csharp-mode . eglot-ensure))
 
 (provide 'csharp)
 ;;; csharp.el ends here
