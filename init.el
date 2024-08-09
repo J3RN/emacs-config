@@ -219,6 +219,13 @@
   (setq projectile-generic-command "fd . -0 --type f --color=never")
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (setq projectile-project-name-function (lambda (project-root)
+					   (concat (file-name-as-directory (file-name-nondirectory (directory-file-name (file-name-parent-directory project-root))))
+						   (file-name-nondirectory (directory-file-name project-root)))))
+  (setq compilation-buffer-name-function (lambda (name-of-mode)
+					   (if (equal (projectile-project-name) "-")
+					       (compilation--default-buffer-name name-of-mode)
+					     (concat "* compilation: " (projectile-project-name) " *"))))
   (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
   (projectile-mode))
 
