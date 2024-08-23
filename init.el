@@ -226,6 +226,7 @@
 					     (concat "* compilation: " (projectile-project-name) " *"))))
   (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
   (setq projectile-per-project-compilation-buffer t)
+  (setq projectile-run-use-comint-mode t)
   (projectile-mode))
 
 (use-package rainbow-delimiters
