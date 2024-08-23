@@ -225,6 +225,7 @@
 					       (compilation--default-buffer-name name-of-mode)
 					     (concat "* compilation: " (projectile-project-name) " *"))))
   (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
+  (setq projectile-per-project-compilation-buffer t)
   (projectile-mode))
 
 (use-package rainbow-delimiters
