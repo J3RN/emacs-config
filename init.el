@@ -262,8 +262,6 @@
 
 (use-package tide)
 
-(use-package tree-sitter-langs)
-
 (use-package undo-tree
   :init
   (setq undo-tree-enable-undo-in-region t)
