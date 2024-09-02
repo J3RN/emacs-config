@@ -371,7 +371,6 @@
 ;; Programming, general
 (load-library "git")
 (load-library "hover")
-(load-library "lsp")
 
 ;; Programming languages
 (load-library "clojure")
