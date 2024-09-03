@@ -89,6 +89,9 @@
   :config
   (doom-modeline-mode 1))
 
+(use-package eglot
+  :bind ("C-c l r" . eglot-rename))
+
 (use-package eldoc
   :delight)
 
