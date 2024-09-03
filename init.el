@@ -284,6 +284,10 @@
   :hook
   (web-mode . tide-setup))
 
+(use-package js
+  :config
+  (add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-mode)))
+
 (use-package which-func
   :config
   (set-face-attribute 'which-func nil :foreground "white")
