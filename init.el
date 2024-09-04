@@ -66,13 +66,13 @@
 
 (use-package dashboard
   :init
-  (setq dashboard-items '(agenda projects))
-  (setq dashboard-startup-banner (locate-user-emacs-file (file-name-concat "images" "128x128@2x.png")))
-  (setq dashboard-set-init-info nil)
+  (setq dashboard-agenda-sort-strategy '(time-up priority-up))
   (setq dashboard-banner-logo-title nil)
+  (setq dashboard-items '(agenda projects))
+  (setq dashboard-set-init-info nil)
   (setq dashboard-set-file-icons t)
   (setq dashboard-set-heading-icons t)
-  (setq dashboard-agenda-sort-strategy '(time-up priority-up))
+  (setq dashboard-startup-banner (locate-user-emacs-file (file-name-concat "images" "128x128@2x.png")))
   :config
   (dashboard-setup-startup-hook))
 
