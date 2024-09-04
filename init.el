@@ -69,6 +69,7 @@
   (setq dashboard-agenda-sort-strategy '(time-up priority-up))
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-items '(agenda projects))
+  (setq dashboard-projects-backend 'projectile)
   (setq dashboard-set-init-info nil)
   (setq dashboard-set-file-icons t)
   (setq dashboard-set-heading-icons t)
