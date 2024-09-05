@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+(setq tab-bar-tab-name-function (lambda () (let ((tname (projectile-project-name)))
+					(if (not (equal "-" tname))
+					    tname
+					  (tab-bar-tab-name-current)))))
+
 (setq tab-bar-new-tab-choice 'dashboard-open)
 (define-icon tab-bar-new nil
   `((image ,(locate-user-emacs-file (file-name-concat "images" "add.svg"))
