@@ -4,6 +4,8 @@
 ;;; packages.
 ;;; Code:
 
+(add-hook 'emacs-lisp-mode-hook 'prettify-symbols-mode)
+
 (use-package flycheck-package
   :config (flycheck-package-setup))
 
