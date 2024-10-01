@@ -121,6 +121,8 @@
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
   (setq warning-minimum-level :error)
+  ;; No tabs is a good default
+  (setq indent-tabs-mode nil)
   ;;; Enable useful disabled commands
   (put 'scroll-left 'disabled nil)
   (put 'narrow-to-region 'disabled nil)
