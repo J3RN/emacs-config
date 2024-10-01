@@ -362,6 +362,14 @@
  kept-old-versions 2
  version-control t)
 
+;;; Place lock files in /var/tmp
+(setq lock-file-name-transforms
+      '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
+
+;;; Place auto-save files in /var/tmp
+(setq auto-save-file-name-transforms
+      '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
+
 ;;; Set sane scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; One line at a time
       mouse-wheel-progressive-speed nil            ; Don't accelerate scrolling
