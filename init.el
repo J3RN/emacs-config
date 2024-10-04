@@ -227,7 +227,7 @@
   (setq compilation-buffer-name-function (lambda (name-of-mode)
 					   (if (equal (projectile-project-name) "-")
 					       (compilation--default-buffer-name name-of-mode)
-					     (concat "* compilation: " (projectile-project-name) " *"))))
+					     (concat "*compilation*<" (projectile-project-name) ">"))))
   (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
   (setq projectile-per-project-compilation-buffer t)
   (setq projectile-run-use-comint-mode t)
