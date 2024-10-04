@@ -2,11 +2,12 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; This emulates the default(?) behavior in VS Code where having your cursor
-;;; over something will highlight all occurrences of said thing in your buffer.
+;;;   This emulates the default(?) behavior in VS Code where having your cursor
+;;;   over something will highlight all occurrences of said thing in your
+;;;   buffer.
 ;;;
-;;; By default the "highlight" is actually bolding, but you can make it whatever
-;;; you want by customizing `hover-highlight-symbol-face'.
+;;;   By default the "highlight" is actually bolding, but you can make it
+;;;   whatever you want by customizing `hover-highlight-symbol-face'.
 ;;;
 ;;; Code:
 
@@ -21,7 +22,7 @@
   "Idle timer for the highligher.")
 
 (defun hover--highlight-regexp ()
-  "Returns the regexp to highlight, if any."
+  "Return the regexp to highlight, if any."
   (when (memq (face-at-point)
 	      '(nil
 		 font-lock-function-name-face

@@ -1,6 +1,8 @@
-;;; rust --- Rust packages and configuration
+;;; rust-config --- Rust packages and configuration
+;;;
 ;;; Commentary:
-;;; Various Rust packages and configuration
+;;;   Various Rust packages and configuration
+;;;
 ;;; Code:
 (use-package rust-mode
   :delight
@@ -8,5 +10,5 @@
   (rust-mode . eglot-ensure)
   (rust-mode . (lambda () (setq-local indent-tabs-mode nil))))
 
-(provide 'rust)
-;;; rust.el ends here
+(provide 'rust-config)
+;;; rust-config.el ends here

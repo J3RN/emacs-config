@@ -1,6 +1,8 @@
-;;; ruby --- Ruby-related packages and configuration
+;;; ruby-config --- Ruby-related packages and configuration
+;;;
 ;;; Commentary:
-;;; Various Ruby packages and configuration
+;;;   Various Ruby packages and configuration
+;;;
 ;;; Code:
 
 (use-package bundler
@@ -45,5 +47,5 @@
 
 (use-package ruby-test-mode)
 
-(provide 'ruby)
-;;; ruby.el ends here
+(provide 'ruby-config)
+;;; ruby-config.el ends here

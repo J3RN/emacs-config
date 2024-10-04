@@ -1,6 +1,7 @@
-;;; purescript -- Purescript packages and config
+;;; purescript-config -- Purescript packages and config
+;;;
 ;;; Commentary:
-;;; Just trying out Purescript.  This may be temporary.
+;;;   Just trying out Purescript.  This may be temporary.
 ;;;
 ;;; Code:
 
@@ -10,5 +11,5 @@
 (use-package psc-ide
   :hook (purescript-mode . psc-ide-mode))
 
-(provide 'purescript)
-;;; purescript.el ends here
+(provide 'purescript-config)
+;;; purescript-config.el ends here

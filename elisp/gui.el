@@ -1,5 +1,8 @@
 ;;; gui --- Graphical UI customizations
+;;;
 ;;; Commentary:
+;;;   Generally seeks to make the UI a bit more minimal than the default
+;;;
 ;;; Code:
 
 (use-package all-the-icons

@@ -1,8 +1,9 @@
 ;;; yank-and-indent --- Indent code when "yanking" (pasting) it
 ;;;
 ;;; Commentary:
-;;; Seems like this would be built-in, but so far as I'm aware, it's not.
-;;; Use a prefix command (e.g. C-u) before invoking yank to disable.
+;;;   Seems like this would be built-in, but so far as I'm aware, it's
+;;;   not.  Use a prefix command (e.g. C-u) before invoking yank to
+;;;   disable.
 ;;;
 ;;; Code:
 

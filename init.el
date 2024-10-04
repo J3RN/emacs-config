@@ -388,23 +388,24 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 ;; Programming, general
-(load-library "git")
+(load-library "git-config")
 (load-library "hover")
 
 ;; Programming languages
-(load-library "clojure")
-(load-library "csharp")
-(load-library "elisp")
-(load-library "elixir")
-(load-library "elm")
-(load-library "haskell")
-(load-library "ocaml")
-(load-library "purescript")
-(load-library "ruby")
-(load-library "rust")
+(load-library "clojure-config")
+(load-library "csharp-config")
+(load-library "elisp-config")
+(load-library "elixir-config")
+(load-library "elm-config")
+(load-library "haskell-config")
+(load-library "javascript-config")
+(load-library "ocaml-config")
+(load-library "purescript-config")
+(load-library "ruby-config")
+(load-library "rust-config")
 
 ;; Miscellany
-(load-library "diary")
+(load-library "diary-config")
 (load-library "fast-buffers")
 (when (display-graphic-p) (load-library "gui"))
 ;; Comment out if you don't like my layout

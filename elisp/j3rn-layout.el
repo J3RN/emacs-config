@@ -1,7 +1,10 @@
 ;;; j3rn-layout --- How I like my windows organized
+;;;
 ;;; Commentary:
-;;; Generally this follows a sort-of IDE sort of layout, where terminals and
-;;; such are at the bottom, and some other things (e.g. Help) are at the top.
+;;;   Generally this follows a sort-of IDE sort of layout, where
+;;;   terminals and such are at the bottom, and some other things
+;;;   (e.g. Help) are at the top.
+;;;
 ;;; Code:
 
 (defvar j3rn-layout-top-windows

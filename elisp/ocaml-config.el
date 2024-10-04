@@ -1,5 +1,7 @@
-;;; ocaml --- My OCaml config
+;;; ocaml-config --- My OCaml config
+;;;
 ;;; Commentary:
+;;;
 ;;; Code:
 
 (use-package tuareg)
@@ -30,5 +32,5 @@
     ;; and use one of its "OPSW" menus.
     ))
 
-(provide 'ocaml)
-;;; ocaml.el ends here
+(provide 'ocaml-config)
+;;; ocaml-config.el ends here

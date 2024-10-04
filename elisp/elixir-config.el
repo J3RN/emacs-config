@@ -1,6 +1,8 @@
-;;; elixir --- Elixir packages and configuration
+;;; elixir-config --- Elixir packages and configuration
+;;;
 ;;; Commentary:
-;;; Various Elixir packages and configuration
+;;;   Various Elixir packages and configuration
+;;;
 ;;; Code:
 
 (defun elixir-expand-keyword ()
@@ -108,5 +110,5 @@
 		       "edo"
 		       "Inserts an Elixir HEREDOC-style string")
 
-(provide 'elixir)
-;;; elixir.el ends here
+(provide 'elixir-config)
+;;; elixir-config.el ends here

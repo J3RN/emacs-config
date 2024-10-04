@@ -1,6 +1,9 @@
-;;; csharp --- Tools for working with C# and .NET
+;;; csharp-config --- Tools for working with C# and .NET
+;;;
 ;;; Commentary:
-;;; I can't believe it either
+;;;
+;;;   I can't believe it either
+;;;
 ;;; Code:
 
 (defun csharpier ()
@@ -18,5 +21,5 @@
   (csharp-mode . (lambda () (add-hook 'before-save-hook 'csharpier nil 'local)))
   (csharp-mode . eglot-ensure))
 
-(provide 'csharp)
-;;; csharp.el ends here
+(provide 'csharp-config)
+;;; csharp-config.el ends here

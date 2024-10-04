@@ -1,11 +1,12 @@
 ;;; fast-buffers.el --- Faster buffer operations
-
+;;;
 ;;; Commentary:
-;;
-;; None of this is too radical, it simply assumes `current-buffer'
-;; for interactve buffer functions
-;;
+;;;
+;;;   None of this is too radical, it simply assumes `current-buffer'
+;;;   for interactve buffer functions
+;;;
 ;;; Code:
+
 (defun j3rn-last-buffer ()
   "Switch to the buffer that you were looking at before this one.
 

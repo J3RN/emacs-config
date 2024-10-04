@@ -1,7 +1,10 @@
-;;; elisp --- Packages and configuration for Emacs Lisp
+;;; elisp-config --- Packages and configuration for Emacs Lisp
+;;;
 ;;; Commentary:
-;;; Various packages and configurations thereof for authoring Emacs Lisp
-;;; packages.
+;;;
+;;;   Various packages and configurations thereof for authoring Emacs
+;;;   Lisp packages.
+;;;
 ;;; Code:
 
 (add-hook 'emacs-lisp-mode-hook 'prettify-symbols-mode)
@@ -22,5 +25,5 @@
 	 ("C-M-<right>" . paredit-backward-barf-sexp)
 	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
-(provide 'elisp)
-;;; elisp.el ends here
+(provide 'elisp-config)
+;;; elisp-config.el ends here

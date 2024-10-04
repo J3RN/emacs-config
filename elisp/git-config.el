@@ -1,7 +1,10 @@
-;;; git --- Git-related packages and configuration
+;;; git-config --- Git-related packages and configuration
+;;;
 ;;; Commentary:
-;;; Various Git-related packages and configuration
+;;;   Various Git-related packages and configuration
+;;;
 ;;; Code:
+
 (use-package diff-hl
   :config
   (global-diff-hl-mode))
@@ -24,5 +27,5 @@
   (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local)))
   (magit-process-mode . visual-line-mode))
 
-(provide 'git)
-;;; git.el ends here
+(provide 'git-config)
+;;; git-config.el ends here
