@@ -11,7 +11,7 @@ abbrev_defs
 # Machine-local history
 .last-package-update-day
 eln-cache
-eshell/history
+eshell
 forge-database*.sqlite
 projectile-bookmarks.eld
 recentf
