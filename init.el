@@ -144,6 +144,7 @@
   :hook (prog-mode . flycheck-mode))
 
 (use-package flycheck-eglot
+  :after (flycheck eglot)
   :config
   (global-flycheck-eglot-mode))
 
