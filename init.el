@@ -91,7 +91,9 @@
   (doom-modeline-mode 1))
 
 (use-package eglot
-  :bind ("C-c l r" . eglot-rename))
+  :bind
+  ("C-c l r" . eglot-rename)
+  ("M-+" . eglot-find-implementation))
 
 (use-package eldoc
   :delight)
