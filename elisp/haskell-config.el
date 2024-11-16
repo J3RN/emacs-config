@@ -8,6 +8,7 @@
 (use-package haskell-mode
   :config
   (setq haskell-process-type 'stack-ghci)
+  (setq haskell-stylish-on-save t)
   :hook
   (haskell-mode . (lambda () (setq prettify-symbols-alist '(("<-" . 8592)
                                                        ("->" . 8594)
