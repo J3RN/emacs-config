@@ -281,6 +281,12 @@
   (setq undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo-tree-saves"))))
   :config (global-undo-tree-mode))
 
+(use-package wat-ts-mode
+  :load-path "~/Code/J3RN/wat-ts-mode/master"
+  :config
+  (add-to-list 'treesit-language-source-alist '(wat "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wat/src"))
+  (add-to-list 'treesit-language-source-alist '(wast "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wast/src")))
+
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
