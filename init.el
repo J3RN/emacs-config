@@ -143,11 +143,6 @@
   :delight
   :hook (prog-mode . flycheck-mode))
 
-(use-package flycheck-eglot
-  :after (flycheck eglot)
-  :config
-  (global-flycheck-eglot-mode))
-
 (use-package go-mode)
 
 (use-package haml-mode)
