@@ -19,6 +19,7 @@ transient
 session.*
 tramp
 projects
+projectile.cache
 
 # Machine-local data
 bookmarks
