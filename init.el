@@ -34,7 +34,7 @@
 
 (use-package auto-dark
   :custom
-  (auto-dark-light-theme 'adwaita)
+  (auto-dark-light-theme 'light)
   (auto-dark-dark-theme 'wombat)
   :config
   (auto-dark-mode 1))
