@@ -93,7 +93,7 @@
 (use-package eglot
   :bind
   ("C-c l r" . eglot-rename)
-  ("C-C l f" . eglot-code-action-quickfix)
+  ("C-c l f" . eglot-code-action-quickfix)
   ("M-+" . eglot-find-implementation))
 
 (use-package eldoc
