@@ -82,8 +82,6 @@
 
 (use-package delight)
 
-(use-package dictionary)
-
 (use-package dockerfile-mode)
 
 (use-package doom-modeline
