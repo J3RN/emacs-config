@@ -42,5 +42,22 @@
 ;; Enable tabs
 (tab-bar-mode 1)
 
+;;; Tab bars
+(load-theme 'adwaita nil t)
+(custom-theme-set-faces
+ 'adwaita
+ '(tab-bar ((((class color) (min-colors 89)) (:background "#E6E6E6"))))
+ '(tab-bar-tab ((((class color) (min-colors 89)) (:background "#EDEDED" :foreground "#2E3436" :bold t :box (:line-width (10 . 5) :style flat-button)))))
+ '(tab-bar-tab-inactive ((((class color) (min-colors 89)) (:background "#D9D9D9" :foreground "#2E3436" :bold t :box (:line-width (10 . 5) :style flat-button))))))
+(load-theme 'wombat nil t)
+(custom-theme-set-faces
+ 'wombat
+ '(tab-bar ((((class color) (min-colors 89)) (:background "#303030"))))
+ '(tab-bar-tab ((((class color) (min-colors 89)) (:background "#242424" :foreground "#f6f3e8" :weight bold :box (:line-width (10 . 5) :style flat-button)))))
+ '(tab-bar-tab-inactive ((((class color) (min-colors 89)) (:background "#454545" :foreground "#ffffff" :weight bold :box (:line-width (10 . 5) :style flat-button))))))
+
+;;; Reload themes
+(seq-map (lambda (theme) (enable-theme theme)) custom-enabled-themes)
+
 (provide 'tabs)
 ;;; tabs.el ends here
