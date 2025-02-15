@@ -5,6 +5,9 @@
 
 ;;; Code:
 
+;;; Set my custom "light" theme as safe (this must come before auto-dark is loaded)
+(setq custom-safe-themes '("7f7f0f22fab9673b86cc768fdc23d64e69e712c9322ff1f84306dac3d6ca1343" default))
+
 ;;; Package stuff
 (require 'package)
 ;; Set package archives
