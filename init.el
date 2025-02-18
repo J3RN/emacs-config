@@ -404,6 +404,7 @@
 ;; Programming languages
 (load-library "clojure-config")
 (load-library "csharp-config")
+(load-library "dhall-config")
 (load-library "elisp-config")
 (load-library "elixir-config")
 (load-library "elm-config")
