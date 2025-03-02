@@ -16,6 +16,8 @@
 (use-package elixir-mode
   :delight
   :bind ("C-c e :" . elixir-expand-keyword)
+  :config
+  (add-to-list 'eglot-server-programs '(elixir-mode "elixir-ls"))
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
