@@ -20,6 +20,8 @@ session.*
 tramp
 projects
 projectile.cache
+rake.cache
+url
 
 # Machine-local data
 bookmarks
