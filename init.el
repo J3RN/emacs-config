@@ -125,6 +125,7 @@
   (setq save-abbrevs 'silently)
   (setq window-buffer-change-functions '(balance-windows))
   (setq warning-minimum-level :error)
+  (setq-default cursor-style 'bar)
   ;; No tabs is a good default
   (setq indent-tabs-mode nil)
   ;;; Enable useful disabled commands
