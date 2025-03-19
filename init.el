@@ -95,7 +95,9 @@
   :bind
   ("C-c l r" . eglot-rename)
   ("C-c l f" . eglot-code-action-quickfix)
-  ("M-+" . eglot-find-implementation))
+  ("M-+" . eglot-find-implementation)
+  :config
+  (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio")))
 
 (use-package eldoc
   :delight)
@@ -271,8 +273,6 @@
   :hook ((LaTeX-mode . flyspell-mode)
 	 (LaTeX-mode . visual-line-mode)))
 
-(use-package tide)
-
 (use-package undo-tree
   :init
   (setq undo-tree-enable-undo-in-region t)
@@ -300,7 +300,7 @@
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
   :hook
-  (web-mode . tide-setup))
+  (web-mode . eglot-ensure))
 
 (use-package js
   :config
