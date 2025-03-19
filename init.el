@@ -386,7 +386,7 @@
       mouse-wheel-progressive-speed nil            ; Don't accelerate scrolling
       mouse-wheel-follow-mouse t                   ; Scroll window mouse is positioned over
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
-      mouse-wheel-flip-direction t                 ; This will forever bother me now that I've though about it
+      mouse-wheel-flip-direction t                 ; This will forever bother me now that I've thought about it
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
 
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
