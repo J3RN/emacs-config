@@ -88,6 +88,8 @@
   :init
   (setq doom-modeline-workspace-name nil)
   (setq doom-modeline-buffer-file-name-style 'relative-to-project)
+  (setq doom-modeline-buffer-modification-icon t)
+  (setq doom-modeline-buffer-name nil)
   :config
   (doom-modeline-mode 1))
 
@@ -389,6 +391,9 @@
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
       mouse-wheel-flip-direction t                 ; This will forever bother me now that I've thought about it
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
+
+;;; Fancy custom header line
+(setq-default header-line-format '("%e" mode-line-front-space (:eval doom-modeline--buffer-file-icon) " " (:eval doom-modeline--buffer-file-name)))
 
 ;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
 (setq confirm-kill-emacs 'yes-or-no-p)
