@@ -5,8 +5,11 @@
 ;;;
 ;;; Code:
 
-(use-package all-the-icons
-  :config (all-the-icons-install-fonts t))
+(use-package nerd-icons
+  :custom
+  (nerd-icons-font-family "Symbols Nerd Font Mono")
+  :config
+  (nerd-icons-install-fonts t))
 
 ;; Disable toolbar
 (tool-bar-mode -1)
