@@ -436,5 +436,14 @@
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
 
+;;; Restore original GC values (borrowed from redguardtoo/emacs.d)
+(defun my-cleanup-gc ()
+  "Clean up gc."
+  (setq gc-cons-threshold  67108864) ; 64M
+  (setq gc-cons-percentage 0.1) ; original value
+  (garbage-collect))
+
+(run-with-idle-timer 4 nil #'my-cleanup-gc)
+
 (provide 'init)
 ;;; init.el ends here
