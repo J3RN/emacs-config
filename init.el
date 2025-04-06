@@ -299,6 +299,7 @@
   (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
+  (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio"))
   :hook
   (web-mode . eglot-ensure))
 
