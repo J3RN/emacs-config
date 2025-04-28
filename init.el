@@ -144,9 +144,9 @@
 
 (use-package fish-mode)
 
-(use-package flycheck
-  :delight
-  :hook (prog-mode . flycheck-mode))
+(use-package flymake
+  :bind (("C-c ! n" . flymake-goto-next-error)
+	 ("C-c ! p" . flymake-goto-prev-error)))
 
 (use-package go-mode)
 
