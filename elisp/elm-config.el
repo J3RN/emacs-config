@@ -5,7 +5,9 @@
 ;;;
 ;;; Code:
 
-(use-package elm-mode)
+(use-package elm-mode
+  :hook
+  (elm-mode . eglot-ensure))
 
 (provide 'elm-config)
 ;;; elm-config.el ends here
