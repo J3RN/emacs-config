@@ -12,11 +12,11 @@
   "A list of regular expressions that, if matched, will display the given buffer in the 'top'.")
 
 (defvar j3rn-layout-bottom-windows
-  '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir"
-    "\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*" "\\*Backtrace\\*"
-    "\\*Async Shell Command\\*" "\\*Flycheck error messages\\*" "\\*OCaml\\*" "\\*Inf-UCM"
-    "\\*Bundler\\*" "\\*RuboCop")
-  "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
+      '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir"
+	"\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*" "\\*Backtrace\\*"
+	"\\*Async Shell Command\\*" "\\*Flycheck error messages\\*" "\\*OCaml\\*" "\\*Inf-UCM"
+	"\\*Bundler\\*" "\\*RuboCop" "-shell\\*")
+      "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
 
 (defun j3rn-layout-top-window-p (buffer action)
   "Predicate indicating whether BUFFER should be placed at the top of the frame.  ACTION."
