@@ -20,11 +20,11 @@
 
 (defun j3rn-layout-top-window-p (buffer action)
   "Predicate indicating whether BUFFER should be placed at the top of the frame.  ACTION."
-  (seq-some (lambda (pattern) (eq 0 (string-match-p pattern buffer))) j3rn-layout-top-windows))
+  (seq-some (lambda (pattern) (string-match-p pattern buffer)) j3rn-layout-top-windows))
 
 (defun j3rn-layout-bottom-window-p (buffer action)
   "Predicate indicating whether BUFFER should be placed at the bottom of the frame.  ACTION."
-  (seq-some (lambda (pattern) (eq 0 (string-match-p pattern buffer))) j3rn-layout-bottom-windows))
+  (seq-some (lambda (pattern) (string-match-p pattern buffer)) j3rn-layout-bottom-windows))
 
 (setq display-buffer-alist
       '((j3rn-layout-bottom-window-p display-buffer-in-side-window
