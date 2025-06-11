@@ -339,6 +339,10 @@
 ;; Bind window-toggle-side-windows
 (global-set-key (kbd "C-c 1") 'window-toggle-side-windows)
 
+;; Package bindings
+(global-set-key (kbd "C-c a l") 'package-list-packages)
+(global-set-key (kbd "C-c a i") 'package-install)
+
 ;; Add kill defun function and binding
 (defun kill-defun ()
   "Kill the function under point."
