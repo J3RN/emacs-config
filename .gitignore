@@ -27,3 +27,9 @@ url
 bookmarks
 diary
 tree-sitter
+
+# F# language server
+FsAutoComplete
+
+# Copilot stuff
+.cache
