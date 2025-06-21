@@ -22,6 +22,8 @@ projects
 projectile.cache
 rake.cache
 url
+auto-save-list
+undo-tree-saves
 
 # Machine-local data
 bookmarks
