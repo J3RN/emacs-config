@@ -417,6 +417,7 @@
 (load-library "elm-config")
 (load-library "haskell-config")
 (load-library "javascript-config")
+(load-library "nix-config")
 (load-library "ocaml-config")
 (load-library "purescript-config")
 (load-library "ruby-config")
