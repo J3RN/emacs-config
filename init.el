@@ -137,6 +137,8 @@
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
+(use-package envrc)
+
 (use-package ess)
 
 (use-package exec-path-from-shell
