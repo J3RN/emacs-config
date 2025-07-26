@@ -112,5 +112,7 @@
 		       "edo"
 		       "Inserts an Elixir HEREDOC-style string")
 
+(add-to-list 'treesit-language-source-alist '(elixir "https://github.com/elixir-lang/tree-sitter-elixir" nil nil))
+
 (provide 'elixir-config)
 ;;; elixir-config.el ends here
