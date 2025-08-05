@@ -423,6 +423,7 @@
 (load-library "elisp-config")
 (load-library "elixir-config")
 (load-library "elm-config")
+(load-library "fsharp-config")
 (load-library "haskell-config")
 (load-library "javascript-config")
 (load-library "nix-config")
