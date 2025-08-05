@@ -6,7 +6,7 @@
 ;;; Code:
 
 ;;; Set my custom "light" theme as safe (this must come before auto-dark is loaded)
-(setq custom-safe-themes '("7f7f0f22fab9673b86cc768fdc23d64e69e712c9322ff1f84306dac3d6ca1343" default))
+(setq custom-safe-themes '("dca48b51e11c5298236ca32aae33e5e72f8bf92dad65250506c7b3bd4a5145f0" default))
 
 ;;; Package stuff
 (require 'package)
@@ -36,6 +36,7 @@
 (use-package async)
 
 (use-package auto-dark
+  :load-path ("~/Code/LionyxML/auto-dark-emacs/master")
   :custom
   (auto-dark-light-theme 'light)
   (auto-dark-dark-theme 'wombat)
@@ -54,6 +55,11 @@
 
 (use-package compile
   :init (setq compilation-scroll-output t))
+
+(use-package copilot
+  :vc (:url "https://github.com/copilot-emacs/copilot.el"
+	    :rev :newest
+	    :branch "main"))
 
 (use-package counsel
   :bind (([remap execute-extended-command] . (lambda () (interactive) (counsel-M-x "")))
