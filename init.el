@@ -317,7 +317,12 @@
   (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
   (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio"))
   :hook
-  (web-mode . eglot-ensure))
+  (web-mode . eglot-ensure)
+  (web-mode . (lambda () (setq prettify-symbols-alist '(("->" . 8594)
+                                                   ("=>" . 8658)
+                                                   ("<=" . 8804)
+                                                   (">=" . 8805)
+                                                   ("||=" . 9568))))))
 
 (use-package js
   :config
