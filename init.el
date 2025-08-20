@@ -20,6 +20,7 @@
   (package-refresh-contents))
 
 ;; Install use-package if it's missing
+;; use-package is included in Emacs 29.1 and later
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
