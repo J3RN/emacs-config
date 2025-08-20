@@ -56,6 +56,12 @@
 (use-package compile
   :init (setq compilation-scroll-output t))
 
+(use-package cook-mode
+  :vc (:url "https://github.com/cooklang/cook-mode"
+       :rev :newest
+       :branch "master")
+  :hook (cook-mode . visual-line-mode))
+
 (use-package copilot
   :vc (:url "https://github.com/copilot-emacs/copilot.el"
 	    :rev :newest
