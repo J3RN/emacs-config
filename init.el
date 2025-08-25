@@ -296,7 +296,7 @@
   :config (global-undo-tree-mode))
 
 (use-package wat-ts-mode
-  :load-path "~/Code/J3RN/wat-ts-mode/master"
+  :vc (:url "https://github.com/J3RN/wat-ts-mode")
   :config
   (add-to-list 'treesit-language-source-alist '(wat "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wat/src"))
   (add-to-list 'treesit-language-source-alist '(wast "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wast/src")))
