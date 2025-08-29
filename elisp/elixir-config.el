@@ -44,7 +44,9 @@
   :vc (:url "https://github.com/J3RN/elixir-test-mode")
   :bind (:map elixir-test-mode-map
               ("C-c e" . elixir-test-command-map))
-  :hook (elixir-mode . elixir-test-mode))
+  :hook
+  (elixir-mode . elixir-test-mode)
+  (elixir-ts-mode . elixir-test-mode))
 
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
