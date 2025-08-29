@@ -17,7 +17,7 @@
 
 (use-package elixir-mode
   :delight
-  :bind ("C-c e :" . elixir-expand-keyword)
+  :bind (:map elixir-mode-map ("C-c e :" . elixir-expand-keyword))
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
