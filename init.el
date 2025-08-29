@@ -126,7 +126,10 @@
   :hook (prog-mode . whitespace-mode)
   :hook (compilation-mode . visual-line-mode)
   :hook (text-mode . flyspell-mode)
-  :bind ("C-c q" . browse-url)
+  :bind
+  ("C-c q" . browse-url)
+  ("C-c x s" . shell)
+  ("C-c x e" . eshell)
   :config
   ;; Enable global modes
   (global-subword-mode)
