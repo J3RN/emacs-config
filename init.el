@@ -66,7 +66,10 @@
 (use-package copilot
   :vc (:url "https://github.com/copilot-emacs/copilot.el"
 	    :rev :newest
-	    :branch "main"))
+	    :branch "main")
+  :config
+  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
 
 (use-package counsel
   :bind (([remap execute-extended-command] . (lambda () (interactive) (counsel-M-x "")))
