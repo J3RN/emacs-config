@@ -37,10 +37,8 @@
 (use-package async)
 
 (use-package auto-dark
-  :load-path ("~/Code/LionyxML/auto-dark-emacs/master")
   :custom
-  (auto-dark-light-theme 'light)
-  (auto-dark-dark-theme 'wombat)
+  (auto-dark-themes '((wombat) (light)))
   :config
   (auto-dark-mode 1))
 
