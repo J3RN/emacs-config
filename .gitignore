@@ -30,8 +30,9 @@ bookmarks
 diary
 tree-sitter
 
-# F# language server
+# Language Server cruft
 FsAutoComplete
+.lexical
 
 # Copilot stuff
 .cache
