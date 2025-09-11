@@ -41,7 +41,8 @@
   (inf-elixir-mode . abbrev-mode))
 
 (use-package elixir-test
-  :vc (:url "https://github.com/J3RN/elixir-test-mode")
+  :vc (:url "https://github.com/J3RN/elixir-test-mode"
+       :rev :newest)
   :bind (:map elixir-test-mode-map
               ("C-c e" . elixir-test-command-map))
   :hook
