@@ -62,17 +62,6 @@
 		(list (s-upper-camel-case (file-name-sans-extension (buffer-name)))))
 	       "."))
 
-(define-skeleton elixir-do-end
-  "Automatically insert `end' after a `do'." nil
-  _ > "\nend" >)
-
-(defun elixir-maybe-do-end ()
-  "Insert an `end' to your `do' if line is determined to need it."
-  (if (looking-back " do" 3)
-      (elixir-do-end)))
-
-(define-abbrev elixir-mode-abbrev-table "do" "do" 'elixir-maybe-do-end)
-
 (tempo-define-template "exmodule"
 		       '("defmodule " p (j3rn-elixir-module-name) " do" n> p n "end" >)
 		       "em"
@@ -81,6 +70,10 @@
 		       '("defprotocol " p (j3rn-elixir-module-name) " do" n> p n "end" >)
 		       "ep"
 		       "Inserts a new Elixir protocol")
+(tempo-define-template "exstub"
+		       '("@spec " (p "name: " funname) "(" (p "args specs: ") ") ::" (p "return spec: ") n> "def " (s funname) "(" (p "args: ") ")")
+		       "estub"
+		       "Inserts an Elixir protocol stub")
 (tempo-define-template "exfun"
 		       '("@doc \"\"\"" n > (p "doc: " doc) n > "\"\"\"" n > "@spec " (p "name: " funname) "(" (p "argument specs: ") ") :: " (p "return type: ") n > "def " (s funname) "(" (p "args: ") ") do" n > p n "end" >)
 		       "ed"
@@ -113,6 +106,10 @@
 		       '("\"\"\"" n> p n> "\"\"\"")
 		       "edo"
 		       "Inserts an Elixir HEREDOC-style string")
+(tempo-define-template "do"
+		       '("do" n> p n "end" >)
+		       "do"
+		       "Inserts a do-end pair")
 
 (add-to-list 'treesit-language-source-alist '(elixir "https://github.com/elixir-lang/tree-sitter-elixir" nil nil))
 
