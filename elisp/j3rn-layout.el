@@ -7,6 +7,10 @@
 ;;;
 ;;; Code:
 
+(defvar j3rn-layout-right-windows
+  '("\\*xref\\*")
+  "A list of regular expressions that, if matched, will display the given buffer in the 'right'.")
+
 (defvar j3rn-layout-top-windows
   '("\\*Help\\*")
   "A list of regular expressions that, if matched, will display the given buffer in the 'top'.")
@@ -17,6 +21,10 @@
 	"\\*Async Shell Command\\*" "\\*Flycheck error messages\\*" "\\*OCaml\\*" "\\*Inf-UCM"
 	"\\*Bundler\\*" "\\*RuboCop" "-shell\\*")
       "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
+
+(defun j3rn-layout-right-window-p (buffer action)
+  "Predicate indicating whether BUFFER should be placed at the top of the frame.  ACTION."
+  (seq-some (lambda (pattern) (string-match-p pattern buffer)) j3rn-layout-right-windows))
 
 (defun j3rn-layout-top-window-p (buffer action)
   "Predicate indicating whether BUFFER should be placed at the top of the frame.  ACTION."
@@ -36,7 +44,12 @@
 			   (side . top)
 			   (slot . -1)
 			   (window-height . 0.5)
-			   (inhibit-same-window . t))))
+			   (inhibit-same-window . t))
+	(j3rn-layout-right-window-p display-buffer-in-side-window
+				  (side . right)
+				  (slot . -1)
+				  (window-width . 10)
+				  (inhibit-same-window . t))))
 
 (provide 'j3rn-layout)
 ;;; j3rn-layout.el ends here
