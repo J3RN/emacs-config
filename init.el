@@ -354,6 +354,12 @@
 
 (use-package yaml-mode)
 
+(use-package yasnippet
+  :hook
+  (prog-mode . yas-minor-mode))
+
+(use-package yasnippet-snippets)
+
 ;;; Bindings for built-in and custom functionality
 ;; *Unbind* C-z (suspend)
 (global-unset-key (kbd "C-z"))
