@@ -161,7 +161,7 @@
 (use-package ess)
 
 (use-package exec-path-from-shell
-  :init (setq exec-path-from-shell-shell-name "/bin/bash")
+  :init (setq exec-path-from-shell-shell-name "bash")
   :config (exec-path-from-shell-initialize))
 
 (use-package fish-mode)
