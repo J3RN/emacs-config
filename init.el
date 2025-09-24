@@ -154,7 +154,9 @@
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil))
 
-(use-package envrc)
+(use-package envrc
+  :config
+  (envrc-global-mode))
 
 (use-package ess)
 
