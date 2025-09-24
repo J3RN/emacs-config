@@ -13,6 +13,45 @@
       (insert ": " to-dup)
     (message "No symbol at point")))
 
+(defun elixir-start-of-symbol ()
+  (while (elixir-valid-atom-char-p (char-before))
+    (backward-char)))
+
+(defun elixir-end-of-symbol ()
+  (while (elixir-valid-atom-char-p (char-after))
+    (forward-char)))
+
+(defun elixir-to-atom ()
+  "Converts a string to an atom."
+  (interactive)
+  (save-excursion
+    (elixir-start-of-symbol)
+    (delete-char -1)
+    (insert-char ?:)
+    (elixir-end-of-symbol)
+    (delete-char 1)))
+
+(defun elixir-to-string ()
+  "Converts an atom to a string."
+  (interactive)
+  (save-excursion
+    (elixir-start-of-symbol)
+    (when (= ?: (char-before))
+	(delete-char -1))
+    (insert-char 34)
+    (elixir-end-of-symbol)
+    (if (= ?: (char-after))
+        (progn
+	  (delete-char 1)
+	  (insert "\" =>"))
+      (insert-char 34))))
+
+(defun elixir-valid-atom-char-p (c)
+  (or (and (>= c ?0) (<= c ?9))
+      (and (>= c ?a) (<= c ?z))
+      (and (>= c ?A) (<= c ?Z))
+      (= ?_ c)))
+
 (add-to-list 'eglot-server-programs `((elixir-mode elixir-ts-mode heex-ts-mode) . ,(eglot-alternatives '("expert" "expert_linux_amd64" "lexical" "nextls" "elixir-ls"))))
 
 (use-package elixir-mode
@@ -44,7 +83,9 @@
   :vc (:url "https://github.com/J3RN/elixir-test-mode"
        :rev :newest)
   :bind (:map elixir-test-mode-map
-              ("C-c e" . elixir-test-command-map))
+              ("C-c e" . elixir-test-command-map)
+	      ("C-c e (" . elixir-to-string)
+	      ("C-c e )" . elixir-to-atom))
   :hook
   (elixir-mode . elixir-test-mode)
   (elixir-ts-mode . elixir-test-mode))
