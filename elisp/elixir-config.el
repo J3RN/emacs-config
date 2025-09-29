@@ -56,7 +56,10 @@
 
 (use-package elixir-mode
   :delight
-  :bind (:map elixir-mode-map ("C-c e :" . elixir-expand-keyword))
+  :bind (:map elixir-mode-map
+	      ("C-c e :" . elixir-expand-keyword)
+	      ("C-c e (" . elixir-to-string)
+	      ("C-c e )" . elixir-to-atom))
   :hook
   (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
   (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
@@ -83,9 +86,7 @@
   :vc (:url "https://github.com/J3RN/elixir-test-mode"
        :rev :newest)
   :bind (:map elixir-test-mode-map
-              ("C-c e" . elixir-test-command-map)
-	      ("C-c e (" . elixir-to-string)
-	      ("C-c e )" . elixir-to-atom))
+              ("C-c e" . elixir-test-command-map))
   :hook
   (elixir-mode . elixir-test-mode)
   (elixir-ts-mode . elixir-test-mode))
