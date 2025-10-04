@@ -72,6 +72,15 @@
 						      ("|>" . 9655)))))
   (elixir-mode . eglot-ensure))
 
+(use-package elixir-test
+  :vc (:url "https://github.com/J3RN/elixir-test-mode"
+       :rev :newest)
+  :bind (:map elixir-test-mode-map
+              ("C-c e" . elixir-test-command-map))
+  :hook
+  (elixir-mode . elixir-test-mode)
+  (elixir-ts-mode . elixir-test-mode))
+
 (use-package inf-elixir
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i p" . 'inf-elixir-project)
@@ -81,15 +90,6 @@
          ("C-c i R" . 'inf-elixir-reload-module))
   :hook
   (inf-elixir-mode . abbrev-mode))
-
-(use-package elixir-test
-  :vc (:url "https://github.com/J3RN/elixir-test-mode"
-       :rev :newest)
-  :bind (:map elixir-test-mode-map
-              ("C-c e" . elixir-test-command-map))
-  :hook
-  (elixir-mode . elixir-test-mode)
-  (elixir-ts-mode . elixir-test-mode))
 
 (use-package mix
   :bind (:map mix-minor-mode-map
