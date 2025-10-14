@@ -147,7 +147,7 @@
   (setq warning-minimum-level :error)
   (setq-default cursor-style 'bar)
   ;; No tabs is a good default
-  (setq indent-tabs-mode nil)
+  (setq-default indent-tabs-mode nil)
   ;;; Enable useful disabled commands
   (put 'scroll-left 'disabled nil)
   (put 'narrow-to-region 'disabled nil)
