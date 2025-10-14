@@ -207,7 +207,8 @@
   (global-ligature-mode t))
 
 (use-package markdown-mode
-  :hook (markdown-mode . visual-line-mode))
+  :hook ((markdown-mode . visual-line-mode)
+	 (markdown-mode . whitespace-mode)))
 
 (use-package nim-mode)
 
