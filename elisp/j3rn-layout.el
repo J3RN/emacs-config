@@ -16,10 +16,25 @@
   "A list of regular expressions that, if matched, will display the given buffer in the 'top'.")
 
 (defvar j3rn-layout-bottom-windows
-      '("\\*.?shell" "\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir"
-	"\\*SQL" "\\*compilation\\*" "\\magit-process" "\\*haskell\\*" "\\*Backtrace\\*"
-	"\\*Async Shell Command\\*" "\\*Flycheck error messages\\*" "\\*OCaml\\*" "\\*Inf-UCM"
-	"\\*Bundler\\*" "\\*RuboCop" "-shell\\*")
+      '(
+	;; Built-ins
+	"\\*.?shell" "\\*SQL" "\\*compilation\\*" "\\*Backtrace\\*" "\\*Async Shell Command\\*"
+	;; Elixir
+	"\\*elixir-test-output" "\\*exunit-compilation" "\\*Inf-Elixir" "\\*mix-compilation"
+	;; Flycheck
+	"\\*Flycheck error messages\\*"
+	;; Haskell
+	"\\*haskell\\*"
+	;; Magit
+	"\\magit-process"
+	;; OCaml
+	"\\*OCaml\\*"
+	;; Ruby
+	"\\*Bundler\\*" "\\*RuboCop"
+	;; Unison
+	"\\*Inf-UCM"
+	;; ???
+	"-shell\\*")
       "A list of regular expressions that, if matched, will display the given buffer in the 'bottom'.")
 
 (defun j3rn-layout-right-window-p (buffer action)
@@ -48,7 +63,7 @@
 	(j3rn-layout-right-window-p display-buffer-in-side-window
 				  (side . right)
 				  (slot . -1)
-				  (window-width . 10)
+				  (window-width . 80)
 				  (inhibit-same-window . t))))
 
 (provide 'j3rn-layout)
