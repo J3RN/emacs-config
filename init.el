@@ -84,6 +84,7 @@
 (use-package dashboard
   :init
   (setq dashboard-agenda-sort-strategy '(time-up priority-up))
+  (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-items '(agenda projects))
   (setq dashboard-projects-backend 'projectile)
