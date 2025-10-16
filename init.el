@@ -427,7 +427,6 @@
       mouse-wheel-follow-mouse t                   ; Scroll window mouse is positioned over
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
       mouse-wheel-flip-direction t                 ; This will forever bother me now that I've thought about it
-      scroll-margin 5                              ; Keep a few line "buffer" when scrolling up or down
       scroll-preserve-screen-position t            ; Keep the cursor at the same place when paging up or down
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
 
