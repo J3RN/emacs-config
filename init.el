@@ -183,7 +183,7 @@
   :bind ("C-c C-r" . ivy-resume)
   :config
   (setq ivy-use-virtual-buffers t)
-  (setq ivy-re-builders-alist '((t . ivy--regex)))
+  (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
   (setq ivy-use-selectable-prompt t)
   (setq ivy-count-format "(%d/%d)")
   (ivy-mode 1))
