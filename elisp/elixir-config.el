@@ -148,7 +148,7 @@
 		       "es"
 		       "Inserts a standard ExUnit setup block")
 (tempo-define-template "exfn"
-		       '("fn " (p "arg: ") " ->" n > p > n "end" >)
+		       '("fn " (p "arg: ") " ->" n > p n "end" >)
 		       "fn"
 		       "Inserts an anonymous Elixir function")
 (tempo-define-template "exdoc"
