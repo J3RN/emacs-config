@@ -92,10 +92,10 @@
   (inf-elixir-mode . abbrev-mode))
 
 (use-package mix
-  :bind (:map mix-minor-mode-map
-	      ("C-c m" . 'mix-minor-mode-command-map)
-	      ("C-c d" . nil))
-  :hook (elixir-mode . mix-minor-mode))
+  :vc (:url "https://github.com/J3RN/mix-mode"
+       :rev :newest)
+  :bind (:map mix-mode-map ("C-c m" . 'mix-command-map))
+  :hook (elixir-mode . mix-mode))
 
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
