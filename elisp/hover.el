@@ -31,12 +31,19 @@
 
 (defun hover--reset-highlight ()
   "Highlight the regexp under point."
-  (when hover-mode
+  (when (and hover-mode (hover--should-highlight-p))
     (when hover--hi-re
       (unhighlight-regexp hover--hi-re))
     (when-let ((re (hover--highlight-regexp)))
       (setq hover--hi-re re)
       (highlight-regexp re 'hover-highlight-symbol-face))))
+
+(defun hover--should-highlight-p ()
+  "Whether Hover should try to highlight the symbol.
+
+Currently the case where Hover should not try to highlight is when the LSP can do
+it instead."
+  (not (and (eglot-current-server) (eglot-server-capable :documentHighlightProvider))))
 
 (define-minor-mode hover-mode
   "Hovers the symbol under point when idle."
