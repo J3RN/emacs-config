@@ -95,7 +95,9 @@
   :vc (:url "https://github.com/J3RN/mix-mode"
        :rev :newest)
   :bind (:map mix-mode-map ("C-c m" . 'mix-command-map))
-  :hook (elixir-mode . mix-mode))
+  :hook
+  (elixir-mode . mix-mode)
+  (elixir-ts-mode . mix-mode))
 
 (defun j3rn-elixir-relative-path ()
   "Return the path after lib/."
