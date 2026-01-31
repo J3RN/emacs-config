@@ -46,6 +46,8 @@
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
+  ;; Don't try to update VC packages
+  (setq auto-package-update-excluded-packages '(mix cook-mode copilot))
   (auto-package-update-maybe))
 
 (use-package company
@@ -436,6 +438,10 @@
 
 ;;; Set shell font to be not bad
 (set-face-attribute 'comint-highlight-prompt nil :inherit nil)
+
+;;; Use visual-line-mode in shell modes
+(add-hook #'shell-mode-hook 'visual-line-mode)
+(add-hook #'eshell-mode-hook 'visual-line-mode)
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
