@@ -52,7 +52,7 @@
       (and (>= c ?A) (<= c ?Z))
       (= ?_ c)))
 
-(add-to-list 'eglot-server-programs `((elixir-mode elixir-ts-mode heex-ts-mode) . ,(eglot-alternatives '("expert" "expert_linux_amd64" "lexical" "nextls" "elixir-ls"))))
+(add-to-list 'eglot-server-programs `((elixir-mode elixir-ts-mode heex-ts-mode) . ,(eglot-alternatives '(("expert" "--stdio") ("expert_linux_amd64" "--stdio") "lexical" "nextls" "elixir-ls"))))
 
 (use-package elixir-mode
   :delight
