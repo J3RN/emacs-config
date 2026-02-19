@@ -47,7 +47,7 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
   ;; Don't try to update VC packages
-  (setq auto-package-update-excluded-packages '(cook-mode copilot elixir-test mix wat-ts-mode))
+  (setq auto-package-update-excluded-packages '(cook-mode copilot elixir-test inf-ucm mix wat-ts-mode))
   (auto-package-update-maybe))
 
 (use-package company
