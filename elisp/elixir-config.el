@@ -89,7 +89,8 @@
          ("C-c i b" . 'inf-elixir-send-buffer)
          ("C-c i R" . 'inf-elixir-reload-module))
   :hook
-  (inf-elixir-mode . abbrev-mode))
+  (inf-elixir-mode . abbrev-mode)
+  (inf-elixir-mode . visual-line-mode))
 
 (use-package mix
   :vc (:url "https://github.com/J3RN/mix-mode"
