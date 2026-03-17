@@ -139,9 +139,7 @@
   :bind
   ("C-c l r" . eglot-rename)
   ("C-c l f" . eglot-code-action-quickfix)
-  ("M-+" . eglot-find-implementation)
-  :config
-  (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio")))
+  ("M-+" . eglot-find-implementation))
 
 (use-package eldoc
   :ensure nil
@@ -421,33 +419,6 @@
   (add-to-list 'treesit-language-source-alist '(wat "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wat/src"))
   (add-to-list 'treesit-language-source-alist '(wast "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wast/src")))
 
-(use-package web-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.h?eex\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-  (add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
-  (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio"))
-  :hook
-  (web-mode . eglot-ensure)
-  (web-mode . (lambda () (setq prettify-symbols-alist '(("->" . 8594)
-                                                   ("=>" . 8658)
-                                                   ("<=" . 8804)
-                                                   (">=" . 8805)
-                                                   ("||=" . 9568))))))
-
-(use-package js
-  :config
-  (add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-mode)))
-
 (use-package which-func
   :ensure nil
   :config
@@ -531,6 +502,7 @@
 (load-library "j3rn-purescript")
 (load-library "j3rn-ruby")
 (load-library "j3rn-rust")
+(load-library "j3rn-typescript")
 
 ;; Miscellany
 (load-library "j3rn-diary")
