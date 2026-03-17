@@ -72,7 +72,7 @@
   (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-items '(agenda projects))
-  (setq dashboard-projects-backend 'projectile)
+  (setq dashboard-projects-backend 'project-el)
   (setq dashboard-set-init-info nil)
   (setq dashboard-set-file-icons t)
   (setq dashboard-set-heading-icons t)
@@ -234,25 +234,6 @@
   ([remap query-replace-regexp] . phi-replace-query))
 
 (use-package pomodoro)
-
-(use-package projectile
-  :delight
-  :init
-  (setq-default projectile-completion-system 'ivy)
-  (setq projectile-generic-command "fd . -0 --type f --color=never")
-  :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (setq projectile-project-name-function (lambda (project-root)
-					   (concat (file-name-as-directory (file-name-nondirectory (directory-file-name (file-name-parent-directory project-root))))
-						   (file-name-nondirectory (directory-file-name project-root)))))
-  (setq compilation-buffer-name-function (lambda (name-of-mode)
-					   (if (equal (projectile-project-name) "-")
-					       (compilation--default-buffer-name name-of-mode)
-					     (concat "*compilation*<" (projectile-project-name) ">"))))
-  (setq projectile-switch-project-action (lambda () (if (magit-toplevel) (magit-status) (dired "."))))
-  (setq projectile-per-project-compilation-buffer t)
-  (setq projectile-run-use-comint-mode t)
-  (projectile-mode))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
