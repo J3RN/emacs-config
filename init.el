@@ -80,8 +80,6 @@
   (setq counsel-rg-base-command '("rg" "--max-columns" "240" "--with-filename" "--no-heading" "--line-number" "--hidden" "--color" "never" "%s"))
   (add-to-list 'ivy-more-chars-alist '(counsel-rg . 2)))
 
-(use-package counsel-etags)
-
 (use-package csv-mode)
 
 (use-package dashboard
