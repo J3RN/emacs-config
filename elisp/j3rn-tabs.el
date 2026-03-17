@@ -5,11 +5,12 @@
 ;;;
 ;;; Code:
 
-;; Label a tab with the projectile-project-name, if available
-(setq tab-bar-tab-name-function (lambda () (let ((tname (projectile-project-name)))
-					(if (not (equal "-" tname))
-					    tname
-					  (tab-bar-tab-name-current)))))
+;; Label a tab with the project-name, if available
+(setq tab-bar-tab-name-function (lambda ()
+                                  (if-let* ((current-project (project-current))
+                                            (pname (project-name current-project)))
+				      pname
+				    (tab-bar-tab-name-current))))
 
 ;; Go to Dashboard when opening a new tab
 (setq tab-bar-new-tab-choice 'dashboard-open)

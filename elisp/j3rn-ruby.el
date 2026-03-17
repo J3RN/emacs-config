@@ -23,16 +23,11 @@
 
 (use-package inf-ruby)
 
-(use-package projectile-rails
-  :delight
-  :config
-  (projectile-rails-global-mode)
-  :hook (projectile-mode-hook . projectile-rails-on))
+(use-package rake)
 
 (use-package rspec-mode
   :delight
-  :hook ((rspec-compilation-mode . visual-line-mode)
-	 (projectile-rails-mode . rspec-mode)))
+  :hook ((rspec-compilation-mode . visual-line-mode)))
 
 (use-package rubocop
   :bind (("C-c c c p" . rubocop-check-project)
