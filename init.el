@@ -42,14 +42,6 @@
   :config
   (auto-dark-mode 1))
 
-(use-package auto-package-update
-  :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
-  ;; Don't try to update VC packages
-  (setq auto-package-update-excluded-packages '(cook-mode copilot elixir-test inf-ucm mix wat-ts-mode))
-  (auto-package-update-maybe))
-
 (use-package company
   :delight
   :hook (prog-mode . company-mode))
