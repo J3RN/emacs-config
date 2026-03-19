@@ -55,6 +55,7 @@
   :hook (prog-mode . company-mode))
 
 (use-package compile
+  :ensure nil
   :init (setq compilation-scroll-output t))
 
 (use-package cook-mode
@@ -109,6 +110,7 @@
   (doom-modeline-mode 1))
 
 (use-package eglot
+  :ensure nil
   :bind
   ("C-c l r" . eglot-rename)
   ("C-c l f" . eglot-code-action-quickfix)
@@ -117,6 +119,7 @@
   (add-to-list 'eglot-server-programs '(web-mode "typescript-language-server" "--stdio")))
 
 (use-package eldoc
+  :ensure nil
   :delight)
 
 (use-package emacs
@@ -170,6 +173,7 @@
 (use-package fish-mode)
 
 (use-package flymake
+  :ensure nil
   :bind (("C-c ! n" . flymake-goto-next-error)
 	 ("C-c ! p" . flymake-goto-prev-error)))
 
@@ -178,6 +182,7 @@
 (use-package haml-mode)
 
 (use-package imenu
+  :ensure nil
   :bind ("M-i" . imenu))
 
 (use-package ivy
@@ -216,6 +221,7 @@
 (use-package nim-mode)
 
 (use-package org
+  :ensure nil
   :delight
   :delight org-indent-mode
   :bind (("C-c o l" . org-store-link)
@@ -272,6 +278,7 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package re-builder
+  :ensure nil
   :config
   (setq reb-re-syntax 'string))
 
@@ -281,12 +288,14 @@
 (use-package ripgrep)
 
 (use-package sendmail
+  :ensure nil
   :init (setq send-mail-function 'mailclient-send-it))
 
 (use-package swiper
   :bind ("C-c s" . swiper))
 
 (use-package tempo
+  :ensure nil
   :bind
   ("C-c t c" . tempo-complete-tag)
   ("C-c t f" . tempo-forward-mark)
@@ -339,20 +348,24 @@
   (add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-mode)))
 
 (use-package which-func
+  :ensure nil
   :config
   (set-face-attribute 'which-func nil :foreground "white")
   (which-function-mode t))
 
 (use-package which-key
+  :ensure nil
   :delight
   :config (which-key-mode t))
 
 (use-package whitespace
+  :ensure nil
   :bind ("C-c w" . whitespace-mode)
   :config
   (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark)))
 
 (use-package windmove
+  :ensure nil
   :config
   (windmove-default-keybindings))
 
