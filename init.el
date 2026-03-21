@@ -88,14 +88,6 @@
   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
 
-(use-package counsel
-  :bind (([remap execute-extended-command] . (lambda () (interactive) (counsel-M-x "")))
-	 ([remap imenu] . counsel-imenu)
-	 ("C-c u r" . counsel-rg))
-  :config
-  (setq counsel-rg-base-command '("rg" "--max-columns" "240" "--with-filename" "--no-heading" "--line-number" "--hidden" "--color" "never" "%s"))
-  (add-to-list 'ivy-more-chars-alist '(counsel-rg . 2)))
-
 (use-package csv-mode)
 
 (use-package dashboard
@@ -239,21 +231,18 @@
 (use-package hover
   :hook (prog-mode . hover-mode))
 
+(use-package icomplete
+  :ensure nil
+  :config
+  (icomplete-vertical-mode)
+  (setq completion-styles '(basic substring flex))
+  :bind (:map icomplete-minibuffer-map
+              ("RET" . icomplete-force-complete-and-exit)
+              ("C-j" . exit-minibuffer)))
+
 (use-package imenu
   :ensure nil
   :bind ("M-i" . imenu))
-
-(use-package ivy
-  :delight
-  :bind ("C-c C-r" . ivy-resume)
-  :config
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
-  (setq ivy-use-selectable-prompt t)
-  (setq ivy-count-format "(%d/%d)")
-  (ivy-mode 1))
-
-(use-package ivy-hydra)
 
 (use-package ligature
   :config
