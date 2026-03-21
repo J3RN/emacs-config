@@ -11,8 +11,6 @@
 
 (use-package forge)
 
-(use-package git-gutter)
-
 (use-package git-timemachine
   :bind ("C-c g t" . git-timemachine))
 
