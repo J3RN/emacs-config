@@ -1,4 +1,4 @@
-;;; tabs.el -- Tab configuration
+;;; j3rn-tabs.el -- Tab configuration
 ;;;
 ;;; Commentary:
 ;;;   Customize tabs to look more modern
@@ -59,5 +59,5 @@
 ;;; Reload themes
 (seq-map (lambda (theme) (enable-theme theme)) custom-enabled-themes)
 
-(provide 'tabs)
-;;; tabs.el ends here
+(provide 'j3rn-tabs)
+;;; j3rn-tabs.el ends here

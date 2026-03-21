@@ -1,4 +1,4 @@
-;;; unison-config --- Unison packages and configuration
+;;; j3rn-unison --- Unison packages and configuration
 ;;;
 ;;; Commentary:
 ;;;
@@ -10,5 +10,5 @@
   :vc (:url "https://github.com/J3RN/inf-ucm"
        :rev :newest))
 
-(provide 'unison-config)
-;;; unison-config.el ends here
+(provide 'j3rn-unison)
+;;; j3rn-unison.el ends here

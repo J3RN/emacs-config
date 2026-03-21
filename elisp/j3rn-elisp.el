@@ -1,4 +1,4 @@
-;;; elisp-config --- Packages and configuration for Emacs Lisp
+;;; j3rn-elisp --- Packages and configuration for Emacs Lisp
 ;;;
 ;;; Commentary:
 ;;;
@@ -25,5 +25,5 @@
 	 ("C-M-<right>" . paredit-backward-barf-sexp)
 	 ("C-M-<left>" . paredit-backward-slurp-sexp)))
 
-(provide 'elisp-config)
-;;; elisp-config.el ends here
+(provide 'j3rn-elisp)
+;;; j3rn-elisp.el ends here

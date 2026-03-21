@@ -1,4 +1,4 @@
-;;; nix-config --- Nix packges and configuration
+;;; j3rn-nix --- Nix packges and configuration
 ;;; Commentary:
 ;;; Code:
 
@@ -9,5 +9,5 @@
   (when (fboundp 'treesit-install-language-grammar)
     (treesit-install-language-grammar 'nix)))
 
-(provide 'nix-config)
-;;; nix-config.el ends here
+(provide 'j3rn-nix)
+;;; j3rn-nix.el ends here

@@ -1,4 +1,4 @@
-;;; javascript-config --- JavaScript packages and configuration
+;;; j3rn-javascript --- JavaScript packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   JavaScript packages and configuration
@@ -10,5 +10,5 @@
 		       "edf"
 		       "Inserts a JavaScript default exported function")
 
-(provide 'javascript-config)
-;;; javascript-config.el ends here
+(provide 'j3rn-javascript)
+;;; j3rn-javascript.el ends here

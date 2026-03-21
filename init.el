@@ -460,33 +460,33 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 ;; Programming, general
-(load-library "git-config")
+(load-library "j3rn-git")
 (load-library "hover")
 
 ;; Programming languages
-(load-library "clojure-config")
-(load-library "csharp-config")
-(load-library "dhall-config")
-(load-library "elisp-config")
-(load-library "elixir-config")
-(load-library "elm-config")
-(load-library "fsharp-config")
-(load-library "gleam-config")
-(load-library "haskell-config")
-(load-library "javascript-config")
-(load-library "nix-config")
-(load-library "ocaml-config")
-(load-library "purescript-config")
-(load-library "ruby-config")
-(load-library "rust-config")
+(load-library "j3rn-clojure")
+(load-library "j3rn-csharp")
+(load-library "j3rn-dhall")
+(load-library "j3rn-elisp")
+(load-library "j3rn-elixir")
+(load-library "j3rn-elm")
+(load-library "j3rn-fsharp")
+(load-library "j3rn-gleam")
+(load-library "j3rn-haskell")
+(load-library "j3rn-javascript")
+(load-library "j3rn-nix")
+(load-library "j3rn-ocaml")
+(load-library "j3rn-purescript")
+(load-library "j3rn-ruby")
+(load-library "j3rn-rust")
 
 ;; Miscellany
-(load-library "diary-config")
+(load-library "j3rn-diary")
 (load-library "fast-buffers")
-(when (display-graphic-p) (load-library "gui"))
+(when (display-graphic-p) (load-library "j3rn-gui"))
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
-(load-library "tabs")
+(load-library "j3rn-tabs")
 (load-library "yank-and-indent")
 
 ;; Local config

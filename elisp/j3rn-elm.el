@@ -1,4 +1,4 @@
-;;; elm-config --- Elm packages and configuration
+;;; j3rn-elm --- Elm packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   Elm packages and configuration
@@ -9,5 +9,5 @@
   :hook
   (elm-mode . eglot-ensure))
 
-(provide 'elm-config)
-;;; elm-config.el ends here
+(provide 'j3rn-elm)
+;;; j3rn-elm.el ends here

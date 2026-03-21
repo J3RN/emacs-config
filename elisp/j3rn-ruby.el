@@ -1,4 +1,4 @@
-;;; ruby-config --- Ruby-related packages and configuration
+;;; j3rn-ruby --- Ruby-related packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   Various Ruby packages and configuration
@@ -49,5 +49,5 @@
 
 (use-package ruby-test-mode)
 
-(provide 'ruby-config)
-;;; ruby-config.el ends here
+(provide 'j3rn-ruby)
+;;; j3rn-ruby.el ends here

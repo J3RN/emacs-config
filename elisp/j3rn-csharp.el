@@ -1,4 +1,4 @@
-;;; csharp-config --- Tools for working with C# and .NET
+;;; j3rn-csharp --- Tools for working with C# and .NET
 ;;;
 ;;; Commentary:
 ;;;
@@ -21,5 +21,5 @@
   (csharp-mode . (lambda () (add-hook 'before-save-hook 'csharpier nil 'local)))
   (csharp-mode . eglot-ensure))
 
-(provide 'csharp-config)
-;;; csharp-config.el ends here
+(provide 'j3rn-csharp)
+;;; j3rn-csharp.el ends here

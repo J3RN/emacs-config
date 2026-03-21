@@ -1,4 +1,4 @@
-;;; haskell-config -- My Haskell configs
+;;; j3rn-haskell -- My Haskell configs
 ;;;
 ;;; Commentary:
 ;;;   I love Haskell
@@ -18,5 +18,5 @@
                                                        (">=" . 8805)))))
   (haskell-mode . eglot-ensure))
 
-(provide 'haskell-config)
-;;; haskell-config.el ends here
+(provide 'j3rn-haskell)
+;;; j3rn-haskell.el ends here

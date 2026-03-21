@@ -1,4 +1,4 @@
-;;; elixir-config --- Elixir packages and configuration
+;;; j3rn-elixir --- Elixir packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   Various Elixir packages and configuration
@@ -169,5 +169,5 @@
 
 (add-to-list 'treesit-language-source-alist '(elixir "https://github.com/elixir-lang/tree-sitter-elixir" nil nil))
 
-(provide 'elixir-config)
-;;; elixir-config.el ends here
+(provide 'j3rn-elixir)
+;;; j3rn-elixir.el ends here

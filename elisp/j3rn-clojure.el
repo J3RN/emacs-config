@@ -1,4 +1,4 @@
-;;; clojure-config --- Clojure packages and configuration
+;;; j3rn-clojure --- Clojure packages and configuration
 ;;;
 ;;; Commentary:
 ;;;
@@ -9,5 +9,5 @@
 (use-package clojure-mode)
 (use-package cider)
 
-(provide 'clojure-config)
-;;; clojure-config.el ends here
+(provide 'j3rn-clojure)
+;;; j3rn-clojure.el ends here

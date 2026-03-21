@@ -1,4 +1,4 @@
-;;; ocaml-config --- My OCaml config
+;;; j3rn-ocaml --- My OCaml config
 ;;;
 ;;; Commentary:
 ;;;
@@ -32,5 +32,5 @@
     ;; and use one of its "OPSW" menus.
     ))
 
-(provide 'ocaml-config)
-;;; ocaml-config.el ends here
+(provide 'j3rn-ocaml)
+;;; j3rn-ocaml.el ends here

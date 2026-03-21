@@ -1,4 +1,4 @@
-;;; gleam-config --- Gleam packages and configuration
+;;; j3rn-gleam --- Gleam packages and configuration
 ;;;
 ;;; Commentary:
 ;;;
@@ -10,5 +10,5 @@
   (add-to-list 'eglot-server-programs '(gleam-ts-mode "gleam" "lsp"))
   :hook (gleam-ts-mode . eglot-ensure))
 
-(provide 'gleam-config)
-;;; gleam-config.el ends here
+(provide 'j3rn-gleam)
+;;; j3rn-gleam.el ends here

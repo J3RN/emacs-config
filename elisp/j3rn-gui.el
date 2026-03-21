@@ -1,4 +1,4 @@
-;;; gui --- Graphical UI customizations
+;;; j3rn-gui --- Graphical UI customizations
 ;;;
 ;;; Commentary:
 ;;;   Generally seeks to make the UI a bit more minimal than the default
@@ -24,5 +24,5 @@
       (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen)
       (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)))
 
-(provide 'gui)
-;;; gui.el ends here
+(provide 'j3rn-gui)
+;;; j3rn-gui.el ends here

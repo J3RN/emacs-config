@@ -1,4 +1,4 @@
-;;; purescript-config -- Purescript packages and config
+;;; j3rn-purescript -- Purescript packages and config
 ;;;
 ;;; Commentary:
 ;;;   Just trying out Purescript.  This may be temporary.
@@ -11,5 +11,5 @@
 (use-package psc-ide
   :hook (purescript-mode . psc-ide-mode))
 
-(provide 'purescript-config)
-;;; purescript-config.el ends here
+(provide 'j3rn-purescript)
+;;; j3rn-purescript.el ends here

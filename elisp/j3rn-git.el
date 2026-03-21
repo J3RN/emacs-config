@@ -1,4 +1,4 @@
-;;; git-config --- Git-related packages and configuration
+;;; j3rn-git --- Git-related packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   Various Git-related packages and configuration
@@ -27,5 +27,5 @@
   (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local)))
   (magit-process-mode . visual-line-mode))
 
-(provide 'git-config)
-;;; git-config.el ends here
+(provide 'j3rn-git)
+;;; j3rn-git.el ends here

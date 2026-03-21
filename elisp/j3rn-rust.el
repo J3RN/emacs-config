@@ -1,4 +1,4 @@
-;;; rust-config --- Rust packages and configuration
+;;; j3rn-rust --- Rust packages and configuration
 ;;;
 ;;; Commentary:
 ;;;   Various Rust packages and configuration
@@ -10,5 +10,5 @@
   (rust-mode . eglot-ensure)
   (rust-mode . (lambda () (setq-local indent-tabs-mode nil))))
 
-(provide 'rust-config)
-;;; rust-config.el ends here
+(provide 'j3rn-rust)
+;;; j3rn-rust.el ends here
