@@ -165,8 +165,6 @@
   :init (setq exec-path-from-shell-shell-name "bash")
   :config (exec-path-from-shell-initialize))
 
-(use-package fish-mode)
-
 (use-package flymake
   :ensure nil
   :bind (("C-c ! n" . flymake-goto-next-error)
@@ -200,8 +198,6 @@
   (setq confirm-kill-emacs 'yes-or-no-p))
 
 (use-package go-mode)
-
-(use-package haml-mode)
 
 (use-package hexl
   :ensure nil
@@ -248,8 +244,6 @@
 (use-package markdown-mode
   :hook ((markdown-mode . visual-line-mode)
 	 (markdown-mode . whitespace-mode)))
-
-(use-package nim-mode)
 
 (use-package org
   :ensure nil
