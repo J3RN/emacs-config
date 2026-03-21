@@ -121,7 +121,6 @@
   :delight)
 
 (use-package emacs
-  :delight emacs-lisp-mode
   :delight eshell-mode
   :delight subword-mode
   :delight whitespace-mode
