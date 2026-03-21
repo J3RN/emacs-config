@@ -177,6 +177,9 @@
 
 (use-package haml-mode)
 
+(use-package hover
+  :hook (prog-mode . hover-mode))
+
 (use-package imenu
   :ensure nil
   :bind ("M-i" . imenu))
@@ -457,7 +460,6 @@
 
 ;; Programming, general
 (load-library "j3rn-git")
-(load-library "hover")
 
 ;; Programming languages
 (load-library "j3rn-clojure")
@@ -487,10 +489,6 @@
 
 ;; Local config
 (when (locate-library "local") (load-library "local"))
-
-(use-package hover
-  :load-path "~/.config/emacs/elisp/hover.el"
-  :hook (prog-mode . hover-mode))
 
 ;;; Startup
 (server-start)			       ; Start the server so clients can connect
