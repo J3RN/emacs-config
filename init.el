@@ -33,6 +33,14 @@
 
 ;; use-package declarations
 
+(use-package abbrev
+  :ensure nil
+  :delight
+  :config
+  (setq save-abbrevs 'silently)
+  :hook
+  (prog-mode . abbrev-mode))
+
 (use-package async)
 
 (use-package auto-dark
@@ -48,6 +56,15 @@
   ;; Don't try to update VC packages
   (setq auto-package-update-excluded-packages '(cook-mode copilot elixir-test inf-ucm mix wat-ts-mode))
   (auto-package-update-maybe))
+
+(use-package autorevert
+  :ensure nil
+  :config
+  (global-auto-revert-mode))
+
+(use-package browse-url
+  :ensure nil
+  :bind ("C-c q" . browse-url))
 
 (use-package company
   :delight
@@ -97,6 +114,16 @@
 
 (use-package delight)
 
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-listing-switches "-alh"))
+
+(use-package display-line-numbers
+  :ensure nil
+  :config
+  (setq display-line-numbers-width-start t))
+
 (use-package dockerfile-mode)
 
 (use-package doom-modeline
@@ -119,45 +146,44 @@
   :ensure nil
   :delight)
 
-(use-package emacs
-  :delight subword-mode
-  :delight whitespace-mode
-  :delight abbrev-mode
-  :hook (prog-mode . abbrev-mode)
-  :hook (prog-mode . whitespace-mode)
-  :hook (compilation-mode . visual-line-mode)
-  :hook (text-mode . flyspell-mode)
-  :bind
-  ("C-c q" . browse-url)
-  ("C-c x s" . shell)
-  ("C-c x e" . eshell)
+(use-package elec-pair
+  :ensure nil
   :config
-  ;; Enable global modes
-  (global-subword-mode)
-  (column-number-mode)
-  (show-paren-mode)
-  (global-auto-revert-mode)
-  (global-hi-lock-mode)
-  (electric-pair-mode)
-  ;; Configure built-ins
-  (setq display-line-numbers-width-start t)
-  (setq dired-listing-switches "-alh")
-  (setq hexl-bits 8)
-  (setq save-abbrevs 'silently)
+  (electric-pair-mode))
+
+(use-package emacs
+  :config
+  ;; Disable bell altogether
+  (setq ring-bell-function (lambda () ()))
+  ;; Balance windows when making or deleting windows
   (setq window-buffer-change-functions '(balance-windows))
-  (setq warning-minimum-level :error)
-  (setq-default cursor-style 'bar)
-  ;; No tabs is a good default
-  (setq-default indent-tabs-mode nil)
+  ;; Do not wrap long lines by default
+  (setq-default truncate-lines t)
   ;;; Enable useful disabled commands
   (put 'scroll-left 'disabled nil)
   (put 'narrow-to-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
-  (put 'upcase-region 'disabled nil))
+  (put 'upcase-region 'disabled nil)
+  ;; *Unbind* C-z (suspend)
+  (global-unset-key (kbd "C-z"))
+  (global-unset-key (kbd "C-x C-z")))
 
 (use-package envrc
   :config
   (envrc-global-mode))
+
+(use-package epg-config
+  :ensure nil
+  :config
+  ;; GPG pinentry prompt fix for macOS
+  (setq-default epa-pinentry-mode 'loopback))
+
+(use-package eshell
+  :ensure nil
+  :bind
+  ("C-c x e" . eshell)
+  :hook
+  (eshell-mode . visual-line-mode))
 
 (use-package ess)
 
@@ -172,9 +198,45 @@
   :bind (("C-c ! n" . flymake-goto-next-error)
 	 ("C-c ! p" . flymake-goto-prev-error)))
 
+(use-package flyspell
+  :ensure nil
+  :hook
+  (text-mode . flyspell-mode))
+
+(use-package files
+  :ensure nil
+  :config
+  ;; Require newlines at the end of files
+  (setq-default require-final-newline t)
+  ;; Sensible backup settings
+  (setq
+   backup-by-copying t
+   backup-directory-alist '(("." . "~/.saves"))
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)
+  ;; Place lock files in /var/tmp
+  (setq lock-file-name-transforms
+        '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
+  ;; Place auto-save files in /var/tmp
+  (setq auto-save-file-name-transforms
+        '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
+  ;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
+  (setq confirm-kill-emacs 'yes-or-no-p))
+
 (use-package go-mode)
 
 (use-package haml-mode)
+
+(use-package hexl
+  :ensure nil
+  :config
+  (setq hexl-bits 8))
+
+(use-package hi-lock
+  :config
+  (global-hi-lock-mode))
 
 (use-package hover
   :hook (prog-mode . hover-mode))
@@ -240,10 +302,22 @@
 (use-package org-pomodoro
   :bind ("C-c o p" . org-pomodoro))
 
+;; A bit meta, eh?
+(use-package package
+  :bind
+  ("C-c a l" . package-list-packages)
+  ("C-c a i" . package-install)
+  ("C-c a d" . package-delete))
+
 (use-package page-break-lines
   :delight
   :config
   (global-page-break-lines-mode))
+
+(use-package paren
+  :ensure nil
+  :config
+  (show-paren-mode))
 
 (use-package phi-search
   :bind
@@ -292,6 +366,29 @@
 (use-package swiper
   :bind ("C-c s" . swiper))
 
+(use-package shell
+  :bind
+  ("C-c x s" . shell)
+  :hook
+  (shell-mode . visual-line-mode))
+
+(use-package simple
+  :ensure nil
+  :config
+  ;; Show column number in modeline
+  (column-number-mode)
+  ;; No tabs is a good default
+  (setq-default indent-tabs-mode nil)
+  :bind
+  ("C-c d" . delete-trailng-whitespace)
+  :hook
+  (compilation-mode . visual-line-mode))
+
+(use-package subword
+  :ensure nil
+  :delight
+  :config (global-subword-mode))
+
 (use-package tempo
   :ensure nil
   :bind
@@ -311,6 +408,11 @@
   (setq undo-tree-enable-undo-in-region t)
   (setq undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo-tree-saves"))))
   :config (global-undo-tree-mode))
+
+(use-package warnings
+  :ensure nil
+  :config
+  (setq warning-minimum-level :error))
 
 (use-package wat-ts-mode
   :vc (:url "https://github.com/J3RN/wat-ts-mode")
@@ -358,14 +460,21 @@
 
 (use-package whitespace
   :ensure nil
+  :delight
   :bind ("C-c w" . whitespace-mode)
   :config
-  (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark)))
+  (setq whitespace-style '(face tabs trailing space-before-tab newline space-after-tab tab-mark))
+  :hook
+  (prog-mode . whitespace-mode))
 
 (use-package windmove
   :ensure nil
   :config
   (windmove-default-keybindings))
+
+(use-package window
+  :bind
+  ("C-c 1" . window-toggle-side-windows))
 
 (use-package yaml-mode)
 
@@ -375,40 +484,12 @@
 
 (use-package yasnippet-snippets)
 
-;;; Bindings for built-in and custom functionality
-;; *Unbind* C-z (suspend)
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
-
-;; Delete trailing whitespace
-(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
-
-;; Bind window-toggle-side-windows
-(global-set-key (kbd "C-c 1") 'window-toggle-side-windows)
-
-;; Package bindings
-(global-set-key (kbd "C-c a l") 'package-list-packages)
-(global-set-key (kbd "C-c a i") 'package-install)
-(global-set-key (kbd "C-c a d") 'package-delete)
-
 ;; Add kill defun function and binding
 (defun kill-defun ()
   "Kill the function under point."
   (interactive)
   (mark-defun)
   (kill-region (point) (mark)))
-
-;;; Disable bell altogether
-(setq ring-bell-function (lambda () ()))
-
-;;; Do not wrap long lines
-(setq-default truncate-lines t)
-
-;;; Require newlines at the end of files
-(setq-default require-final-newline t)
-
-;;; GPG pinentry prompt fix for macOS
-(setq-default epa-pinentry-mode 'loopback)
 
 ;;; ANSI colorize compilation output
 (defun colorize-compilation-buffer ()
@@ -418,23 +499,6 @@
   (read-only-mode))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-;;; Sensible backup settings
-(setq
- backup-by-copying t
- backup-directory-alist '(("." . "~/.saves"))
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)
-
-;;; Place lock files in /var/tmp
-(setq lock-file-name-transforms
-      '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
-
-;;; Place auto-save files in /var/tmp
-(setq auto-save-file-name-transforms
-      '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
-
 ;;; Set sane scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; One line at a time
       mouse-wheel-progressive-speed nil            ; Don't accelerate scrolling
@@ -443,16 +507,6 @@
       mouse-wheel-flip-direction t                 ; This will forever bother me now that I've thought about it
       scroll-preserve-screen-position t            ; Keep the cursor at the same place when paging up or down
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
-
-;;; Confirm quitting Emacs (I accidentally cmd-q or C-x C-c sometimes)
-(setq confirm-kill-emacs 'yes-or-no-p)
-
-;;; Set shell font to be not bad
-(set-face-attribute 'comint-highlight-prompt nil :inherit nil)
-
-;;; Use visual-line-mode in shell modes
-(add-hook #'shell-mode-hook 'visual-line-mode)
-(add-hook #'eshell-mode-hook 'visual-line-mode)
 
 ;;; Load libraries
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
