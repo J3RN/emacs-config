@@ -1,0 +1,79 @@
+[submodule "elisp/async"]
+	path = elisp/async
+	url = https://github.com/jwiegley/emacs-async.git
+[submodule "elisp/auto-dark"]
+	path = elisp/auto-dark
+	url = https://github.com/LionyxML/auto-dark-emacs.git
+[submodule "elisp/cook-mode"]
+	path = elisp/cook-mode
+	url = https://github.com/cooklang/cook-mode.git
+[submodule "elisp/csv-mode"]
+	path = elisp/csv-mode
+	url = https://https.git.savannah.gnu.org/git/emacs/elpa.git
+	branch = externals/csv-mode
+[submodule "elisp/dashboard"]
+	path = elisp/dashboard
+	url = https://github.com/emacs-dashboard/dashboard.git
+[submodule "elisp/elixir-test"]
+	path = elisp/elixir-test
+	url = git@github.com:J3RN/elixir-test-mode
+[submodule "elisp/gleam-ts-mode"]
+	path = elisp/gleam-ts-mode
+	url = git@github.com:gleam-lang/gleam-mode
+[submodule "elisp/inf-elixir"]
+	path = elisp/inf-elixir
+	url = git@github.com:J3RN/inf-elixir
+[submodule "elisp/inf-ucm"]
+	path = elisp/inf-ucm
+	url = git@github.com:J3RN/inf-ucm
+[submodule "elisp/mix-mode"]
+	path = elisp/mix-mode
+	url = git@github.com:J3RN/mix-mode
+[submodule "elisp/wat-ts-mode"]
+	path = elisp/wat-ts-mode
+	url = git@github.com:J3RN/wat-ts-mode
+[submodule "elisp/delight"]
+	path = elisp/delight
+	url = https://git.savannah.nongnu.org/git/delight.git
+[submodule "elisp/magit"]
+	path = elisp/magit
+	url = https://github.com/magit/magit.git
+[submodule "elisp/forge"]
+	path = elisp/forge
+	url = https://github.com/magit/forge.git
+[submodule "elisp/cond-let"]
+	path = elisp/cond-let
+	url = https://github.com/tarsius/cond-let.git
+[submodule "elisp/llama"]
+	path = elisp/llama
+	url = https://github.com/tarsius/llama
+[submodule "elisp/with-editor"]
+	path = elisp/with-editor
+	url = https://github.com/magit/with-editor
+[submodule "elisp/transient"]
+	path = elisp/transient
+	url = https://github.com/magit/transient
+[submodule "elisp/yasnippet"]
+	path = elisp/yasnippet
+	url = https://github.com/joaotavora/yasnippet
+[submodule "elisp/closql"]
+	path = elisp/closql
+	url = https://github.com/magit/closql
+[submodule "elisp/emacsql"]
+	path = elisp/emacsql
+	url = https://github.com/magit/emacsql
+[submodule "elisp/ghub"]
+	path = elisp/ghub
+	url = https://github.com/magit/ghub
+[submodule "elisp/rainbow-delimiters"]
+	path = elisp/rainbow-delimiters
+	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "elisp/company-mode"]
+	path = elisp/company-mode
+	url = https://github.com/company-mode/company-mode.git
+[submodule "elisp/paredit"]
+	path = elisp/paredit
+	url = https://paredit.org/paredit.git
+[submodule "elisp/exec-path-from-shell"]
+	path = elisp/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell

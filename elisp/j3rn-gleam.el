@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package gleam-ts-mode
+  :ensure nil
   :mode (rx ".gleam" eos)
   :config
   (add-to-list 'eglot-server-programs '(gleam-ts-mode "gleam" "lsp"))

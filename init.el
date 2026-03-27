@@ -7,29 +7,31 @@
 
 ;;; Package stuff
 (require 'package)
-;; Set package archives
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
 ;; Load and activate packages
 (package-initialize)
-
-;; Fetch the list of available packages
-(unless package-archive-contents
-  (package-refresh-contents))
 
 ;; Install use-package if it's missing
 ;; use-package is included in Emacs 29.1 and later
 (unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
 
 ;; Setup use-package
 (require 'use-package)
-(setq use-package-always-ensure t)	; Always ensure packages are installed
+(setq use-package-always-ensure nil)	; Never attempt to install packages
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; Configure custom themes
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 ;; Set my custom "light" theme as safe (this must come before auto-dark is loaded)
 (setq custom-safe-themes '("dca48b51e11c5298236ca32aae33e5e72f8bf92dad65250506c7b3bd4a5145f0" default))
+
+;; Tell Emacs where to find vendored/custom code
+(let ((code-dir (concat user-emacs-directory "elisp")))
+  (add-to-list 'load-path code-dir)
+  (let ((default-directory code-dir))
+    (normal-top-level-add-subdirs-to-load-path)))
 
 ;; use-package declarations
 
@@ -41,9 +43,11 @@
   :hook
   (prog-mode . abbrev-mode))
 
-(use-package async)
+(use-package async
+  :ensure nil)
 
 (use-package auto-dark
+  :ensure nil
   :custom
   (auto-dark-themes '((wombat) (light)))
   :config
@@ -67,14 +71,14 @@
   :init (setq compilation-scroll-output t))
 
 (use-package cook-mode
-  :vc (:url "https://github.com/cooklang/cook-mode"
-       :rev :newest
-       :branch "master")
+  :ensure nil
   :hook (cook-mode . visual-line-mode))
 
-(use-package csv-mode)
+(use-package csv-mode
+  :ensure nil)
 
 (use-package dashboard
+  :ensure nil
   :init
   (setq dashboard-agenda-sort-strategy '(time-up priority-up))
   (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
@@ -88,7 +92,8 @@
   :config
   (dashboard-setup-startup-hook))
 
-(use-package delight)
+(use-package delight
+  :ensure nil)
 
 (use-package dired
   :ensure nil
@@ -343,7 +348,7 @@
   (setq warning-minimum-level :error))
 
 (use-package wat-ts-mode
-  :vc (:url "https://github.com/J3RN/wat-ts-mode")
+  :ensure nil
   :config
   (add-to-list 'treesit-language-source-alist '(wat "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wat/src"))
   (add-to-list 'treesit-language-source-alist '(wast "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wast/src")))
@@ -374,8 +379,14 @@
   (windmove-default-keybindings))
 
 (use-package window
+  :ensure nil
   :bind
   ("C-c 1" . window-toggle-side-windows))
+
+(use-package xref
+  :ensure nil
+  :config
+  (setq xref-search-program 'ripgrep))
 
 (use-package yaml-mode)
 
@@ -406,9 +417,6 @@
       mouse-wheel-follow-mouse t                   ; Scroll window mouse is positioned over
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
-
-;;; Load libraries
-(add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 ;; Programming, general
 (load-library "j3rn-git")
