@@ -275,8 +275,6 @@
   ([remap query-replace] . phi-replace)
   ([remap query-replace-regexp] . phi-replace-query))
 
-(use-package pomodoro)
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
