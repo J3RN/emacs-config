@@ -44,6 +44,7 @@
 (use-package async)
 
 (use-package auto-dark
+  :delight
   :custom
   (auto-dark-themes '((wombat) (light)))
   :config
@@ -479,6 +480,7 @@
 (use-package yaml-mode)
 
 (use-package yasnippet
+  :delight yas-minor-mode
   :hook
   (prog-mode . yas-minor-mode))
 
