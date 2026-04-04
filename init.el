@@ -295,8 +295,6 @@
 (use-package restclient
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
-(use-package ripgrep)
-
 (use-package sendmail
   :ensure nil
   :init (setq send-mail-function 'mailclient-send-it))
