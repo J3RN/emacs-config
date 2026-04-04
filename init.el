@@ -337,8 +337,6 @@
 (use-package restclient
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
-(use-package ripgrep)
-
 (use-package sendmail
   :ensure nil
   :init (setq send-mail-function 'mailclient-send-it))
@@ -429,6 +427,10 @@
 (use-package window
   :bind
   ("C-c 1" . window-toggle-side-windows))
+
+(use-package xref
+  :config
+  (setq xref-search-program 'ripgrep))
 
 (use-package yaml-mode)
 
