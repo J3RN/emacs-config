@@ -299,9 +299,6 @@
   :ensure nil
   :init (setq send-mail-function 'mailclient-send-it))
 
-(use-package swiper
-  :bind ("C-c s" . swiper))
-
 (use-package shell
   :bind
   ("C-c x s" . shell)
