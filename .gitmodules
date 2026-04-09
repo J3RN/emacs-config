@@ -1,0 +1,178 @@
+[submodule "elisp/async"]
+	path = elisp/async
+	url = https://github.com/jwiegley/emacs-async.git
+[submodule "elisp/auto-dark"]
+	path = elisp/auto-dark
+	url = https://github.com/LionyxML/auto-dark-emacs.git
+[submodule "elisp/cook-mode"]
+	path = elisp/cook-mode
+	url = https://github.com/cooklang/cook-mode.git
+[submodule "elisp/csv-mode"]
+	path = elisp/csv-mode
+	url = https://https.git.savannah.gnu.org/git/emacs/elpa.git
+	branch = externals/csv-mode
+[submodule "elisp/dashboard"]
+	path = elisp/dashboard
+	url = https://github.com/emacs-dashboard/dashboard.git
+[submodule "elisp/elixir-test"]
+	path = elisp/elixir-test
+	url = git@github.com:J3RN/elixir-test-mode
+[submodule "elisp/gleam-ts-mode"]
+	path = elisp/gleam-ts-mode
+	url = git@github.com:gleam-lang/gleam-mode
+[submodule "elisp/inf-elixir"]
+	path = elisp/inf-elixir
+	url = git@github.com:J3RN/inf-elixir
+[submodule "elisp/inf-ucm"]
+	path = elisp/inf-ucm
+	url = git@github.com:J3RN/inf-ucm
+[submodule "elisp/mix-mode"]
+	path = elisp/mix-mode
+	url = git@github.com:J3RN/mix-mode
+[submodule "elisp/wat-ts-mode"]
+	path = elisp/wat-ts-mode
+	url = git@github.com:J3RN/wat-ts-mode
+[submodule "elisp/delight"]
+	path = elisp/delight
+	url = https://git.savannah.nongnu.org/git/delight.git
+[submodule "elisp/magit"]
+	path = elisp/magit
+	url = https://github.com/magit/magit.git
+[submodule "elisp/forge"]
+	path = elisp/forge
+	url = https://github.com/magit/forge.git
+[submodule "elisp/cond-let"]
+	path = elisp/cond-let
+	url = https://github.com/tarsius/cond-let.git
+[submodule "elisp/llama"]
+	path = elisp/llama
+	url = https://github.com/tarsius/llama
+[submodule "elisp/with-editor"]
+	path = elisp/with-editor
+	url = https://github.com/magit/with-editor
+[submodule "elisp/transient"]
+	path = elisp/transient
+	url = https://github.com/magit/transient
+[submodule "elisp/yasnippet"]
+	path = elisp/yasnippet
+	url = https://github.com/joaotavora/yasnippet
+[submodule "elisp/closql"]
+	path = elisp/closql
+	url = https://github.com/magit/closql
+[submodule "elisp/emacsql"]
+	path = elisp/emacsql
+	url = https://github.com/magit/emacsql
+[submodule "elisp/ghub"]
+	path = elisp/ghub
+	url = https://github.com/magit/ghub
+[submodule "elisp/rainbow-delimiters"]
+	path = elisp/rainbow-delimiters
+	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "elisp/company-mode"]
+	path = elisp/company-mode
+	url = https://github.com/company-mode/company-mode.git
+[submodule "elisp/paredit"]
+	path = elisp/paredit
+	url = https://paredit.org/paredit.git
+[submodule "elisp/exec-path-from-shell"]
+	path = elisp/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell
+[submodule "elisp/doom-modeline"]
+	path = elisp/doom-modeline
+	url = https://github.com/seagle0128/doom-modeline.git
+[submodule "elisp/nerd-icons"]
+	path = elisp/nerd-icons
+	url = https://github.com/rainstormstudio/nerd-icons.el.git
+[submodule "elisp/dockerfile-mode"]
+	path = elisp/dockerfile-mode
+	url = https://github.com/spotify/dockerfile-mode
+[submodule "elisp/ess"]
+	path = elisp/ess
+	url = https://github.com/emacs-ess/ESS
+[submodule "elisp/go-mode"]
+	path = elisp/go-mode
+	url = https://github.com/dominikh/go-mode.el
+[submodule "elisp/markdown-mode"]
+	path = elisp/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode
+[submodule "elisp/page-break-lines"]
+	path = elisp/page-break-lines
+	url = https://github.com/purcell/page-break-lines
+[submodule "elisp/diff-hl"]
+	path = elisp/diff-hl
+	url = https://github.com/dgutov/diff-hl
+[submodule "elisp/undo-tree"]
+	path = elisp/undo-tree
+	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "elisp/inf-ruby"]
+	path = elisp/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby
+[submodule "elisp/treepy"]
+	path = elisp/treepy
+	url = https://github.com/volrath/treepy.el
+[submodule "elisp/yaml"]
+	path = elisp/yaml
+	url = https://github.com/zkry/yaml.el
+[submodule "elisp/yaml-mode"]
+	path = elisp/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode
+[submodule "elisp/clojure-mode"]
+	path = elisp/clojure-mode
+	url = https://github.com/clojure-emacs/clojure-mode
+[submodule "elisp/package-lint"]
+	path = elisp/package-lint
+	url = https://github.com/purcell/package-lint
+[submodule "elisp/haskell-mode"]
+	path = elisp/haskell-mode
+	url = https://github.com/haskell/haskell-mode
+[submodule "elisp/tuareg"]
+	path = elisp/tuareg
+	url = https://github.com/ocaml/tuareg
+[submodule "elisp/rubocop"]
+	path = elisp/rubocop
+	url = https://github.com/bbatsov/rubocop-emacs
+[submodule "elisp/ruby-end"]
+	path = elisp/ruby-end
+	url = https://github.com/rejeep/ruby-end
+[submodule "elisp/rust-mode"]
+	path = elisp/rust-mode
+	url = https://github.com/rust-lang/rust-mode
+[submodule "elisp/auctex"]
+	path = elisp/auctex
+	url = https://https.git.savannah.gnu.org/git/auctex.git
+[submodule "elisp/envrc"]
+	path = elisp/envrc
+	url = https://github.com/purcell/envrc
+[submodule "elisp/restclient"]
+	path = elisp/restclient
+	url = https://github.com/emacsorphanage/restclient
+[submodule "elisp/git-timemachine"]
+	path = elisp/git-timemachine
+	url = https://codeberg.org/pidu/git-timemachine
+[submodule "elisp/dhall-mode"]
+	path = elisp/dhall-mode
+	url = https://github.com/psibi/dhall-mode
+[submodule "elisp/purescript-mode"]
+	path = elisp/purescript-mode
+	url = https://github.com/purescript-emacs/purescript-mode
+[submodule "elisp/enh-ruby-mode"]
+	path = elisp/enh-ruby-mode
+	url = https://github.com/zenspider/Enhanced-Ruby-Mode
+[submodule "elisp/rspec-mode"]
+	path = elisp/rspec-mode
+	url = https://github.com/pezra/rspec-mode
+[submodule "elisp/ruby-hash-syntax"]
+	path = elisp/ruby-hash-syntax
+	url = https://github.com/purcell/ruby-hash-syntax
+[submodule "elisp/yasnippet-snippets"]
+	path = elisp/yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets
+[submodule "elisp/inheritenv"]
+	path = elisp/inheritenv
+	url = https://github.com/purcell/inheritenv
+[submodule "elisp/elixir-mode"]
+	path = elisp/elixir-mode
+	url = https://github.com/elixir-editors/emacs-elixir.git
+[submodule "elisp/compat"]
+	path = elisp/compat
+	url = https://github.com/emacs-compat/compat.git

@@ -7,8 +7,7 @@
 ;;; Code:
 
 (use-package inf-ucm
-  :vc (:url "https://github.com/J3RN/inf-ucm"
-       :rev :newest))
+  :ensure nil)
 
 (provide 'j3rn-unison)
 ;;; j3rn-unison.el ends here

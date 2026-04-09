@@ -15,7 +15,7 @@ eshell
 forge-database*.sqlite
 projectile-bookmarks.eld
 recentf
-transient
+/transient
 session.*
 tramp
 projects

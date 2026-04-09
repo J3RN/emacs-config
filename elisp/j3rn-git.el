@@ -9,12 +9,14 @@
   :config
   (global-diff-hl-mode))
 
-(use-package forge)
+(use-package forge
+  :ensure nil)
 
 (use-package git-timemachine
   :bind ("C-c g t" . git-timemachine))
 
 (use-package magit
+  :ensure nil
   :bind
   ("C-c g s" . magit-status)
   ("C-c g f" . magit-file-dispatch)
