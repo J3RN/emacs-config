@@ -43,7 +43,10 @@
 
 Currently the case where Hover should not try to highlight is when the LSP can do
 it instead."
-  (not (and (eglot-current-server) (eglot-server-capable :documentHighlightProvider))))
+  (not (and
+        (eglot-current-server)
+        (fboundp 'eglot-server-capable)
+        (eglot-server-capable :documentHighlightProvider))))
 
 (define-minor-mode hover-mode
   "Hovers the symbol under point when idle."
