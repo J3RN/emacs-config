@@ -73,8 +73,7 @@
   (elixir-mode . eglot-ensure))
 
 (use-package elixir-test
-  :vc (:url "https://github.com/J3RN/elixir-test-mode"
-       :rev :newest)
+  :ensure nil
   :bind (:map elixir-test-mode-map
               ("C-c e" . elixir-test-command-map))
   :hook
@@ -82,6 +81,7 @@
   (elixir-ts-mode . elixir-test-mode))
 
 (use-package inf-elixir
+  :ensure nil
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i p" . 'inf-elixir-project)
          ("C-c i l" . 'inf-elixir-send-line)
@@ -93,8 +93,7 @@
   (inf-elixir-mode . visual-line-mode))
 
 (use-package mix
-  :vc (:url "https://github.com/J3RN/mix-mode"
-       :rev :newest)
+  :ensure nil
   :bind (:map mix-mode-map ("C-c m" . 'mix-command-map))
   :hook
   (elixir-mode . mix-mode)
