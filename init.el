@@ -251,9 +251,6 @@
 	  (tags . " %i %-12:c")
 	  (search . " %i %-12:c"))))
 
-(use-package org-pomodoro
-  :bind ("C-c o p" . org-pomodoro))
-
 ;; A bit meta, eh?
 (use-package package
   :bind
