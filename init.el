@@ -268,11 +268,6 @@
   :config
   (show-paren-mode))
 
-(use-package phi-search
-  :bind
-  ([remap query-replace] . phi-replace)
-  ([remap query-replace-regexp] . phi-replace-query))
-
 (use-package project
   :ensure nil
   :config
