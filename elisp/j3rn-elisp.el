@@ -14,8 +14,6 @@
 (use-package flycheck-package
   :config (flycheck-package-setup))
 
-(use-package lispy)
-
 (use-package package-lint)
 
 (use-package paredit
