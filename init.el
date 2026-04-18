@@ -506,6 +506,7 @@
       mouse-wheel-progressive-speed nil            ; Don't accelerate scrolling
       mouse-wheel-follow-mouse t                   ; Scroll window mouse is positioned over
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
+      mouse-wheel-flip-direction t                 ; Emacs treats trackpad and mouse wheel differently, preserve trackpad sanity
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
 
 ;;; Load libraries
