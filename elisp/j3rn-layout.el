@@ -8,7 +8,7 @@
 ;;; Code:
 
 (defvar j3rn-layout-right-windows
-  '("\\*xref\\*")
+  '("\\*xref\\*" "\\*Occur\\*")
   "A list of regular expressions that, if matched, will display the given buffer in the 'right'.")
 
 (defvar j3rn-layout-top-windows
