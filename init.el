@@ -29,7 +29,7 @@
 ;; Configure custom themes
 (setq custom-theme-directory (locate-user-emacs-file "themes"))
 ;; Set my custom "light" theme as safe (this must come before auto-dark is loaded)
-(setq custom-safe-themes '("dca48b51e11c5298236ca32aae33e5e72f8bf92dad65250506c7b3bd4a5145f0" default))
+(setq custom-safe-themes '("6d523e998cb20d2caf6a15166190bfa53a6a4d7852107cda6489b7fe174ab989" default))
 
 ;; use-package declarations
 

@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'light
- '(default ((t (:foreground "black" :background "white" :stipple nil :inherit nil))))
+ '(default ((t (:foreground "black" :background "#F8F8F6" :stipple nil :inherit nil))))
  '(cursor ((((background light)) (:background "black")) (((background dark)) (:background "white"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
@@ -60,7 +60,7 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
  '(tab-bar ((((class color) (min-colors 89)) (:background "#E6E6E6"))))
- '(tab-bar-tab ((((class color) (min-colors 89)) (:background "white" :foreground "#2E3436" :bold t :box (:line-width (10 . 5) :style flat-button)))))
+ '(tab-bar-tab ((((class color) (min-colors 89)) (:background "#F8F8F6" :foreground "#2E3436" :bold t :box (:line-width (10 . 5) :style flat-button)))))
  '(tab-bar-tab-inactive ((((class color) (min-colors 89)) (:background "#D9D9D9" :foreground "#2E3436" :bold t :box (:line-width (10 . 5) :style flat-button))))))
 
 (provide-theme 'light)
