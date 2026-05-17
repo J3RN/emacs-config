@@ -405,6 +405,7 @@
 	 (LaTeX-mode . visual-line-mode)))
 
 (use-package undo-tree
+  :delight
   :init
   (setq undo-tree-enable-undo-in-region t)
   (setq undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo-tree-saves"))))
