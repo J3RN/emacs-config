@@ -73,8 +73,6 @@
   (elixir-mode . eglot-ensure))
 
 (use-package elixir-test
-  :vc (:url "https://github.com/J3RN/elixir-test-mode"
-       :rev :newest)
   :bind (:map elixir-test-mode-map
               ("C-c e" . elixir-test-command-map))
   :hook
@@ -93,8 +91,6 @@
   (inf-elixir-mode . visual-line-mode))
 
 (use-package mix
-  :vc (:url "https://github.com/J3RN/mix-mode"
-       :rev :newest)
   :bind (:map mix-mode-map ("C-c m" . 'mix-command-map))
   :hook
   (elixir-mode . mix-mode)

@@ -8,7 +8,6 @@
 ;;; Code:
 
 (use-package elisp-mode
-  :ensure nil
   :hook (emacs-lisp-mode . prettify-symbols-mode))
 
 (use-package flycheck-package

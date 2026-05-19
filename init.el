@@ -7,23 +7,19 @@
 
 ;;; Package stuff
 (require 'package)
-;; Set package archives
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
 ;; Load and activate packages
 (package-initialize)
-
-;; Fetch the list of available packages
-(unless package-archive-contents
-  (package-refresh-contents))
 
 ;; Install use-package if it's missing
 ;; use-package is included in Emacs 29.1 and later
 (unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
 
 ;; Setup use-package
 (require 'use-package)
-(setq use-package-always-ensure t)	; Always ensure packages are installed
+(setq use-package-always-ensure nil)	; Never attempt to install packages
 (setq use-package-always-demand t)	; Always eager load packages instead of lazy loading them
 
 ;; Configure custom themes
@@ -31,10 +27,18 @@
 ;; Set my custom "light" theme as safe (this must come before auto-dark is loaded)
 (setq custom-safe-themes '("6d523e998cb20d2caf6a15166190bfa53a6a4d7852107cda6489b7fe174ab989" default))
 
+;; Tell Emacs where to find vendored/custom code
+(let ((code-dir (concat user-emacs-directory "elisp")))
+  (add-to-list 'load-path code-dir)
+  (let ((default-directory code-dir))
+    (normal-top-level-add-subdirs-to-load-path)))
+
 ;; use-package declarations
 
+;;; Delight must come before anything that needs to be de-lighted
+(use-package delight)
+
 (use-package abbrev
-  :ensure nil
   :delight
   :config
   (setq save-abbrevs 'silently)
@@ -51,12 +55,10 @@
   (auto-dark-mode 1))
 
 (use-package autorevert
-  :ensure nil
   :config
   (global-auto-revert-mode))
 
 (use-package browse-url
-  :ensure nil
   :bind ("C-c q" . browse-url))
 
 (use-package company
@@ -64,13 +66,9 @@
   :hook (prog-mode . company-mode))
 
 (use-package compile
-  :ensure nil
   :init (setq compilation-scroll-output t))
 
 (use-package cook-mode
-  :vc (:url "https://github.com/cooklang/cook-mode"
-       :rev :newest
-       :branch "master")
   :hook (cook-mode . visual-line-mode))
 
 (use-package csv-mode)
@@ -89,15 +87,11 @@
   :config
   (dashboard-setup-startup-hook))
 
-(use-package delight)
-
 (use-package dired
-  :ensure nil
   :config
   (setq dired-listing-switches "-alh"))
 
 (use-package display-line-numbers
-  :ensure nil
   :config
   (setq display-line-numbers-width-start t))
 
@@ -111,18 +105,15 @@
   (doom-modeline-mode 1))
 
 (use-package eglot
-  :ensure nil
   :bind
   ("C-c l r" . eglot-rename)
   ("C-c l f" . eglot-code-action-quickfix)
   ("M-+" . eglot-find-implementation))
 
 (use-package eldoc
-  :ensure nil
   :delight)
 
 (use-package elec-pair
-  :ensure nil
   :config
   (electric-pair-mode))
 
@@ -148,13 +139,11 @@
   (envrc-global-mode))
 
 (use-package epg-config
-  :ensure nil
   :config
   ;; GPG pinentry prompt fix for macOS
   (setq-default epa-pinentry-mode 'loopback))
 
 (use-package eshell
-  :ensure nil
   :bind
   ("C-c x e" . eshell)
   :hook
@@ -167,17 +156,14 @@
   :config (exec-path-from-shell-initialize))
 
 (use-package flymake
-  :ensure nil
   :bind (("C-c ! n" . flymake-goto-next-error)
 	 ("C-c ! p" . flymake-goto-prev-error)))
 
 (use-package flyspell
-  :ensure nil
   :hook
   (text-mode . flyspell-mode))
 
 (use-package files
-  :ensure nil
   :config
   ;; Require newlines at the end of files
   (setq-default require-final-newline t)
@@ -201,7 +187,6 @@
 (use-package go-mode)
 
 (use-package hexl
-  :ensure nil
   :config
   (setq hexl-bits 8))
 
@@ -213,7 +198,6 @@
   :hook (prog-mode . hover-mode))
 
 (use-package icomplete
-  :ensure nil
   :config
   (icomplete-vertical-mode)
   (setq completion-styles '(basic partial-completion substring flex))
@@ -225,7 +209,6 @@
               ("C-j" . exit-minibuffer)))
 
 (use-package imenu
-  :ensure nil
   :bind ("M-i" . imenu))
 
 (use-package markdown-mode
@@ -233,7 +216,6 @@
 	 (markdown-mode . whitespace-mode)))
 
 (use-package org
-  :ensure nil
   :delight
   :delight org-indent-mode
   :bind (("C-c o l" . org-store-link)
@@ -264,12 +246,10 @@
   (global-page-break-lines-mode))
 
 (use-package paren
-  :ensure nil
   :config
   (show-paren-mode))
 
 (use-package project
-  :ensure nil
   :config
   (cl-defmethod project-name (project)
     (let ((root (project-root project)))
@@ -280,7 +260,6 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package re-builder
-  :ensure nil
   :config
   (setq reb-re-syntax 'string))
 
@@ -288,7 +267,6 @@
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
 (use-package sendmail
-  :ensure nil
   :init (setq send-mail-function 'mailclient-send-it))
 
 (use-package shell
@@ -298,7 +276,6 @@
   (shell-mode . visual-line-mode))
 
 (use-package simple
-  :ensure nil
   :config
   ;; Show column number in modeline
   (column-number-mode)
@@ -310,12 +287,10 @@
   (compilation-mode . visual-line-mode))
 
 (use-package subword
-  :ensure nil
   :delight
   :config (global-subword-mode))
 
 (use-package tempo
-  :ensure nil
   :bind
   ("C-c t c" . tempo-complete-tag)
   ("C-c t f" . tempo-forward-mark)
@@ -323,8 +298,8 @@
   :config
   (setq tempo-interactive t))
 
-(use-package tex
-  :ensure auctex
+;; Part of AUCTeX
+(use-package latex
   :hook ((LaTeX-mode . flyspell-mode)
 	 (LaTeX-mode . visual-line-mode)))
 
@@ -336,29 +311,24 @@
   :config (global-undo-tree-mode))
 
 (use-package warnings
-  :ensure nil
   :config
   (setq warning-minimum-level :error))
 
 (use-package wat-ts-mode
-  :vc (:url "https://github.com/J3RN/wat-ts-mode")
   :config
   (add-to-list 'treesit-language-source-alist '(wat "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wat/src"))
   (add-to-list 'treesit-language-source-alist '(wast "https://github.com/wasm-lsp/tree-sitter-wasm" nil "wast/src")))
 
 (use-package which-func
-  :ensure nil
   :config
   (set-face-attribute 'which-func nil :foreground "white")
   (which-function-mode t))
 
 (use-package which-key
-  :ensure nil
   :delight
   :config (which-key-mode t))
 
 (use-package whitespace
-  :ensure nil
   :delight
   :bind ("C-c w" . whitespace-mode)
   :config
@@ -367,7 +337,6 @@
   (prog-mode . whitespace-mode))
 
 (use-package windmove
-  :ensure nil
   :config
   (windmove-default-keybindings))
 
@@ -410,9 +379,6 @@
       mouse-wheel-tilt-scroll t                    ; Allow sideways scrolling
       mouse-wheel-flip-direction t                 ; Emacs treats trackpad and mouse wheel differently, preserve trackpad sanity
       scroll-conservatively 100)                   ; Scroll one line at a time when point moves off screen
-
-;;; Load libraries
-(add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 ;; Programming, general
 (load-library "j3rn-git")
