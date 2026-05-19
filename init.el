@@ -266,6 +266,8 @@
 (use-package restclient
   :config (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
+(use-package scad-mode)
+
 (use-package sendmail
   :init (setq send-mail-function 'mailclient-send-it))
 
