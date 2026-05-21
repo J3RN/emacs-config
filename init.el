@@ -201,6 +201,7 @@
   :config
   (icomplete-vertical-mode)
   (setq completion-styles '(basic partial-completion substring flex))
+  (setq completion-pcm-leading-wildcard t)
   (setq read-buffer-completion-ignore-case t)
   (setq icomplete-show-matches-on-no-input t)
   (setq icomplete-scroll t)
