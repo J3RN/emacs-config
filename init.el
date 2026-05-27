@@ -97,13 +97,6 @@
 
 (use-package dockerfile-mode)
 
-(use-package doom-modeline
-  :init
-  (setq doom-modeline-workspace-name nil)
-  (setq doom-modeline-buffer-file-name-style 'relative-to-project)
-  :config
-  (doom-modeline-mode 1))
-
 (use-package eglot
   :bind
   ("C-c l r" . eglot-rename)
