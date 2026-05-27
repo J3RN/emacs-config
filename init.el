@@ -200,7 +200,8 @@
   (setq icomplete-scroll t)
   :bind (:map icomplete-minibuffer-map
               ("RET" . icomplete-force-complete-and-exit)
-              ("C-j" . exit-minibuffer)))
+              ("C-j" . exit-minibuffer)
+              ("SPC" . self-insert-command)))
 
 (use-package imenu
   :bind ("M-i" . imenu))
