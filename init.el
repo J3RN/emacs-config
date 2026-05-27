@@ -405,6 +405,7 @@
 (when (display-graphic-p) (load-library "j3rn-gui"))
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
+(load-library "j3rn-relative-modeline")
 (load-library "j3rn-tabs")
 (load-library "yank-and-indent")
 
