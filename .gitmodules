@@ -200,3 +200,6 @@
 [submodule "elisp/ruby-test-mode"]
 	path = elisp/ruby-test-mode
 	url = https://github.com/ruby-test-mode/ruby-test-mode.git
+[submodule "elisp/emacs-which-key"]
+	path = elisp/emacs-which-key
+	url = https://github.com/justbur/emacs-which-key.git
