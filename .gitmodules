@@ -197,3 +197,6 @@
 [submodule "elisp/rake"]
 	path = elisp/rake
 	url = https://github.com/asok/rake.git
+[submodule "elisp/ruby-test-mode"]
+	path = elisp/ruby-test-mode
+	url = https://github.com/ruby-test-mode/ruby-test-mode.git
