@@ -188,3 +188,6 @@
 [submodule "elisp/emacs-fsharp-mode"]
 	path = elisp/emacs-fsharp-mode
 	url = https://github.com/fsharp/emacs-fsharp-mode.git
+[submodule "elisp/reason-mode"]
+	path = elisp/reason-mode
+	url = https://github.com/reasonml-editor/reason-mode.git
