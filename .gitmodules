@@ -185,3 +185,6 @@
 [submodule "elisp/elm-mode"]
 	path = elisp/elm-mode
 	url = https://github.com/jcollard/elm-mode.git
+[submodule "elisp/emacs-fsharp-mode"]
+	path = elisp/emacs-fsharp-mode
+	url = https://github.com/fsharp/emacs-fsharp-mode.git
