@@ -194,3 +194,6 @@
 [submodule "elisp/psc-ide-emacs"]
 	path = elisp/psc-ide-emacs
 	url = https://github.com/purescript-emacs/psc-ide-emacs.git
+[submodule "elisp/rake"]
+	path = elisp/rake
+	url = https://github.com/asok/rake.git
