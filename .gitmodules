@@ -191,3 +191,6 @@
 [submodule "elisp/reason-mode"]
 	path = elisp/reason-mode
 	url = https://github.com/reasonml-editor/reason-mode.git
+[submodule "elisp/psc-ide-emacs"]
+	path = elisp/psc-ide-emacs
+	url = https://github.com/purescript-emacs/psc-ide-emacs.git
