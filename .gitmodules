@@ -182,3 +182,6 @@
 [submodule "elisp/nix-ts-mode"]
 	path = elisp/nix-ts-mode
 	url = https://github.com/nix-community/nix-ts-mode.git
+[submodule "elisp/elm-mode"]
+	path = elisp/elm-mode
+	url = https://github.com/jcollard/elm-mode.git
