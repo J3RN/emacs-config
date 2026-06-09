@@ -203,3 +203,12 @@
 [submodule "elisp/emacs-which-key"]
 	path = elisp/emacs-which-key
 	url = https://github.com/justbur/emacs-which-key.git
+[submodule "elisp/f.el"]
+	path = elisp/f.el
+	url = https://github.com/rejeep/f.el.git
+[submodule "elisp/s.el"]
+	path = elisp/s.el
+	url = https://github.com/magnars/s.el.git
+[submodule "elisp/dash.el"]
+	path = elisp/dash.el
+	url = https://github.com/magnars/dash.el.git
