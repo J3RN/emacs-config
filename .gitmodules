@@ -212,3 +212,6 @@
 [submodule "elisp/dash.el"]
 	path = elisp/dash.el
 	url = https://github.com/magnars/dash.el.git
+[submodule "elisp/emacs-reformatter"]
+	path = elisp/emacs-reformatter
+	url = https://github.com/purcell/emacs-reformatter.git
