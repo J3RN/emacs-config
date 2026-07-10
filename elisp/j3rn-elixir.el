@@ -100,6 +100,11 @@
 
 (use-package mix
   :bind (:map mix-mode-map ("C-c m" . 'mix-command-map))
+  :config
+  (define-key 'mix-command-map (kbd "d g") (lambda () (interactive) (mix-execute-task "deps.get")))
+  (define-key 'mix-command-map (kbd "f") (lambda () (interactive) (mix-execute-task "format")))
+  (define-key 'mix-command-map (kbd "z") (lambda () (interactive) (mix-execute-task "dialyzer")))
+  (define-key 'mix-command-map (kbd "r") (lambda () (interactive) (mix-execute-task "credo")))
   :hook
   (elixir-mode . mix-mode)
   (elixir-ts-mode . mix-mode))
