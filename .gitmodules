@@ -215,3 +215,6 @@
 [submodule "elisp/emacs-reformatter"]
 	path = elisp/emacs-reformatter
 	url = https://github.com/purcell/emacs-reformatter.git
+[submodule "elisp/mise.el"]
+	path = elisp/mise.el
+	url = https://github.com/eki3z/mise.el
