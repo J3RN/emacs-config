@@ -210,7 +210,9 @@
   :hook ((markdown-mode . visual-line-mode)
 	 (markdown-mode . whitespace-mode)))
 
-(use-package mise)
+(use-package mise
+  :config
+  (global-mise-mode))
 
 (use-package org
   :delight
