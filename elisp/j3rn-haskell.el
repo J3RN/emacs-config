@@ -5,7 +5,7 @@
 ;;;
 ;;; Code:
 
-(use-package haskell-mode
+(use-package haskell
   :config
   (setq haskell-process-type 'stack-ghci)
   (setq haskell-stylish-on-save t)
