@@ -349,7 +349,9 @@
   :config
   (setq xref-search-program 'ripgrep))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.bu\\'" . yaml-mode)))
 
 (use-package yasnippet
   :delight yas-minor-mode
