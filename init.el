@@ -478,7 +478,9 @@
   :bind
   ("C-c 1" . window-toggle-side-windows))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.bu\\'" . yaml-mode)))
 
 (use-package yasnippet
   :delight yas-minor-mode
