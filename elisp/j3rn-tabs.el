@@ -7,7 +7,7 @@
 
 ;; Label a tab with the project-name, if available
 (setq tab-bar-tab-name-function (lambda ()
-                                  (if-let* ((current-project (project-current))
+                                  (if-let* ((current-project (ignore-error file-missing (project-current)))
                                             (pname (project-name current-project)))
 				      pname
 				    (tab-bar-tab-name-current))))
