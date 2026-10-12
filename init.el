@@ -228,6 +228,14 @@
 
 (use-package go-mode)
 
+(use-package gptel
+  :config
+  (gptel-make-ollama "Ollama"
+                     :host "localhost:11434"
+                     :stream t
+                     :models '(qwen3-vl:30b deepseek-r1:32b gpt-oss:20b))
+  )
+
 (use-package haml-mode)
 
 (use-package hexl
