@@ -7,7 +7,6 @@
 ;;; Code:
 
 (use-package clojure-mode)
-(use-package cider)
 
 (provide 'j3rn-clojure)
 ;;; j3rn-clojure.el ends here
