@@ -62,23 +62,23 @@
                                                                       "nextls"
                                                                       "elixir-ls"))))
 
-(use-package elixir-mode
+(use-package elixir-ts-mode
   :delight
-  :bind (:map elixir-mode-map
+  :bind (:map elixir-ts-mode-map
 	      ("C-c e :" . elixir-expand-keyword)
 	      ("C-c e (" . elixir-to-string)
 	      ("C-c e )" . elixir-to-atom))
   :hook
-  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
-  (elixir-mode . (lambda () (setq indent-tabs-mode nil)))
-  (elixir-mode . (lambda () (setq prettify-symbols-alist '(("<-" . 8592)
-						      ("->" . 8594)
-						      ("=>" . 8658)
-						      ("!=" . 8800)
-						      ("<=" . 8804)
-						      (">=" . 8805)
-						      ("|>" . 9655)))))
-  (elixir-mode . eglot-ensure))
+  (elixir-ts-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil 'local)))
+  (elixir-ts-mode . (lambda () (setq indent-tabs-mode nil)))
+  (elixir-ts-mode . (lambda () (setq prettify-symbols-alist '(("<-" . 8592)
+							 ("->" . 8594)
+							 ("=>" . 8658)
+							 ("!=" . 8800)
+							 ("<=" . 8804)
+							 (">=" . 8805)
+							 ("|>" . 9655)))))
+  (elixir-ts-mode . eglot-ensure))
 
 (use-package elixir-test
   :bind (:map elixir-test-mode-map

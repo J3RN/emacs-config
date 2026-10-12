@@ -170,9 +170,6 @@
 [submodule "elisp/inheritenv"]
 	path = elisp/inheritenv
 	url = https://github.com/purcell/inheritenv
-[submodule "elisp/elixir-mode"]
-	path = elisp/elixir-mode
-	url = https://github.com/elixir-editors/emacs-elixir.git
 [submodule "elisp/compat"]
 	path = elisp/compat
 	url = https://github.com/emacs-compat/compat.git
