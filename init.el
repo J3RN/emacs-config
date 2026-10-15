@@ -179,6 +179,9 @@
 
 (use-package go-mode)
 
+(use-package hcl-ts-mode
+  :mode (rx ".hcl" eos))
+
 (use-package hexl
   :config
   (setq hexl-bits 8))
