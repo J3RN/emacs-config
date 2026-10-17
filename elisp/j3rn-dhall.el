@@ -1,4 +1,4 @@
-;;; j3rn-dhall --- Packages and config for Dhall
+;;; j3rn-dhall --- Packages and config for Dhall  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

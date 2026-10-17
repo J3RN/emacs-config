@@ -1,4 +1,4 @@
-;;; j3rn-csharp --- Tools for working with C# and .NET
+;;; j3rn-csharp --- Tools for working with C# and .NET  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; j3rn-clojure --- Clojure packages and configuration
+;;; j3rn-clojure --- Clojure packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

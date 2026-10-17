@@ -1,4 +1,4 @@
-;;; j3rn-elm --- Elm packages and configuration
+;;; j3rn-elm --- Elm packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Elm packages and configuration

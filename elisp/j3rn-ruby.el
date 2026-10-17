@@ -1,4 +1,4 @@
-;;; j3rn-ruby --- Ruby-related packages and configuration
+;;; j3rn-ruby --- Ruby-related packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Various Ruby packages and configuration

@@ -1,4 +1,4 @@
-;;; j3rn-layout --- How I like my windows organized
+;;; j3rn-layout --- How I like my windows organized  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Generally this follows a sort-of IDE sort of layout, where

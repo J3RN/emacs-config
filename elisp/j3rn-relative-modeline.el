@@ -1,4 +1,4 @@
-;;; j3rn-relative-modeline -- Show buffer filename relative to project root (if any)
+;;; j3rn-relative-modeline -- Show buffer filename relative to project root (if any)  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

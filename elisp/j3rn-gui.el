@@ -1,4 +1,4 @@
-;;; j3rn-gui --- Graphical UI customizations
+;;; j3rn-gui --- Graphical UI customizations  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Generally seeks to make the UI a bit more minimal than the default

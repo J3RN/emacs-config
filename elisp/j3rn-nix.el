@@ -1,4 +1,4 @@
-;;; j3rn-nix --- Nix packges and configuration
+;;; j3rn-nix --- Nix packges and configuration  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

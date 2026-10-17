@@ -1,4 +1,4 @@
-;;; j3rn-ocaml --- My OCaml config
+;;; j3rn-ocaml --- My OCaml config  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

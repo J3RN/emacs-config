@@ -1,4 +1,4 @@
-;;; j3rn-tabs.el -- Tab configuration
+;;; j3rn-tabs.el -- Tab configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Customize tabs to look more modern

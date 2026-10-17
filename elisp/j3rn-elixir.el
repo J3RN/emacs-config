@@ -1,4 +1,4 @@
-;;; j3rn-elixir --- Elixir packages and configuration
+;;; j3rn-elixir --- Elixir packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Various Elixir packages and configuration

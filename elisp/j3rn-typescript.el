@@ -1,4 +1,4 @@
-;;; j3rn-typescript --- TypeScript packages and configuration
+;;; j3rn-typescript --- TypeScript packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   TypeScript packages and configuration

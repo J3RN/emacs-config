@@ -1,4 +1,4 @@
-;;; j3rn-diary --- Diary configuration
+;;; j3rn-diary --- Diary configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; j3rn-purescript -- Purescript packages and config
+;;; j3rn-purescript -- Purescript packages and config  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Just trying out Purescript.  This may be temporary.

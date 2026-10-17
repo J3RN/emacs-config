@@ -1,4 +1,4 @@
-;;; j3rn-search --- A buffer search mechanism
+;;; j3rn-search --- A buffer search mechanism  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

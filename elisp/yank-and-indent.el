@@ -1,4 +1,4 @@
-;;; yank-and-indent --- Indent code when "yanking" (pasting) it
+;;; yank-and-indent --- Indent code when "yanking" (pasting) it  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Seems like this would be built-in, but so far as I'm aware, it's

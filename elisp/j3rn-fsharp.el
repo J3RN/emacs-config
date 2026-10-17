@@ -1,4 +1,4 @@
-;;; j3rn-fsharp -- Tools and config for writing F#
+;;; j3rn-fsharp -- Tools and config for writing F#  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

@@ -1,4 +1,4 @@
-;;; j3rn-git --- Git-related packages and configuration
+;;; j3rn-git --- Git-related packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Various Git-related packages and configuration

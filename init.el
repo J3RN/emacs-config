@@ -1,4 +1,4 @@
-;;; init.el --- The startup file
+;;; init.el --- The startup file  -*- lexical-binding:t; -*-
 
 ;;; Commentary:
 ;; This is just my personal Emacs config.  I use it.

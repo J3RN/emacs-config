@@ -1,4 +1,4 @@
-;;; j3rn-haskell -- My Haskell configs
+;;; j3rn-haskell -- My Haskell configs  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   I love Haskell

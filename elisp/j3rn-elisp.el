@@ -1,4 +1,4 @@
-;;; j3rn-elisp --- Packages and configuration for Emacs Lisp
+;;; j3rn-elisp --- Packages and configuration for Emacs Lisp  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

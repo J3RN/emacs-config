@@ -1,4 +1,4 @@
-;;; j3rn-rust --- Rust packages and configuration
+;;; j3rn-rust --- Rust packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Various Rust packages and configuration

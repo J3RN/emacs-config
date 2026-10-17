@@ -1,4 +1,4 @@
-;;; j3rn-gleam --- Gleam packages and configuration
+;;; j3rn-gleam --- Gleam packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;;; j3rn-unison --- Unison packages and configuration
+;;; j3rn-unison --- Unison packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

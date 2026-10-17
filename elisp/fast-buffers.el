@@ -1,4 +1,4 @@
-;;; fast-buffers.el --- Faster buffer operations
+;;; fast-buffers.el --- Faster buffer operations  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

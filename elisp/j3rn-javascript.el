@@ -1,4 +1,4 @@
-;;; j3rn-javascript --- JavaScript packages and configuration
+;;; j3rn-javascript --- JavaScript packages and configuration  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   JavaScript packages and configuration

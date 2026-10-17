@@ -1,4 +1,5 @@
-;;; early-init.el --- Loaded before init.el
+;;; early-init.el --- Loaded before init.el  -*- lexical-binding:t; -*-
+
 ;;; Commentary: Contents taken from redguardtoo/emacs.d
 
 (setq gc-cons-percentage 0.6)
