@@ -158,11 +158,11 @@
       "}"
       ] @font-lock-bracket-face)
 
-      :feature 'delimiter
-      :language 'hcl
-      '([
-         "="
-         ] @font-lock-delimiter-face)))
+   :feature 'delimiter
+   :language 'hcl
+   '([
+      "="
+      ] @font-lock-delimiter-face)))
 
 
 (defvar hcl-ts--indent-rules
