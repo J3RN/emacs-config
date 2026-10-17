@@ -1,4 +1,4 @@
-;;; fast-buffers.el --- Faster buffer operations  -*- lexical-binding: t; -*-
+;;; j3rn-fast-buffers.el --- Faster buffer operations  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;
@@ -25,5 +25,5 @@ bounce you between your two most recently visited buffers."
 (global-set-key (kbd "C-c k") 'j3rn-kill-buffer)
 (global-set-key (kbd "C-c y") 'bury-buffer)
 
-(provide 'fast-buffers)
-;;; fast-buffers.el ends here
+(provide 'j3rn-fast-buffers)
+;;; j3rn-fast-buffers.el ends here

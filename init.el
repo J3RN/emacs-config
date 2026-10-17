@@ -408,14 +408,14 @@
 
 ;; Miscellany
 (load-library "j3rn-diary")
-(load-library "fast-buffers")
+(load-library "j3rn-fast-buffers")
 (when (display-graphic-p) (load-library "j3rn-gui"))
 ;; Comment out if you don't like my layout
 (load-library "j3rn-layout")
 (load-library "j3rn-relative-modeline")
 (load-library "j3rn-search")
 (load-library "j3rn-tabs")
-(load-library "yank-and-indent")
+(load-library "j3rn-yank-and-indent")
 
 ;; Local config
 (when (locate-library "local") (load-library "local"))

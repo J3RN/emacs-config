@@ -1,4 +1,4 @@
-;;; yank-and-indent --- Indent code when "yanking" (pasting) it  -*- lexical-binding: t; -*-
+;;; j3rn-yank-and-indent --- Indent code when "yanking" (pasting) it  -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;   Seems like this would be built-in, but so far as I'm aware, it's
@@ -14,5 +14,5 @@
 	       (let ((mark-even-if-inactive transient-mark-mode))
 		 (indent-region (region-beginning) (region-end) nil))))))
 
-(provide 'yank-and-indent)
-;;; yank-and-indent.el ends here
+(provide 'j3rn-yank-and-indent)
+;;; j3rn-yank-and-indent.el ends here
