@@ -104,9 +104,6 @@
 [submodule "elisp/undo-tree"]
 	path = elisp/undo-tree
 	url = https://gitlab.com/tsc25/undo-tree.git
-[submodule "elisp/inf-ruby"]
-	path = elisp/inf-ruby
-	url = https://github.com/nonsequitur/inf-ruby
 [submodule "elisp/treepy"]
 	path = elisp/treepy
 	url = https://github.com/volrath/treepy.el
@@ -128,12 +125,6 @@
 [submodule "elisp/tuareg"]
 	path = elisp/tuareg
 	url = https://github.com/ocaml/tuareg
-[submodule "elisp/rubocop"]
-	path = elisp/rubocop
-	url = https://github.com/bbatsov/rubocop-emacs
-[submodule "elisp/ruby-end"]
-	path = elisp/ruby-end
-	url = https://github.com/rejeep/ruby-end
 [submodule "elisp/rust-mode"]
 	path = elisp/rust-mode
 	url = https://github.com/rust-lang/rust-mode
@@ -155,15 +146,6 @@
 [submodule "elisp/purescript-mode"]
 	path = elisp/purescript-mode
 	url = https://github.com/purescript-emacs/purescript-mode
-[submodule "elisp/enh-ruby-mode"]
-	path = elisp/enh-ruby-mode
-	url = https://github.com/zenspider/Enhanced-Ruby-Mode
-[submodule "elisp/rspec-mode"]
-	path = elisp/rspec-mode
-	url = https://github.com/pezra/rspec-mode
-[submodule "elisp/ruby-hash-syntax"]
-	path = elisp/ruby-hash-syntax
-	url = https://github.com/purcell/ruby-hash-syntax
 [submodule "elisp/yasnippet-snippets"]
 	path = elisp/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets
@@ -191,12 +173,6 @@
 [submodule "elisp/psc-ide-emacs"]
 	path = elisp/psc-ide-emacs
 	url = https://github.com/purescript-emacs/psc-ide-emacs.git
-[submodule "elisp/rake"]
-	path = elisp/rake
-	url = https://github.com/asok/rake.git
-[submodule "elisp/ruby-test-mode"]
-	path = elisp/ruby-test-mode
-	url = https://github.com/ruby-test-mode/ruby-test-mode.git
 [submodule "elisp/emacs-which-key"]
 	path = elisp/emacs-which-key
 	url = https://github.com/justbur/emacs-which-key.git

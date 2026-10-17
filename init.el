@@ -403,7 +403,6 @@
 (load-library "j3rn-nix")
 (load-library "j3rn-ocaml")
 (load-library "j3rn-purescript")
-(load-library "j3rn-ruby")
 (load-library "j3rn-rust")
 (load-library "j3rn-typescript")
 
