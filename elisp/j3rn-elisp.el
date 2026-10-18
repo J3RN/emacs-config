@@ -10,8 +10,9 @@
 (use-package elisp-mode
   :hook (emacs-lisp-mode . prettify-symbols-mode))
 
-(use-package flycheck-package
-  :config (flycheck-package-setup))
+;; Commented out because I'm not currently using flycheck
+;; (use-package flycheck-package
+;;   :config (flycheck-package-setup))
 
 (use-package package-lint)
 
