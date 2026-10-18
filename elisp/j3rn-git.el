@@ -9,8 +9,6 @@
   :config
   (global-diff-hl-mode))
 
-(use-package forge)
-
 (use-package git-timemachine
   :bind ("C-c g t" . git-timemachine))
 

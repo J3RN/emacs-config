@@ -38,9 +38,6 @@
 [submodule "elisp/magit"]
 	path = elisp/magit
 	url = https://github.com/magit/magit.git
-[submodule "elisp/forge"]
-	path = elisp/forge
-	url = https://github.com/magit/forge.git
 [submodule "elisp/cond-let"]
 	path = elisp/cond-let
 	url = https://github.com/tarsius/cond-let.git
@@ -56,15 +53,6 @@
 [submodule "elisp/yasnippet"]
 	path = elisp/yasnippet
 	url = https://github.com/joaotavora/yasnippet
-[submodule "elisp/closql"]
-	path = elisp/closql
-	url = https://github.com/magit/closql
-[submodule "elisp/emacsql"]
-	path = elisp/emacsql
-	url = https://github.com/magit/emacsql
-[submodule "elisp/ghub"]
-	path = elisp/ghub
-	url = https://github.com/magit/ghub
 [submodule "elisp/rainbow-delimiters"]
 	path = elisp/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters.git
