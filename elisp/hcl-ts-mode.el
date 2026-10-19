@@ -58,8 +58,11 @@
 
    :feature 'string
    :language 'hcl
-   '((string_lit) @font-lock-string-face
-     (quoted_template) @font-lock-string-face)
+   '([
+      (string_lit)
+      (quoted_template)
+      (heredoc_template)
+      ] @font-lock-string-face)
 
    ;;    :feature 'number
    ;;    :language 'hcl
