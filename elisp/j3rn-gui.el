@@ -15,8 +15,6 @@
 (tool-bar-mode -1)
 ;; Disable menubar
 (menu-bar-mode -1)
-;; Disable scrollbar
-(scroll-bar-mode -1)
 
 ;; Bind normal mac fullscreenifying shortcut
 (if (string-equal "darwin" system-type)
