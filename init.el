@@ -180,7 +180,8 @@
 (use-package go-mode)
 
 (use-package hcl-ts-mode
-  :mode (rx ".hcl" eos))
+  :mode (rx ".hcl" eos)
+  :mode (rx ".tf" eos))
 
 (use-package hexl
   :config
