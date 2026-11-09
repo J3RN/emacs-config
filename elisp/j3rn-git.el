@@ -25,5 +25,17 @@
   (magit-process-mode . (lambda () (add-hook 'after-change-functions (lambda (beg end diff) (ansi-color-apply-on-region beg end)) nil 'local)))
   (magit-process-mode . visual-line-mode))
 
+;;; Relies on magit
+(defun j3rn-worktree-branch ()
+  "Create a new branch and worktree where the worktree's directory is the branch name."
+  (interactive)
+  (pcase-let* ((`(,branch ,start-point) (magit-branch-read-args
+                                         "In new worktree; checkout new branch"
+                                         (magit-get-push-branch (magit-main-branch))))
+               (dir (concat
+                     (file-name-parent-directory (magit-toplevel))
+                     branch)))
+    (magit-worktree-branch dir branch start-point)))
+
 (provide 'j3rn-git)
 ;;; j3rn-git.el ends here
