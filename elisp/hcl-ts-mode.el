@@ -171,7 +171,10 @@
 (defvar hcl-ts--indent-rules
   (let ((offset 'hcl-ts-indent-offset))
     `((hcl
-       ((parent-is "^body$") parent-bol ,offset)))))
+       ((parent-is "^body$") parent-bol 0)
+       ((parent-is "^object$") parent-bol ,offset)
+       ((parent-is "^tuple$") parent-bol ,offset)
+       ((node-is "tuple-end") parent-bol 0)))))
 
 
 ;;; Public functions
