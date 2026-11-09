@@ -18,6 +18,7 @@
   ("C-c g f" . magit-file-dispatch)
   ("C-c g c" . magit-clone)
   :config
+  (setq magit-branch-prefer-remote-upstream t)
   (unbind-key "C-<tab>" magit-section-mode-map)
   (require 'magit-extras)
   :hook
